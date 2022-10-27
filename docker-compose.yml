@@ -1,0 +1,49 @@
+version: '2'
+volumes:
+  mysql:
+  redis:
+  bundle:
+  solr:
+  tmp-data:
+services:
+  mysql:
+    image: mysql/mysql-server:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    env_file: .env
+    volumes:
+      - mysql:/var/lib/mysql:delegated
+  redis:
+    image: redis:4.0-alpine
+    command: redis-server
+    volumes:
+      - redis:/data
+  solr:
+    image: "solr:latest"
+    volumes:
+      - solr:/app/solr/conf
+    ports:
+      - "8983:8983"
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - blacklight-core
+      - /app/solr/conf
+      - "-Xms256m"
+      - "-Xmx512m"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - .:/app:cached
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - redis
+      - solr

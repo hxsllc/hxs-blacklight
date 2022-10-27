@@ -10,7 +10,10 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+
+# Use MySQL as the database for Active Record
+gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -70,11 +73,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
 gem "blacklight", ">= 7.0"
 
 group :development, :test do
   gem "solr_wrapper", ">= 0.3"
 end
+
 gem "rsolr", ">= 1.0", "< 3"
 gem "bootstrap", "~> 4.0"
 gem "twitter-typeahead-rails", "0.11.1.pre.corejavascript"
