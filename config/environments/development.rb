@@ -67,4 +67,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # FIXES Code changes not being reflected in the Docker dev environment
+  # Using the ActiveSupport::FileUpdateChecker which pulls rather listens to events
+  # See https://stackoverflow.com/questions/37699573/rails-app-in-docker-container-doesnt-reload-in-development
+  config.file_watcher = ActiveSupport::FileUpdateChecker
 end
