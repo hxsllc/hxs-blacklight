@@ -8,6 +8,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   apt-get update -qq && \
   apt-get install -y --no-install-recommends \
   build-essential \
+  default-jre \
   git \
   bash \
   libxml2-dev \
@@ -28,7 +29,7 @@ COPY Gemfile* .
 RUN bundle install --jobs 4 --retry 3
 
 # create app in container
-COPY . .
+# COPY . .
 
 COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
@@ -37,4 +38,4 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process
-CMD ["bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0"]
+# CMD ["bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0"]
