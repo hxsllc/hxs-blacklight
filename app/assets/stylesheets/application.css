@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.bg-dark { background-color: #E5B651 !important; }
+.navbar-logo {
+  background: transparent url(/assets/images/ds-logo-blacklight-v01.png) no-repeat top left !important;
+}
+.btn-primary { background-color: #9B3C38 !important; border-color: unset !important; margin:-1px; }
+.navbar-dark .navbar-nav .nav-link { color: #3D2E0F !important; }
+a { color: #3D356D !important; }
