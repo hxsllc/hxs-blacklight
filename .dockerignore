@@ -1,1 +1,12 @@
+# Source Controle
+.git
+
+# IDE Directories
+.idea
+
+# Local development
 .solr_wrapper.yml
+
+# Environment & Secrets
+config/master.key
+*.env
