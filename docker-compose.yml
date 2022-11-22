@@ -1,31 +1,20 @@
-version: '2'
+version: '3.7'
 volumes:
   app:
-  mysql:
-  redis:
-  bundle:
-  solr:
-  tmp-data:
+  app_gems:
+  postgres:
 services:
-  mysql:
-    image: mysql/mysql-server:latest
-    container_name: "hxs-blacklight-mysql"
+  postgres:
+    image: "postgres:15.0-alpine"
+    container_name: "hxs-blacklight-postgres"
     restart: always
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
     env_file: .env
+    ports:
+      - '5438:5432'
     volumes:
-      - mysql:/var/lib/mysql:delegated
-  redis:
-    image: redis:4.0-alpine
-    container_name: "hxs-blacklight-redis"
-    command: redis-server
-    volumes:
-      - redis:/data
+      - postgres:/var/lib/postgresql/data
   solr:
-    image: "solr:latest"
+    image: "solr:9.0.0"
     container_name: "hxs-blacklight-solr"
     env_file: .env
     volumes:
@@ -47,6 +36,7 @@ services:
     env_file: .env
     volumes:
       - .:/app
+      - app_gems:/usr/local/bundle/
     ports:
       - "3000:3000"
     command:
@@ -58,7 +48,9 @@ services:
       - "3000"
       - "-b"
       - "0.0.0.0"
+    links:
+      - postgres
+      - solr
     depends_on:
-      - mysql
-      - redis
+      - postgres
       - solr

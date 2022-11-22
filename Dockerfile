@@ -21,12 +21,13 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   rm --recursive --force /var/lib/apt/lists/*
 
 # create working directory
-RUN mkdir $APP_ROOT
+RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 
 # bundle install
-COPY Gemfile* .
-RUN bundle install --jobs 4 --retry 3
+# COPY Gemfile* .
+# RUN gem install bundler:2.3.7
+# RUN bundle install --jobs 4 --retry 3
 
 # create app in container
 # COPY . .
