@@ -52,11 +52,16 @@
           author_tsim
           subject_tsim
           all_text_timv
+          title_recorded
         </str>
         <str name="pf">
           all_text_timv^10
         </str>
 
+       <str name="title_qf">
+          title_recorded
+       </str>
+       
        <str name="author_qf">
           author_tsim
        </str>
