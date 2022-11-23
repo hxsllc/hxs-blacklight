@@ -37,7 +37,7 @@ Notes:
 ### Build & Push App Image
 
 1) Login to AWS ECR `aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 214159447841.dkr.ecr.us-east-2.amazonaws.com`
-2) Build Image `ENV RAILS_MASTER_KEY=[MASTER_KEY] docker buildx build --platform linux/x86_64 -t hxs-blacklight-app --file .docker/rails.prod.Dockerfile --secret id=RAILS_MASTER_KEY --build-arg RAILS_PORT=80 .`
+2) Build Image `ENV RAILS_MASTER_KEY=[MASTER_KEY] docker buildx build --platform linux/x86_64 -t hxs-blacklight-app --file .docker/rails.prod.Dockerfile --secret id=master_key,env=RAILS_MASTER_KEY --build-arg RAILS_PORT=80 .`
 2) Tag Image `docker tag hxs-blacklight-app:latest 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-app:latest`
 3) Push Image `docker push 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-app:latest`
 
@@ -48,4 +48,27 @@ Notes:
 3) Tag Image `docker tag hxs-blacklight-solr:latest 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-solr:latest`
 4) Push Image `docker push 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-solr:latest`
 
+### Tips & Tricks
 
+- Force a deployment: `hxs-blacklight % aws ecs update-service --force-new-deployment --region us-east-2 --cluster hxs-blacklight-staging --service hxs-blacklight`
+
+### Troubleshooting
+
+#### - Receive the following error when trying to login to ECR:
+
+`Error saving credentials: error storing credentials - err: exit status 1, out: 'Post "http://ipc/registry/credstore-updated": dial unix backend.sock: connect: no such file or directory'`
+
+Make sure that the docker server is running.
+
+### Log Into Solr
+
+1) Log into [**AWS**](https://aws.amazon.com)
+2) Navigate to the [**ECS Console**]( https://us-east-2.console.aws.amazon.com/ecs)
+3) Select **Clusters**
+4) Select **hxs-blacklight-staging**
+5) Under **Services** select **hxs-blacklight**
+6) Click on the **Configuration and Tasks**
+7) Under the **Tasks** Panel, select the top most task
+8) Under the **Configuration** look for the public IP
+9) Copy the public IP and past it into the browser
+10) Change the port to **8983**
