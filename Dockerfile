@@ -25,9 +25,9 @@ RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 
 # bundle install
-# COPY Gemfile* .
-# RUN gem install bundler:2.3.7
-# RUN bundle install --jobs 4 --retry 3
+COPY Gemfile* .
+RUN gem install bundler:2.3.7
+RUN bundle install --jobs 4 --retry 3
 
 # create app in container
 # COPY . .

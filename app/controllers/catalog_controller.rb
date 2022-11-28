@@ -33,7 +33,8 @@ class CatalogController < ApplicationController
     #config.per_page = [10,20,50,100]
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_tsim'
+    #config.index.title_field = 'title_recorded'
+    config.index.document_presenter_class = TitlePresenter
     #config.index.display_type_field = 'format'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
 
@@ -80,21 +81,26 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'format', label: 'Format'
-    config.add_facet_field 'pub_date_ssim', label: 'Publication Year', single: true
-    config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'language_ssim', label: 'Language', limit: true
-    config.add_facet_field 'lc_1letter_ssim', label: 'Call Number'
-    config.add_facet_field 'subject_geo_ssim', label: 'Region'
-    config.add_facet_field 'subject_era_ssim', label: 'Era'
+    config.add_facet_field 'title_recorded', label: 'Title'
+    config.add_facet_field 'place_recorded', label: 'Place' #, single: true
+    config.add_facet_field 'material', label: 'Material (LD)'    
+    config.add_facet_field 'language_authority', label: 'Language (LD)'
+    config.add_facet_field 'century_authority', label: 'Century (LD)'
+    config.add_facet_field 'name_authority', label: 'Names (LD)'
+            
+    #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
+    #config.add_facet_field 'language_ssim', label: 'Language', limit: true
+    #config.add_facet_field 'lc_1letter_ssim', label: 'Call Number'
+    #config.add_facet_field 'subject_geo_ssim', label: 'Region'
+    #config.add_facet_field 'subject_era_ssim', label: 'Era'
 
-    config.add_facet_field 'example_pivot_field', label: 'Pivot Field', pivot: ['format', 'language_ssim'], collapsing: true
+    #config.add_facet_field 'example_pivot_field', label: 'Pivot Field', pivot: ['format', 'language_ssim'], collapsing: true
 
-    config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-       :years_5 => { label: 'within 5 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 5 } TO *]" },
-       :years_10 => { label: 'within 10 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 10 } TO *]" },
-       :years_25 => { label: 'within 25 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 25 } TO *]" }
-    }
+    #config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
+    #   :years_5 => { label: 'within 5 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 5 } TO *]" },
+    #   :years_10 => { label: 'within 10 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 10 } TO *]" },
+    #   :years_25 => { label: 'within 25 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 25 } TO *]" }
+    #}
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -104,32 +110,45 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'title_tsim', label: 'Title'
-    config.add_index_field 'title_vern_ssim', label: 'Title'
-    config.add_index_field 'author_tsim', label: 'Author'
-    config.add_index_field 'author_vern_ssim', label: 'Author'
-    config.add_index_field 'format', label: 'Format'
-    config.add_index_field 'language_ssim', label: 'Language'
-    config.add_index_field 'published_ssim', label: 'Published'
-    config.add_index_field 'published_vern_ssim', label: 'Published'
-    config.add_index_field 'lc_callnum_ssim', label: 'Call number'
+    config.add_index_field 'title_recorded', label: 'Title'
+    config.add_index_field 'material', label: 'Material'  
+    config.add_index_field 'holding_institution_recorded', label: 'Holding Institution'
+    config.add_index_field 'place_recorded', label: 'Place'  
+    config.add_index_field 'production_date_recorded', label: 'Production Date'
+    config.add_index_field 'language_recorded', label: 'Language'
+    #config.add_index_field 'physical_description', label: 'Physical Description'
+    #config.add_index_field 'published_vern_ssim', label: 'Published'
+    #config.add_index_field 'lc_callnum_ssim', label: 'Call number'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_tsim', label: 'Title'
-    config.add_show_field 'title_vern_ssim', label: 'Title'
-    config.add_show_field 'subtitle_tsim', label: 'Subtitle'
-    config.add_show_field 'subtitle_vern_ssim', label: 'Subtitle'
-    config.add_show_field 'author_tsim', label: 'Author'
-    config.add_show_field 'author_vern_ssim', label: 'Author'
-    config.add_show_field 'format', label: 'Format'
-    config.add_show_field 'url_fulltext_ssim', label: 'URL'
-    config.add_show_field 'url_suppl_ssim', label: 'More Information'
-    config.add_show_field 'language_ssim', label: 'Language'
-    config.add_show_field 'published_ssim', label: 'Published'
-    config.add_show_field 'published_vern_ssim', label: 'Published'
-    config.add_show_field 'lc_callnum_ssim', label: 'Call number'
-    config.add_show_field 'isbn_ssim', label: 'ISBN'
+    ##external links
+    config.add_show_field 'institutional_URL', label: 'Institutional Record', helper_method: :make_link
+    config.add_show_field 'IIIF_manifest', label: 'IIIF Manifest', helper_method: :make_link
+    
+    ##top of display
+    config.add_show_field 'title_recorded', label: 'Title'
+    config.add_show_field 'id_ds', label: 'DS ID'
+    config.add_show_field 'shelfmark', label: 'Shelfmark'
+    config.add_show_field 'material', label: 'Material (LD)'  
+    
+    ##middle of display
+    config.add_show_field 'place_recorded', label: 'Place'  
+    config.add_show_field 'place_authority', label: 'Place (LD)'      
+    config.add_show_field 'language_authority', label: 'Language (LD)', link_to_facet:true
+    config.add_show_field 'production_date_recorded', label: 'Production Date'
+    config.add_show_field 'century_authority', label: 'Century (LD)', link_to_facet:true
+    config.add_show_field 'associated_name_recorded', label: 'Names', link_to_facet:true, separator_options: { words_connector: '<br>' }
+    config.add_show_field 'name_authority', label: 'Names (LD)', link_to_facet:true, separator_options: { words_connector: '<br>' }
+    
+    config.add_show_field 'physical_description', label: 'Physical Description'
+    config.add_show_field 'subject_recorded', label: 'Subject', separator_options: { words_connector: '<br>' }
+    config.add_show_field 'subject_authority', label: 'Subject (LD)', link_to_facet:true, separator_options: { words_connector: '<br>' }
+    config.add_show_field 'genre_recorded', label: 'Genre', separator_options: { words_connector: '<br>' }
+    config.add_show_field 'genre_authority', label: 'Genre (LD)', link_to_facet:true, separator_options: { words_connector: '<br>' }
+    
+    ##bottom of display 
+    config.add_show_field 'holding_institution', label: 'Holding Institution', link_to_facet:true       
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -149,41 +168,43 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
-    config.add_search_field 'all_fields', label: 'All Fields'
+    config.add_search_field 'all_fields', label: 'Keyword' do |field|
+    	field.solr_parameters = {
+		qf: 'title_recorded',
+		pf: ''
+    }
+  	end
+
+	config.add_search_field 'title', label: 'Title' do |field|
+    	field.solr_parameters = {
+		qf: 'title_recorded',
+		pf: ''
+    }
+  	end
 
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
-
-    config.add_search_field('title') do |field|
-      # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = {
-        'spellcheck.dictionary': 'title',
-        qf: '${title_qf}',
-        pf: '${title_pf}'
-      }
-    end
-
-    config.add_search_field('author') do |field|
-      field.solr_parameters = {
-        'spellcheck.dictionary': 'author',
-        qf: '${author_qf}',
-        pf: '${author_pf}'
-      }
-    end
+    #config.add_search_field('author') do |field|
+    #  field.solr_parameters = {
+    #    'spellcheck.dictionary': 'author',
+    #    qf: '${author_qf}',
+    #    pf: '${author_pf}'
+    #  }
+    #end
 
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject') do |field|
-      field.qt = 'search'
-      field.solr_parameters = {
-        'spellcheck.dictionary': 'subject',
-        qf: '${subject_qf}',
-        pf: '${subject_pf}'
-      }
-    end
+    #config.add_search_field('subject') do |field|
+    #  field.qt = 'search'
+    #  field.solr_parameters = {
+    #    'spellcheck.dictionary': 'subject',
+    #    qf: '${subject_qf}',
+    #    pf: '${subject_pf}'
+    #  }
+    #end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the Solr field to sort by and

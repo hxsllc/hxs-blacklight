@@ -1,20 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema name="Hydra" version="1.5">
-  <!-- NOTE: various comments and unused configuration possibilities have been purged
+	<!-- TEST -->
+
+    <!-- NOTE: various comments and unused configuration possibilities have been purged
      from this file.  Please refer to http://wiki.apache.org/solr/SchemaXml,
      as well as the default schema file included with Solr -->
 
   <uniqueKey>id</uniqueKey>
 
   <fields>
-    <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
-    <field name="format" type="string" stored="true" indexed="true" multiValued="true" />
-    <field name="_version_" type="long"     indexed="true"  stored="true"/>
-    <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
-
-    <field name="lat" type="tdouble" stored="true" indexed="true" multiValued="false"/>
-    <field name="lng" type="tdouble" stored="true" indexed="true" multiValued="false"/>
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
+
+  <field name="IIIF_manifest" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="_version_" type="long" indexed="true" stored="true"/>
+  <field name="acknowledgements" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="all_text_timv" type="text" indexed="true" termOffsets="true" stored="false" termPositions="true" termVectors="true" multiValued="true"/>
+  <field name="associated_name_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="century_authority" type="string" multiValued="true" stored="true"/>
+  <field name="date_added" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="date_updated" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="dated" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="described_manuscript" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="earliest_date" type="string" multiValued="true" stored="true"/>
+  <field name="format" type="string" multiValued="true" indexed="true" stored="true"/>
+  <field name="genre_authority" type="string" multiValued="true" stored="true"/>
+  <field name="genre_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="holding" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="holding_institution" type="string" multiValued="false" stored="true"/>
+  <field name="holding_institution_recorded" type="textSpell" uninvertible="true" indexed="true" stored="true"/>
+  <field name="holding_status" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="id2" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="id_ds" type="string" multiValued="false" stored="true"/>
+  <field name="instance_of" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="institutional_ID" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="institutional_URL" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="language_authority" type="string" multiValued="true" stored="true"/>
+  <field name="language_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="lat" type="tdouble" multiValued="false" indexed="true" stored="true"/>
+  <field name="latest_date" type="string" multiValued="true" stored="true"/>
+  <field name="lng" type="tdouble" multiValued="false" indexed="true" stored="true"/>
+  <field name="manuscript_holding" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="material" type="string" multiValued="true" stored="true"/>
+  <field name="material_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="name_authority" type="string" multiValued="true" stored="true"/>
+  <field name="note" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="original_script" type="string" multiValued="true" stored="true"/>
+  <field name="physical_description" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="place_authority" type="string" multiValued="true" stored="true"/>
+  <field name="place_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="production_date_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="shelfmark" type="text" uninvertible="true" indexed="true" stored="true"/>
+  <field name="subject_authority" type="string" multiValued="true" stored="true"/>
+  <field name="subject_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="timestamp" type="date" default="NOW" multiValued="false" indexed="true" stored="true"/>
+  <field name="title" type="text" uninvertible="true" indexed="true" stored="false"/>
+  <field name="title2" type="text" uninvertible="true" indexed="true" stored="true"/>
+    <field name="title_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
 
     <!-- text (_t...) -->
 
@@ -194,9 +236,6 @@
     <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="false" multiValued="true" />
 
     <!-- you must define copyField source and dest fields explicity or schemaBrowser doesn't work -->
-    <field name="all_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
-
-
   </fields>
 
 

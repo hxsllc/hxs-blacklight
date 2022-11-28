@@ -1,5 +1,5 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * This is a manifest file that'll be compiled into application.scss, which will include all the files
  * listed below.
  *
  * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.bg-dark { background-color: #E5B651 !important; }
+.navbar-logo {
+  background: transparent image-url("ds-logo-blacklight-v02.png") no-repeat top left !important;
+  background-size:contain !important;
+  flex:unset !important;
+  width:300px;
+  margin-top:unset !important;
+}
+.btn-primary { background-color: #9B3C38 !important; border-color: unset !important; margin:-1px; }
+.navbar-dark .navbar-nav .nav-link { color: #3D2E0F !important; }
+a { color: #3D356D !important; }
