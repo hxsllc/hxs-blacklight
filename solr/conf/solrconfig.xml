@@ -57,10 +57,6 @@
         <str name="pf">
           all_text_timv^10
         </str>
-
-       <str name="title_qf">
-          title_recorded
-       </str>
        
        <str name="author_qf">
           author_tsim
@@ -194,7 +190,7 @@
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
 
   <requestDispatcher handleSelect="true" >
-    <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />
+    <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="8182" formdataUploadLimitInKB="8182" />
   </requestDispatcher>
 
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />

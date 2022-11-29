@@ -55,7 +55,7 @@
   <field name="original_script" type="string" multiValued="true" stored="true"/>
   <field name="physical_description" type="text" uninvertible="true" indexed="true" stored="true"/>
   <field name="place_authority" type="string" multiValued="true" stored="true"/>
-  <field name="place_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="place_recorded" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="production_date_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
   <field name="shelfmark" type="text" uninvertible="true" indexed="true" stored="true"/>
   <field name="subject_authority" type="string" multiValued="true" stored="true"/>
@@ -63,7 +63,7 @@
   <field name="timestamp" type="date" default="NOW" multiValued="false" indexed="true" stored="true"/>
   <field name="title" type="text" uninvertible="true" indexed="true" stored="false"/>
   <field name="title2" type="text" uninvertible="true" indexed="true" stored="true"/>
-    <field name="title_recorded" type="text" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="title_recorded" type="string" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
 
     <!-- text (_t...) -->
 
