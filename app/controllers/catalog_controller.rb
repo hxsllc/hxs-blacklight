@@ -2,12 +2,20 @@
 
 # Blacklight controller that handles searches and document requests
 class CatalogController < ApplicationController
+  include BlacklightAdvancedSearch::Controller
 
   include Blacklight::Catalog
   include Blacklight::Marc::Catalog
 
 
   configure_blacklight do |config|
+    # default advanced config values
+    config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
+    # config.advanced_search[:qt] ||= 'advanced'
+    config.advanced_search[:url_key] ||= 'advanced'
+    config.advanced_search[:query_parser] ||= 'dismax'
+    config.advanced_search[:form_solr_parameters] ||= {}
+
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
     #
@@ -25,8 +33,6 @@ class CatalogController < ApplicationController
       rows: 10
     }
     
-    self.default_processor_chain << :add_advanced_parse_q_to_solr
-
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
     #config.document_solr_path = 'get'
