@@ -24,6 +24,8 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       rows: 10
     }
+    
+    self.default_processor_chain << :add_advanced_parse_q_to_solr
 
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'

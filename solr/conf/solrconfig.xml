@@ -52,7 +52,6 @@
           author_tsim
           subject_tsim
           all_text_timv
-          title_recorded
         </str>
         <str name="pf">
           all_text_timv^10
