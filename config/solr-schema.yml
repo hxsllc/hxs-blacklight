@@ -359,7 +359,7 @@ fields:
     multiValued: true
     docValues: true
     indexed: true
-  - name: "earliest _date"
+  - name: "earliest_date"
     type: "string"
     stored: true
     multiValued: true
