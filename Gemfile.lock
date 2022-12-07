@@ -361,6 +361,7 @@ DEPENDENCIES
   debug
   devise
   devise-guests (~> 0.8)
+  hashdiff (~> 1.0)
   importmap-rails
   jbuilder
   jquery-rails
