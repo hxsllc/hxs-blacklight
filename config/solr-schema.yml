@@ -1,0 +1,1070 @@
+fieldTypes:
+  - name: "_bbox_coord"
+    class: "solr.DoublePointField"
+    stored: false
+    docValues: true
+  - name: "alphaSort"
+    class: "solr.TextField"
+    omitNorms: true
+    sortMissingLast: true
+    analyzer: 
+      tokenizer: 
+        class: "solr.KeywordTokenizerFactory"
+      filters: 
+        - class: "solr.ICUFoldingFilterFactory"
+        - class: "solr.TrimFilterFactory"
+  - name: "ancestor_path"
+    class: "solr.TextField"
+    indexAnalyzer: 
+      tokenizer: 
+        class: "solr.KeywordTokenizerFactory"
+    queryAnalyzer: 
+      tokenizer: 
+        class: "solr.PathHierarchyTokenizerFactory"
+        delimiter: "/"
+  - name: "bbox"
+    class: "solr.BBoxField"
+    geo: "true"
+    numberType: "_bbox_coord"
+    storeSubFields: "false"
+    distanceUnits: "kilometers"
+  - name: "boolean"
+    class: "solr.BoolField"
+    sortMissingLast: true
+  - name: "date"
+    class: "solr.DatePointField"
+    docValues: true
+  - name: "descendent_path"
+    class: "solr.TextField"
+    indexAnalyzer: 
+      tokenizer: 
+        class: "solr.PathHierarchyTokenizerFactory"
+        delimiter: "/"
+    queryAnalyzer: 
+      tokenizer: 
+        class: "solr.KeywordTokenizerFactory"
+  - name: "double"
+    class: "solr.DoublePointField"
+    docValues: true
+  - name: "float"
+    class: "solr.FloatPointField"
+    docValues: true
+  - name: "int"
+    class: "solr.IntPointField"
+    docValues: true
+  - name: "location"
+    class: "solr.LatLonPointSpatialField"
+    docValues: true
+  - name: "location_rpt"
+    class: "solr.SpatialRecursivePrefixTreeFieldType"
+    geo: "true"
+    maxDistErr: "0.001"
+    distErrPct: "0.025"
+    distanceUnits: "kilometers"
+  - name: "long"
+    class: "solr.LongPointField"
+    docValues: true
+  - name: "pid_text"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.KeywordTokenizerFactory"
+  - name: "point"
+    class: "solr.PointType"
+    subFieldSuffix: "_d"
+    dimension: "2"
+  - name: "rand"
+    class: "solr.RandomSortField"
+    omitNorms: true
+  - name: "string"
+    class: "solr.StrField"
+    sortMissingLast: true
+  - name: "tdate"
+    class: "solr.DatePointField"
+    docValues: true
+  - name: "tdouble"
+    class: "solr.DoublePointField"
+    docValues: true
+  - name: "text"
+    class: "solr.TextField"
+    omitNorms: false
+    analyzer: 
+      tokenizer: 
+        class: "solr.ICUTokenizerFactory"
+      filters: 
+        - class: "solr.ICUFoldingFilterFactory"
+        - class: "solr.TrimFilterFactory"
+  - name: "textSpell"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.StandardTokenizerFactory"
+      filters: 
+        - class: "solr.StopFilterFactory"
+          ignoreCase: "true"
+          words: "stopwords.txt"
+        - class: "solr.LowerCaseFilterFactory"
+        - class: "solr.RemoveDuplicatesTokenFilterFactory"
+  - name: "textSuggest"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.KeywordTokenizerFactory"
+      filters: 
+        - class: "solr.LowerCaseFilterFactory"
+        - class: "solr.RemoveDuplicatesTokenFilterFactory"
+  - name: "text_en"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.ICUTokenizerFactory"
+      filters: 
+        - class: "solr.ICUFoldingFilterFactory"
+        - class: "solr.EnglishPossessiveFilterFactory"
+        - class: "solr.EnglishMinimalStemFilterFactory"
+        - class: "solr.TrimFilterFactory"
+  - name: "text_en_ng"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.ICUTokenizerFactory"
+      filters: 
+        - class: "solr.ICUFoldingFilterFactory"
+        - class: "solr.EnglishPossessiveFilterFactory"
+        - class: "solr.EnglishMinimalStemFilterFactory"
+        - class: "solr.TrimFilterFactory"
+  - name: "text_ws"
+    class: "solr.TextField"
+    positionIncrementGap: "100"
+    analyzer: 
+      tokenizer: 
+        class: "solr.WhitespaceTokenizerFactory"
+      filters: 
+        - class: "solr.TrimFilterFactory"
+  - name: "tfloat"
+    class: "solr.FloatPointField"
+    docValues: true
+  - name: "tint"
+    class: "solr.IntPointField"
+    docValues: true
+  - name: "tlong"
+    class: "solr.LongPointField"
+    docValues: true
+fields:
+  - name: "id_ds"
+    type: "string"
+    multiValued: false
+    stored: true
+  - name: "IIIF_manifest"
+    type: "text"
+    uninvertible: true
+    indexed: true
+    stored: true
+  - name: "described_manuscript"
+    type: "text"
+    uninvertible: true
+    indexed: true
+    stored: true
+  - name: "earliest_date"
+    type: "string"
+    multiValued: true
+    stored: true
+  - name: "all_text_timv"
+    type: "text"
+    indexed: true
+    termOffsets: true
+    stored: false
+    termPositions: true
+    termVectors: true
+    multiValued: true
+  - name: "format"
+    type: "string"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "id"
+    type: "string"
+    multiValued: false
+    indexed: true
+    required: true
+    stored: true
+  - name: "lat"
+    type: "tdouble"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "lng"
+    type: "tdouble"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "timestamp"
+    type: "date"
+    default: "NOW"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "id_wikibase"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "manuscript_holding"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "title_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "date_updated"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "date_added"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "genre_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "subject_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "place_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "language_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "material"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "physical_description"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "acknowledgements"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "production_date_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "dated"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "note"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "associated_name_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "uniform_title_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "external_identifier"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "genre_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "subject_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "place_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "language_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "century"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "century_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "aat_id"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "earliest _date"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "latest_date"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "equivalent_property"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "name_authority"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "place"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "role"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "holding_institution"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "institutional_ID"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "holding_status"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "start_time"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "end_time"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "institutional_URL"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "shelfmark"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "instance_of"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "iiif_manifest"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "viaf_id "
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "formatter_url"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "material_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "holding_institution_recorded"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "wikidata_qid"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "external_uri"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "original_script"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "uniform_title_recorded "
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+  - name: "term"
+    type: "string"
+    stored: true
+    multiValued: true
+    docValues: true
+    indexed: true
+dynamicFields:
+  - name: "*_coordinate"
+    type: "tdouble"
+    indexed: true
+    stored: false
+  - name: "*_tesimv"
+    type: "text_en"
+    indexed: true
+    termOffsets: true
+    stored: true
+    termPositions: true
+    termVectors: true
+    multiValued: true
+  - name: "*_dttsim"
+    type: "tdate"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_dbtsim"
+    type: "tdouble"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*suggest"
+    type: "textSuggest"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_tsimv"
+    type: "text"
+    indexed: true
+    termOffsets: true
+    stored: true
+    termPositions: true
+    termVectors: true
+    multiValued: true
+  - name: "*_tesim"
+    type: "text_en"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_teimv"
+    type: "text_en"
+    indexed: true
+    termOffsets: true
+    stored: false
+    termPositions: true
+    termVectors: true
+    multiValued: true
+  - name: "*_tesiv"
+    type: "text_en"
+    indexed: true
+    termOffsets: true
+    stored: true
+    termPositions: true
+    termVectors: true
+    multiValued: false
+  - name: "*_ssort"
+    type: "alphaSort"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_itsim"
+    type: "tint"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_dtsim"
+    type: "date"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_dttim"
+    type: "tdate"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_dttsm"
+    type: "tdate"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_dttsi"
+    type: "tdate"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_ltsim"
+    type: "tlong"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_dbsim"
+    type: "double"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_dbtim"
+    type: "tdouble"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_dbtsm"
+    type: "tdouble"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_dbtsi"
+    type: "tdouble"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_ftsim"
+    type: "tfloat"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_llsim"
+    type: "location"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_tsim"
+    type: "text"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_timv"
+    type: "text"
+    indexed: true
+    termOffsets: true
+    stored: false
+    termPositions: true
+    termVectors: true
+    multiValued: true
+  - name: "*_tsiv"
+    type: "text"
+    indexed: true
+    termOffsets: true
+    stored: true
+    termPositions: true
+    termVectors: true
+    multiValued: false
+  - name: "*_teim"
+    type: "text_en"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_tesm"
+    type: "text_en"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_tesi"
+    type: "text_en"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_teiv"
+    type: "text_en"
+    indexed: true
+    termOffsets: true
+    stored: false
+    termPositions: true
+    termVectors: true
+    multiValued: false
+  - name: "*_ssim"
+    type: "string"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_isim"
+    type: "int"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_itim"
+    type: "tint"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_itsm"
+    type: "tint"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_itsi"
+    type: "tint"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_dtim"
+    type: "date"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_dtsm"
+    type: "date"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_dtsi"
+    type: "date"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_dtti"
+    type: "tdate"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_dtts"
+    type: "tdate"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_lsim"
+    type: "long"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_ltim"
+    type: "tlong"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_ltsm"
+    type: "tlong"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_ltsi"
+    type: "tlong"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_dbim"
+    type: "double"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_dbsm"
+    type: "double"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_dbsi"
+    type: "double"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_dbti"
+    type: "tdouble"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_dbts"
+    type: "tdouble"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_fsim"
+    type: "float"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_ftim"
+    type: "tfloat"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_ftsm"
+    type: "tfloat"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_ftsi"
+    type: "tfloat"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_llim"
+    type: "location"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_llsm"
+    type: "location"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_llsi"
+    type: "location"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_srpt"
+    type: "location_rpt"
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_bbox"
+    type: "bbox"
+    indexed: true
+    stored: true
+  - name: "*spell"
+    type: "textSpell"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_tim"
+    type: "text"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_tsm"
+    type: "text"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_tsi"
+    type: "text"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_tiv"
+    type: "text"
+    indexed: true
+    termOffsets: true
+    stored: false
+    termPositions: true
+    termVectors: true
+    multiValued: false
+  - name: "*_tei"
+    type: "text_en"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_tes"
+    type: "text_en"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_sim"
+    type: "string"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_ssm"
+    type: "string"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_ssi"
+    type: "string"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_iim"
+    type: "int"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_ism"
+    type: "int"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_isi"
+    type: "int"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_iti"
+    type: "tint"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_its"
+    type: "tint"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_dti"
+    type: "date"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_dts"
+    type: "date"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_lim"
+    type: "long"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_lsm"
+    type: "long"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_lsi"
+    type: "long"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_lti"
+    type: "tlong"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_lts"
+    type: "tlong"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_dbi"
+    type: "double"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_dbs"
+    type: "double"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_fim"
+    type: "float"
+    multiValued: true
+    indexed: true
+    stored: false
+  - name: "*_fsm"
+    type: "float"
+    multiValued: true
+    indexed: false
+    stored: true
+  - name: "*_fsi"
+    type: "float"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_fti"
+    type: "tfloat"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_fts"
+    type: "tfloat"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_bsi"
+    type: "boolean"
+    multiValued: false
+    indexed: true
+    stored: true
+  - name: "*_lli"
+    type: "location"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_lls"
+    type: "location"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_ti"
+    type: "text"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_ts"
+    type: "text"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_si"
+    type: "string"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_ss"
+    type: "string"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_ii"
+    type: "int"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_is"
+    type: "int"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_li"
+    type: "long"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_ls"
+    type: "long"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_fi"
+    type: "float"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_fs"
+    type: "float"
+    multiValued: false
+    indexed: false
+    stored: true
+  - name: "*_bi"
+    type: "boolean"
+    multiValued: false
+    indexed: true
+    stored: false
+  - name: "*_bs"
+    type: "boolean"
+    multiValued: false
+    indexed: false
+    stored: true
+copyFields:
+  - source: "*_tsim"
+    dest: "all_text_timv"
+    maxChars: 3000
+  - source: "*_tesim"
+    dest: "all_text_timv"
+    maxChars: 3000
+  - source: "*_ssim"
+    dest: "all_text_timv"
+    maxChars: 3000
+  - source: "*_si"
+    dest: "all_text_timv"
+    maxChars: 3000
+  - source: "*_tsim"
+    dest: "suggest"
+  - source: "*_tesim"
+    dest: "suggest"
+  - source: "*_ssim"
+    dest: "suggest"
+  - source: "*_si"
+    dest: "suggest"
+  - source: "*_tsim"
+    dest: "spell"
+  - source: "*_tesim"
+    dest: "spell"
+  - source: "*_ssim"
+    dest: "spell"
+  - source: "*_si"
+    dest: "spell"
+  - source: "author_tsim"
+    dest: "author_spell"
+  - source: "subject_ssim"
+    dest: "subject_spell"
+  - source: "title_tsim"
+    dest: "title_spell"
+  
+  
