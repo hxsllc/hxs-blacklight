@@ -170,10 +170,6 @@ fields:
     uninvertible: true
     indexed: true
     stored: true
-  - name: "earliest_date"
-    type: "string"
-    multiValued: true
-    stored: true
   - name: "all_text_timv"
     type: "text"
     indexed: true
