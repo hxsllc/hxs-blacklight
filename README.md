@@ -11,16 +11,19 @@
 2) Open the Terminal and CD to repo `cd hxs-blacklight`
 3) Run `docker-compose build`
 4) Run `docker-compose run --rm app bundle install -j8`
-5) Run `docker-compose run --rm app rake db:migrate`
-6) Run `docker-compose up`
-7) Open http://localhost:3000 in the browser
+5) Run `docker-compose run --rm app bundle exec rake db:migrate`
+6) Run `docker-compose run --rm app bundle exec rake solr:schema:update`
+7) Run `docker-compose run --rm app bundle exec rake solr:seed`
+8) Run `docker-compose up`
+9) Open http://localhost:3000 in the browser
 
 If you want to add test MARC records run `docker-compose run app rake solr:marc:index_test_data`
 
 ### Changes
 
 - Code - *No Action* - Code changes should be detected by Rails
-- Migrations - Run `docker-compose run --rm app rake db:migrate`
+- Migrations - Run `docker-compose run --rm app bundle exec rake db:migrate`
+- Solr Schema Changes - Run `docker-compose run --rm app bundle exec rake solr:schema:update`
 - Gemfile - Rerun `docker-compose run --rm app bundle install` and restart `app` container
 
 ### Links/URLs
@@ -50,7 +53,9 @@ Notes:
 
 ### Tips & Tricks
 
-- Force a deployment: `hxs-blacklight % aws ecs update-service --force-new-deployment --region us-east-2 --cluster hxs-blacklight-staging --service hxs-blacklight`
+- Migrate Database: `aws ecs execute-command --region us-east-2 --cluster hxs-blacklight-staging --task [TASK_ID] --container app --command "bundle exec rake db:migrate" --interactive`
+- Sync Solr Schema: `aws ecs execute-command --region us-east-2 --cluster hxs-blacklight-staging --task [TASK_ID] --container app --command "bundle exec rake solr:schema:update" --interactive`
+- Force a deployment: `aws ecs update-service --force-new-deployment --region us-east-2 --cluster hxs-blacklight-staging --service hxs-blacklight`
 
 ### Troubleshooting
 
