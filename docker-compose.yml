@@ -3,6 +3,7 @@ volumes:
   app:
   app_gems:
   postgres:
+  solr_data:
 services:
   postgres:
     image: "postgres:15.0-alpine"
@@ -19,6 +20,7 @@ services:
     env_file: .env
     volumes:
       - ./solr/conf:/opt/solr/conf
+      - solr_data:/var/solr
     ports:
       - "8983:8983"
     entrypoint:
