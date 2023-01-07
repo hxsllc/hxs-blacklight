@@ -1,0 +1,34 @@
+<!--
+	<h4>author</h4>
+<pre>
+	<% #=@fields_with_keys[:author_facet].label %>
+	<% #@fields_with_keys[:author_facet].values.each do |value|  %>
+	<% #= value.html_safe %>
+	<% #end %>
+</pre>
+-->
+
+<dl class="document-metadata dl-invert row">
+  <% fields.each do |field| -%>
+    <%= field %>
+  <% end -%>
+</dl>
+
+<!--
+<h4>@fields_with_keys keys</h4>
+<pre>
+	<%= JSON.pretty_generate @fields_with_keys.keys %>
+</pre>
+
+<h4>@fields_with_keys labels</h4>
+<pre>
+	<%= JSON.pretty_generate @fields_with_keys.each_with_object({}) { |(key, field), hash| hash[key] = { label: field.label, values: field.values } } %>
+</pre>
+
+
+<h4>@fields_with_keys values</h4>
+<pre>
+	<%= JSON.pretty_generate @fields_with_keys.each_with_object({}) { |(key, field), hash| hash[key] = { values: field.values } } %>
+</pre>
+-->
+
