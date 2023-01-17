@@ -1,13 +1,88 @@
 <!--
-	<h4>author</h4>
+<h4><%= @fields_with_keys[:id].label %></h4>
 <pre>
-	<% #=@fields_with_keys[:author_facet].label %>
-	<% #@fields_with_keys[:author_facet].values.each do |value|  %>
-	<% #= value.html_safe %>
-	<% #end %>
+	<% @fields_with_keys[:id].values.each do |value|  %>
+	<%=  value.html_safe %>
+	<% end %>
 </pre>
 -->
 
+<div id="document-viewer" style="background-color:#F8F4ED;border-radius:25px 25px 0px 0px;">
+	<div id="alternate-versions-bar" style="padding:20px 10px 5px 20px;">
+		<em>Images provided by hosting institution via &nbsp;<a href="<%= @fields_with_keys[:iiif_manifest_link].values.first %>">
+		<img src="https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1" style="height:20px;margin-top:-3px;"></a></em>
+	<!--
+	<strong>Versions:</strong>
+	<a class="" style="color:#444 !important;" href="#">
+		Wikibase Record
+		<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="25" height="25"
+viewBox="0,0,256,256">
+<g fill="#e5b651" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M5,3c-1.09306,0 -2,0.90694 -2,2v14c0,1.09306 0.90694,2 2,2h14c1.09306,0 2,-0.90694 2,-2v-7h-2v7h-14v-14h7v-2zM14,3v2h3.58594l-9.29297,9.29297l1.41406,1.41406l9.29297,-9.29297v3.58594h2v-7z"></path></g></g>
+</svg></a>
+	<a class="" style="color:#444 !important;" href="<%= @fields_with_keys[:institutional_record_link].values.first %>">
+		Institutional Record
+		<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="25" height="25"
+viewBox="0,0,256,256">
+<g fill="#e5b651" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M5,3c-1.09306,0 -2,0.90694 -2,2v14c0,1.09306 0.90694,2 2,2h14c1.09306,0 2,-0.90694 2,-2v-7h-2v7h-14v-14h7v-2zM14,3v2h3.58594l-9.29297,9.29297l1.41406,1.41406l9.29297,-9.29297v3.58594h2v-7z"></path></g></g>
+</svg></a>
+	<a style="float:right;padding-right:10px;" href="<%= @fields_with_keys[:iiif_manifest_link].values.first %>">
+		<img src="https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1" style="height:20px;margin-top:-3px;"></a>
+	-->
+	</div>
+
+	<script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+	
+	<div id="my-mirador" style="display:inline-block;height:450px;position:relative;width:100%;padding-bottom:20px;"> 
+	
+	<script type="text/javascript">
+	var mirador = Mirador.viewer({
+	  "id": "my-mirador",
+	  "windows": [
+	    {
+	      "loadedManifest": "<%= @fields_with_keys[:iiif_manifest_link].values.first %>",
+	      "canvasIndex": 2,
+	    }
+	  ],
+	  workspaceControlPanel: {
+	    enabled: false, // Configure if the control panel should be rendered.  Useful if you want to lock the viewer down to only the configured manifests
+	  },  
+	  themes: {
+	    light: {
+	      palette: {
+	        type: 'light',
+	        primary: {
+	          main: '#E5B651',
+	        },
+			secondary: {
+	          main: '#EBDABC',
+	        },      
+		    shades: { // Shades that can be used to offset color areas of the Workspace / Window
+		      dark: '#F8F4ED',
+		      main: '#F1E9DC',
+		      light: '#F8F4ED',
+		    },          
+	      },
+	    },
+	  },	  
+	});
+	</script>
+	<style type="text/css">
+		.mirador5, .mirador6 {
+			background-color:#F8F4ED !important;
+		}
+		.mosaic {
+			background-color:#F8F4ED;
+		}
+		.MuiSvgIcon-fontSizeLarge {
+			color:#E5B651 !important;
+		}
+	</style>
+	</div>
+</div>
+
+<h1><br>Metadata</h1>
 <dl class="document-metadata dl-invert row">
   <% fields.each do |field| -%>
     <%= field %>
@@ -15,6 +90,7 @@
 </dl>
 
 <!--
+
 <h4>@fields_with_keys keys</h4>
 <pre>
 	<%= JSON.pretty_generate @fields_with_keys.keys %>
@@ -25,10 +101,10 @@
 	<%= JSON.pretty_generate @fields_with_keys.each_with_object({}) { |(key, field), hash| hash[key] = { label: field.label, values: field.values } } %>
 </pre>
 
-
 <h4>@fields_with_keys values</h4>
 <pre>
 	<%= JSON.pretty_generate @fields_with_keys.each_with_object({}) { |(key, field), hash| hash[key] = { values: field.values } } %>
 </pre>
+
 -->
 

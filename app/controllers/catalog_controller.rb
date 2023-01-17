@@ -72,8 +72,8 @@ include BlacklightAdvancedSearch::Controller
 
 	### https://github.com/projectblacklight/blacklight/blob/main/app/views/catalog/_show_tools.html.erb (copy, add new panel)
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
-    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
-    config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
+    #config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    #config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     config.add_show_tools_partial(:citation)
 
     ## https://github.com/projectblacklight/blacklight/blob/main/app/views/blacklight/nav/_bookmark.html.erb
@@ -247,29 +247,28 @@ include BlacklightAdvancedSearch::Controller
     ##display v3.0    
     
     	## BUTTONS AND VIEWERS
-		config.add_show_field 'id_search', label: 'Wikibase ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :make_btn_ds
-		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', accessor: :make_btn_iiif
-		config.add_show_field 'institutional_record_link', label: 'Institutional Record', accessor: :make_btn_record
+		config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } #, accessor: :make_btn_ds
+		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', accessor: :iiif_strikethrough
+		config.add_show_field 'institutional_record_link', label: 'Institutional Record', accessor: :record_strikethrough
 		
 		## METADATA
-		config.add_show_field 'institution_facet', label: 'Holding Institution', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'shelfmark_display', label: 'Shelfmark', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_shelfmark
-		config.add_show_field 'title_display', label: 'Title', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_title
-		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
-		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
-		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'institution_facet', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'shelfmark_display', label: 'Shelfmark', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_shelfmark
+		config.add_show_field 'title_display', label: 'Title', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_title
+		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
+		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
+		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
 
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 
-		config.add_show_field 'place_production_display', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
-		config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-
-		config.add_show_field 'owner_display', label: 'Associated Name(s)', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'term_display', label: 'Terms', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'place_production_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
+		config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_language
+		config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_material
+		config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_description
+		config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_note
+		config.add_show_field 'term_facet', label: 'Terms', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
 
 		#config.add_show_field 'genre_display', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 		#config.add_show_field 'subject_display', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }

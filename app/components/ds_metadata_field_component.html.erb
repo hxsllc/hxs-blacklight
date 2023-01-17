@@ -1,7 +1,7 @@
 
 <%= render(@layout.new(field: @field)) do |component| %>
   <% component.label do %>
-    <%= label %>
+    <strong><%= label %></strong>
   <% end %>
   <% component.value do %>
     <%= @field.render %>
