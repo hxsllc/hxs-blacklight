@@ -248,8 +248,6 @@ include BlacklightAdvancedSearch::Controller
     
     	## BUTTONS AND VIEWERS
 		config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } #, accessor: :make_btn_ds
-		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', accessor: :iiif_strikethrough
-		config.add_show_field 'institutional_record_link', label: 'Institutional Record', accessor: :record_strikethrough
 		
 		## METADATA
 		config.add_show_field 'institution_facet', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
@@ -257,8 +255,8 @@ include BlacklightAdvancedSearch::Controller
 		config.add_show_field 'title_display', label: 'Title', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_title
 		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
 		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
-		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
+		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '</div>', two_words_connector: '</div>', last_word_connector: '</div>' }, accessor: :prop_owner
 
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 
@@ -269,6 +267,10 @@ include BlacklightAdvancedSearch::Controller
 		config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_description
 		config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_note
 		config.add_show_field 'term_facet', label: 'Terms', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+
+		# TECHNICAL
+		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest'
+		config.add_show_field 'institutional_record_link', label: 'Institutional Record'
 
 		#config.add_show_field 'genre_display', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 		#config.add_show_field 'subject_display', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }

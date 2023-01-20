@@ -7,10 +7,25 @@
 </pre>
 -->
 
-<div id="document-viewer" style="background-color:#F8F4ED;border-radius:25px 25px 0px 0px;">
-	<div id="alternate-versions-bar" style="padding:20px 10px 5px 20px;">
-		<em>Images provided by hosting institution via &nbsp;<a href="<%= @fields_with_keys[:iiif_manifest_link].values.first %>">
-		<img src="https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1" style="height:20px;margin-top:-3px;"></a></em>
+<div id="document-viewer" style="background-color:#F8F4ED;margin-top:20px;border-radius:25px 25px 0px 0px;padding:0px 20px 20px 20px;">
+	
+		
+		<% if !@fields_with_keys[:iiif_manifest_link].nil? %>
+		<%=   "<div id='alternate-versions-bar' style='padding:20px 10px 0px 0px;'>".html_safe %>
+		<%=   "<em>Images provided by hosting institution via &nbsp;<a href=\"".html_safe %>
+		<%=   @fields_with_keys[:iiif_manifest_link].values.first %>
+		<%=   "\">".html_safe %>
+		<%=   "<img src=\"https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1\" style=\"height:20px;margin-top:-3px;\"></a></em>".html_safe %>
+		<%=   "<script src='https://unpkg.com/mirador@latest/dist/mirador.min.js'></script>".html_safe %>
+		<%=   "<div id='my-mirador' style='display:inline-block;height:450px;position:relative;width:100%;padding-bottom:20px;'>".html_safe %>
+		<%=   "</div>".html_safe %>
+		<%=   "</div>".html_safe %>	
+		<%=   "</div>".html_safe %>				
+		<% else %>
+		<%=   "<em style='display:block;padding:10px;'>No images provided by hosting institution</em>".html_safe %>
+		<%=   "</div>".html_safe %>			
+		<% end	%>		
+
 	<!--
 	<strong>Versions:</strong>
 	<a class="" style="color:#444 !important;" href="#">
@@ -20,28 +35,30 @@ width="25" height="25"
 viewBox="0,0,256,256">
 <g fill="#e5b651" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M5,3c-1.09306,0 -2,0.90694 -2,2v14c0,1.09306 0.90694,2 2,2h14c1.09306,0 2,-0.90694 2,-2v-7h-2v7h-14v-14h7v-2zM14,3v2h3.58594l-9.29297,9.29297l1.41406,1.41406l9.29297,-9.29297v3.58594h2v-7z"></path></g></g>
 </svg></a>
-	<a class="" style="color:#444 !important;" href="<%= @fields_with_keys[:institutional_record_link].values.first %>">
+	<a class="" style="color:#444 !important;" href="">
 		Institutional Record
 		<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="25" height="25"
 viewBox="0,0,256,256">
 <g fill="#e5b651" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M5,3c-1.09306,0 -2,0.90694 -2,2v14c0,1.09306 0.90694,2 2,2h14c1.09306,0 2,-0.90694 2,-2v-7h-2v7h-14v-14h7v-2zM14,3v2h3.58594l-9.29297,9.29297l1.41406,1.41406l9.29297,-9.29297v3.58594h2v-7z"></path></g></g>
 </svg></a>
-	<a style="float:right;padding-right:10px;" href="<%= @fields_with_keys[:iiif_manifest_link].values.first %>">
+	<a style="float:right;padding-right:10px;" href="">
 		<img src="https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1" style="height:20px;margin-top:-3px;"></a>
 	-->
-	</div>
 
-	<script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
-	
-	<div id="my-mirador" style="display:inline-block;height:450px;position:relative;width:100%;padding-bottom:20px;"> 
+
+	<% if !@fields_with_keys[:iiif_manifest_link].nil? %>
+	<% manifest = @fields_with_keys[:iiif_manifest_link].values.first %>
+	<% else %>
+	<% manifest = '' %>
+	<% end %>
 	
 	<script type="text/javascript">
 	var mirador = Mirador.viewer({
 	  "id": "my-mirador",
 	  "windows": [
 	    {
-	      "loadedManifest": "<%= @fields_with_keys[:iiif_manifest_link].values.first %>",
+	      "loadedManifest": "<%= manifest %>",
 	      "canvasIndex": 2,
 	    }
 	  ],
@@ -79,10 +96,8 @@ viewBox="0,0,256,256">
 			color:#E5B651 !important;
 		}
 	</style>
-	</div>
-</div>
 
-<h1><br>Metadata</h1>
+<h3><br>Metadata</h3>
 <dl class="document-metadata dl-invert row">
   <% fields.each do |field| -%>
     <%= field %>

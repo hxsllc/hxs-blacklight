@@ -131,7 +131,26 @@ class SolrDocument
 		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
     end
     end
-  end        
+  end     
+  
+  def prop_owner
+	if fetch('owner_display',false)
+	Array(fetch('owner_display')).map do |v|
+		data = JSON.parse(v)
+		qfield = "owner_facet"
+		pv = data["PV"]
+		agr = data["AGR"]
+		ql = data["QL"]
+		qu = data["QU"]
+		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
+		if ql then qlink = "<a style='color:#665241 !important;font-weight:500;' href='?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then divstart = "<br><div style='background-color:#F8F4ED;border-radius:0 25px 25px 25px;padding:10px 10px 10px 20px;'><img src='https://img.icons8.com/ios-glyphs/30/null/search--v1.png' width='20'/>&nbsp;" else divstart="" end
+		if qu then qhref = "<a href='#{qu}' target='_blank'><img src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' width='24' style='float:right;margin-right:10px;'/></a>" else qhref = "" end
+		if ql then divend = "</div>" else divend="" end
+		"<div class='ld-value' style='margin-bottom:10px;'>#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+    end
+    end
+  end             
   
   def prop_date
 	if fetch('date_display',false)
