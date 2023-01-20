@@ -1,21 +1,14 @@
 class TitlePresenterIndex < Blacklight::IndexPresenter
   def heading
     # Assuming that :main_title and :sub_title are field names on the Solr document.
-    if document.first(:holding_institution) then 
-      a=document.first(:holding_institution)
+    if document.first(:institution_facet) then 
+      a=document.first(:institution_facet)
     end
-    if document.first(:shelfmark) then 
-      b=document.first(:shelfmark)
+    if document.first(:shelfmark_search) then 
+      b=document.first(:shelfmark_search)
     end
-    if document.first(:id) then 
-      c=document.first(:id)
-    end
-    if a && b && c 
-      a + ", " + b + " (" + c + ")"
-    elsif a && c
-      a + " (" + c + ")"
-    else
-      c
+    if a && b
+      a + ", " + b
     end
   end
 end
