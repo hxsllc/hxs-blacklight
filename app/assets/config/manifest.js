@@ -5,3 +5,4 @@
 //= link_tree ../../../vendor/javascript
 
 //= link application.css
+//= link_tree ../builds
