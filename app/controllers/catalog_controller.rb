@@ -46,7 +46,7 @@ include BlacklightAdvancedSearch::Controller
     #config.document_solr_path = 'get'
 
     # items to show per page, each number in the array represent another option to choose from.
-    #config.per_page = [10,20,50,100]
+    config.per_page = [10,20,50,100]
 
     # solr field configuration for search results/index views
     #config.index.title_field = 'title_recorded'
@@ -115,8 +115,16 @@ include BlacklightAdvancedSearch::Controller
     #config.add_facet_field 'century_authority', label: 'Century', collapse:false, sort:'alpha', limit:-1
 	config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
 	config.add_facet_field 'material_facet', label: 'Material', limit:5
-    config.add_facet_field 'title_facet', label: 'Supplied Title',limit:5
+    config.add_facet_field 'title_facet', label: 'Title',limit:5
 	config.add_facet_field 'term_facet', label: 'Keywords', limit:5
+	
+	# CLICKABLE IN FULL RECORD VIEW
+	config.add_facet_field 'author_facet', if:false
+	config.add_facet_field 'scribe_facet', if:false
+	config.add_facet_field 'artist_facet', if:false
+	config.add_facet_field 'owner_facet', if:false
+	config.add_facet_field 'date_facet', if:false
+
             
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     #config.add_facet_field 'language_ssim', label: 'Language', limit: true
@@ -250,27 +258,31 @@ include BlacklightAdvancedSearch::Controller
 		config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } #, accessor: :make_btn_ds
 		
 		## METADATA
-		config.add_show_field 'institution_facet', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
 		config.add_show_field 'shelfmark_display', label: 'Shelfmark', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_shelfmark
 		config.add_show_field 'title_display', label: 'Title', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_title
+		
+		# FACET LINKS, LINKED DATA
 		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
 		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
 		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
 		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '</div>', two_words_connector: '</div>', last_word_connector: '</div>' }, accessor: :prop_owner
-
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-
-		config.add_show_field 'place_production_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
+		config.add_show_field 'place_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
 		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
 		config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_language
 		config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_material
+
+		# FACET LINKS, NO LINKED DATA
+		config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_institution
+		config.add_show_field 'term_facet', label: 'Terms', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_term
+
+		# TEXTUAL
 		config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_description
 		config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_note
-		config.add_show_field 'term_facet', label: 'Terms', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }
 
 		# TECHNICAL
+		config.add_show_field 'institutional_record_link', label: 'Institutional Record', accessor: :prop_record
 		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest'
-		config.add_show_field 'institutional_record_link', label: 'Institutional Record'
 
 		#config.add_show_field 'genre_display', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 		#config.add_show_field 'subject_display', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
@@ -297,32 +309,42 @@ include BlacklightAdvancedSearch::Controller
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
     	field.solr_parameters = {
 		qf: '
-		id_search',
+		id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search 
+		term_search language_search date_search place_search material_search
+		institution_facet title_facet artist_facet author_facet scribe_facet owner_facet term_Facet language_facet date_facet place_facet material_facet
+		',
 		pf: ''
     }
   	end
 
+	config.add_search_field 'name_search', label: 'Name' do |field|
+    	field.solr_parameters = {
+		qf: 'author_facet author_search scribe_facet scribe_search owner_facet owner_search artist_facet artist_search',
+		pf: ''
+    }
+  	end  	
+  	
 	config.add_search_field 'shelfmark_search', label: 'Shelfmark' do |field|
     	field.solr_parameters = {
-		qf: 'shelfmark shelfmark_search',
+		qf: 'shelfmark_search',
+		pf: ''
+    }
+  	end  	
+  	
+	config.add_search_field 'title_search', label: 'Title' do |field|
+    	field.solr_parameters = {
+		qf: 'title_facet title_search',
 		pf: ''
     }
   	end  	
 
 	config.add_search_field 'place_search', label: 'Place' do |field|
     	field.solr_parameters = {
-		qf: 'place_search place_authority_search',
+		qf: 'place_facet place_search',
 		pf: ''
     }
   	end
   	
-	config.add_search_field 'title_search', label: 'Supplied Title' do |field|
-    	field.solr_parameters = {
-		qf: 'title title_search',
-		pf: ''
-    }
-  	end  	
-
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
