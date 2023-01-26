@@ -10,3 +10,6 @@
 # Environment & Secrets
 config/master.key
 *.env
+
+# Node modules
+node_modules/

@@ -21,14 +21,15 @@ gem "pg", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# Using jsbuilding-rails instead
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+# gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+# gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -93,3 +94,4 @@ gem "devise-guests", "~> 0.8"
 gem "blacklight-marc", ">= 7.0.0.rc1", "< 8"
 gem "blacklight_advanced_search", "~> 7.0"
 gem "hashdiff", "~> 1.0"
+gem "jsbundling-rails", "~> 1.1"

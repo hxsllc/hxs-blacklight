@@ -4,6 +4,12 @@ set -e
 # Install missing gems
 bundle check || bundle install --jobs 20 --retry 5
 
+# Install npm packages
+yarn install --network-timeout=30000
+
+# Build JS before start
+yarn build
+
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /app/tmp/pids/server.pid
 
