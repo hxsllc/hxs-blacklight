@@ -265,7 +265,7 @@ include BlacklightAdvancedSearch::Controller
 		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
 		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
 		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
-		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '</div>', two_words_connector: '</div>', last_word_connector: '</div>' }, accessor: :prop_owner
+		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_owner
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 		config.add_show_field 'place_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
 		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
