@@ -1,0 +1,12 @@
+<div class="card show-tools mb-4">
+  <div class="card-header">
+    <h2 class="mb-0 h6">
+      Alternate Versions
+    </h2>
+  </div>
+  <div class="list-group list-group-flush">
+    <%= link_to 'Institutional Records', document['institutional_record_link'].first, class: 'list-group-item' if document['institutional_record_link'].present? %>
+    <%= link_to 'IIIF Manifest', document['iiif_manifest_link'].first, class: 'list-group-item' if document['iiif_manifest_link'].present? %>
+    <%= link_to 'DS Wikibase', "https://penn-wikibase.site/#{document['qid_meta'][2]}", class: 'list-group-item' if document['qid_meta'].present? %>
+  </div>
+</div>
