@@ -2,18 +2,18 @@
 
 # Blacklight controller that handles searches and document requests
 class CatalogController < ApplicationController
-include Blacklight::Catalog
-include Blacklight::Marc::Catalog
-include BlacklightAdvancedSearch::Controller
+	include Blacklight::Catalog
+	include Blacklight::Marc::Catalog
+	include BlacklightAdvancedSearch::Controller
 #include Blacklight::BlacklightHelperBehavior
 #include Blacklight::ConfigurationHelperBehavior
 #def index
 #raise document_index_view_type.to_s
 #end
-	
-  configure_blacklight do |config|	 
-	  
-	config.view_config(:list).search_bar_component = DsSearchBarComponent
+
+  configure_blacklight do |config|
+
+		config.view_config(:list).search_bar_component = DsSearchBarComponent
 
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
@@ -40,7 +40,7 @@ include BlacklightAdvancedSearch::Controller
     config.default_solr_params = {
       rows: 10
     }
-    
+
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
     #config.document_solr_path = 'get'
@@ -54,7 +54,7 @@ include BlacklightAdvancedSearch::Controller
     config.show.document_presenter_class = TitlePresenterShow
     #config.index.display_type_field = 'format'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
-    
+
         # solr field configuration for search results/index views
 		#config.index.show_link = 'title_display'
 		#config.index.record_display_type = 'format'
@@ -80,7 +80,7 @@ include BlacklightAdvancedSearch::Controller
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
     config.add_nav_action(:advanced, partial: 'blacklight/nav/advanced')
-    
+
     # solr field configuration for document/show views
     #config.show.title_field = 'title_tsim'
     #config.show.display_type_field = 'format'
@@ -111,21 +111,18 @@ include BlacklightAdvancedSearch::Controller
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
     config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
-    config.add_facet_field 'language_facet', label: 'Language', limit:5
-    config.add_facet_field 'century_facet', label: 'Century', limit:5
-	config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
-	config.add_facet_field 'material_facet', label: 'Material', limit:5
-    config.add_facet_field 'title_facet', label: 'Title',limit:5
-	config.add_facet_field 'term_facet', label: 'Keywords', limit:5
-	
-	# CLICKABLE IN FULL RECORD VIEW
-	config.add_facet_field 'author_facet', label: 'Author', limit:5, if:false
-	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5, if:false
-	config.add_facet_field 'artist_facet', label: 'Artist', limit:5, if:false
-	config.add_facet_field 'owner_facet', label: 'Owner', limit:5, if:false
-	config.add_facet_field 'date_facet', label: 'Date', limit:5, if:false
+		config.add_facet_field 'author_facet', label: 'Author', limit:5
+		config.add_facet_field 'title_facet', label: 'Title',limit:5
+		config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
+		config.add_facet_field 'artist_facet', label: 'Artist', limit:5
+		config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
+		config.add_facet_field 'century_facet', label: 'Century', limit:5
+		config.add_facet_field 'language_facet', label: 'Language', limit:5
+		config.add_facet_field 'material_facet', label: 'Material', limit:5
+		config.add_facet_field 'owner_facet', label: 'Former Owners', limit:5
+		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
 
-            
+
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     #config.add_facet_field 'language_ssim', label: 'Language', limit: true
     #config.add_facet_field 'lc_1letter_ssim', label: 'Call Number'
