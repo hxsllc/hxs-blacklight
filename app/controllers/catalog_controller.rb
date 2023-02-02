@@ -317,19 +317,26 @@ include BlacklightAdvancedSearch::Controller
     }
   	end
 
-	config.add_search_field 'name_search', label: 'Name' do |field|
-    	field.solr_parameters = {
-		qf: 'author_facet author_search scribe_facet scribe_search owner_facet owner_search artist_facet artist_search',
-		pf: ''
-    }
-  	end  	
-  	
+	config.add_search_field 'holding_institution_search', label: 'Holding Institution' do |field|
+		field.solr_parameters = {
+			qf: 'institution_facet institution_search',
+			pf: ''
+		}
+	end
+
 	config.add_search_field 'shelfmark_search', label: 'Shelfmark' do |field|
     	field.solr_parameters = {
 		qf: 'shelfmark_search',
 		pf: ''
     }
-  	end  	
+	end
+
+	config.add_search_field 'author_search', label: 'Author' do |field|
+		field.solr_parameters = {
+			qf: 'author_facet author_search',
+			pf: ''
+		}
+	end
   	
 	config.add_search_field 'title_search', label: 'Title' do |field|
     	field.solr_parameters = {
@@ -338,7 +345,7 @@ include BlacklightAdvancedSearch::Controller
     }
   	end  	
 
-	config.add_search_field 'place_search', label: 'Place' do |field|
+	config.add_search_field 'place_search', label: 'Production Place' do |field|
     	field.solr_parameters = {
 		qf: 'place_facet place_search',
 		pf: ''
