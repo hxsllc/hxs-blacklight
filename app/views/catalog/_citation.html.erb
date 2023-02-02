@@ -1,0 +1,15 @@
+<%= render Blacklight::System::ModalComponent.new do |component| %>
+  <% component.title { t('blacklight.tools.citation') } %>
+  <% if @documents&.first.present? %>
+    <% document = @documents.first %>
+    <% component.body do %>
+      <div class="px-4 py-3">
+        <%= JSON.parse(Array(document['shelfmark_display']).first)['PV'] %>, <%= Array(document['institution_facet']).first %>.
+        Digital Scriptorium.
+        Web.
+        <%= Time.now.strftime '%e %B %Y' %>: <%= document['id'] %>.
+        <%= solr_document_url document['id'] %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
