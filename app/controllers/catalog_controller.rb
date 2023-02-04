@@ -111,16 +111,16 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
     config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
-		config.add_facet_field 'author_facet', label: 'Author', limit:5
 		config.add_facet_field 'title_facet', label: 'Title',limit:5
+		config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
+		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
+		config.add_facet_field 'author_facet', label: 'Author', limit:5
 		config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
 		config.add_facet_field 'artist_facet', label: 'Artist', limit:5
-		config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
 		config.add_facet_field 'century_facet', label: 'Century', limit:5
 		config.add_facet_field 'language_facet', label: 'Language', limit:5
 		config.add_facet_field 'material_facet', label: 'Material', limit:5
-		config.add_facet_field 'owner_facet', label: 'Former Owners', limit:5
-		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
+		#config.add_facet_field 'owner_facet', label: 'Former Owners', limit:5
 
 
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
@@ -314,35 +314,35 @@ class CatalogController < ApplicationController
     }
   	end
 
-	config.add_search_field 'holding_institution_search', label: 'Holding Institution' do |field|
+	config.add_search_field 'institution', label: 'Holding Institution' do |field|
 		field.solr_parameters = {
 			qf: 'institution_facet institution_search',
 			pf: ''
 		}
 	end
 
-	config.add_search_field 'shelfmark_search', label: 'Shelfmark' do |field|
+	config.add_search_field 'shelfmark', label: 'Shelfmark' do |field|
     	field.solr_parameters = {
 		qf: 'shelfmark_search',
 		pf: ''
     }
 	end
 
-	config.add_search_field 'author_search', label: 'Author' do |field|
+	config.add_search_field 'author', label: 'Author' do |field|
 		field.solr_parameters = {
 			qf: 'author_facet author_search',
 			pf: ''
 		}
 	end
   	
-	config.add_search_field 'title_search', label: 'Title' do |field|
+	config.add_search_field 'title', label: 'Title' do |field|
     	field.solr_parameters = {
 		qf: 'title_facet title_search',
 		pf: ''
     }
   	end  	
 
-	config.add_search_field 'place_search', label: 'Production Place' do |field|
+	config.add_search_field 'place', label: 'Production Place' do |field|
     	field.solr_parameters = {
 		qf: 'place_facet place_search',
 		pf: ''
