@@ -36,6 +36,7 @@ If you want to add test MARC records run `docker-compose run app rake solr:marc:
 Notes:
 1) You only need to rebuild any images that have changes.
 2) ECS is configured to run on Linux x86_64 architecture; make sure to specify the platform when building.
+3) Once you have pushed your images to ECR, you will need to [deploy](#deploy-changes) the images via ECS.
 
 ### Build & Push App Image
 
@@ -50,6 +51,20 @@ Notes:
 2) Build Image `docker buildx build --platform linux/x86_64 -t hxs-blacklight-solr --file .docker/solr.prod.Dockerfile --no-cache .`
 3) Tag Image `docker tag hxs-blacklight-solr:latest 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-solr:latest`
 4) Push Image `docker push 214159447841.dkr.ecr.us-east-2.amazonaws.com/hxs-blacklight-solr:latest`
+
+### Deploy Changes
+
+*NOTE: Due to the way ECS handles deployment, unless you are incrementing the Task definition version, you will need to use the **Force Deployment** in [**Tips & Tricks**](#tips--tricks)*.
+
+1) Log in to ECS
+2) Select Clusters
+3) Select `hxs-blacklight-[environment]`
+4) Select `hxs-blacklight` under **Services**
+5) Click on `Update Service`
+6) Make the necessary changes
+
+   You may need to select `Force new deployment` under **Deployment Options**
+7) Click on `Update`
 
 ### Tips & Tricks
 
