@@ -23,11 +23,11 @@
       <%= append %>
 
       <button type="submit" class="btn btn-primary search-btn" id="<%= @prefix %>search">
-        <span class="submit-search-text"><%= scoped_t('submit') %></span>
+        <span class="submit-search-text"></span>
         <%= blacklight_icon :search, aria_hidden: true %>
       </button>
       <% if advanced_search_enabled? %>
-	  	<%= link_to 'Advanced', @advanced_search_url, class: 'advanced_search btn btn-secondary'%>
+	  	<%= link_to '/ Advanced', @advanced_search_url, class: 'advanced_search btn'%>
 	  <% end %>
     </span>
   </div>

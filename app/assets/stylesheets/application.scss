@@ -16,6 +16,11 @@
 */
 
 .bg-dark { background-color: #E5B651 !important; }
+.container-xl, .container-lg, .container-md, .container-sm, .container { max-width: 1280px; }
+.col-md-3 {
+	flex: 0 0 15%;
+	max-width: 15%;
+}
 .navbar-logo {
   background: transparent image-url("ds-logo-blacklight-v02.png") no-repeat top left !important;
   background-size:contain !important;
@@ -23,29 +28,61 @@
   width:300px;
   margin-top:unset !important;
 }
+.navbar-search {
+	min-height:100px;
+	margin-bottom:25px;
+}
 .btn-primary { background-color: #C54B46 !important; border-color: unset !important; margin:-1px; color: white !important;}
 .btn-secondary { background-color: #E5B651 !important; border-color: unset !important; margin:-1px; }
 
 .navbar-dark .navbar-nav .nav-link { color: #3D2E0F !important; }
+
+.bg-success, .facet-limit-active .card-header {
+  background-color: #EBDABC !important;
+}
+.border-success, .facet-limit-active {
+  border-color: #EBDABC !important;
+}  
+.text-success, .facet-values li .selected {
+  color: #C54B46 !important;
+}
+
+#facets { padding: 20px 20px 20px 0px; }
+  
 a { color: #2c14b2 !important; }
 .ds-bar { background-color:#F8F4ED;
 	border-radius:25px;
-	padding:10px 10px 8px 20px; }
-.ds-ld-link { color: #665241 !important;
+	padding:10px 10px 8px 20px; 
+	}
+.ds-ld-search { color: #665241 !important;
 	font-weight: 500;
 	text-decoration: underline;
 	vertical-align: top;
-	padding-left: 5px; }
+	padding-left: 5px; 
+	}
 .ds-ld-bar { background-color:#F8F4ED;
 	border-radius:0 25px 25px 25px;
-	padding:10px 10px 8px 20px; }
+	padding:10px 10px 8px 20px; 
+	border: 1px solid #F1E9DC;
+	}
 .ds-bar:before, .ds-ld-bar:before { background-image: url("https://img.icons8.com/ios-glyphs/30/null/search--v1.png");
 	width: 20px;
 	background-size: 20px 20px;
 	height: 20px;
 	display: inline-block;
 	content: "";
-	opacity:0.3; }
+	opacity:0.3; 
+	}
 .ds-ld-float { float:right;
 	margin-right:10px;
-	width:24px; }
+	}
+.ds-ld-img { float:right;
+	width:24px; 
+	filter: grayscale(100%);
+	}	
+.ds-ld-link { color: #E5B651 !important;
+	font-weight: 800;
+	text-decoration: underline;
+	vertical-align: top;
+	padding-right: 7px; 
+	}	
