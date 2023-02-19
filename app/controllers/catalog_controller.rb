@@ -115,9 +115,9 @@ class CatalogController < ApplicationController
 		config.add_facet_field 'author_facet', label: 'Author', limit:5
 		config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
 		config.add_facet_field 'artist_facet', label: 'Artist', limit:5
-		#config.add_facet_field 'owner_facet', label: 'Former Owner(s)', limit:5
+		config.add_facet_field 'owner_facet', label: 'Former Owner(s)', limit:5
 		config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
-		config.add_facet_field 'date_facet', label: 'Date (not sorted)', limit:5
+		config.add_facet_field 'century_facet', label: 'Century', limit:5, sort:'alpha'
 		config.add_facet_field 'language_facet', label: 'Language', limit:5
 		config.add_facet_field 'material_facet', label: 'Material', limit:5
 		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
@@ -272,7 +272,7 @@ class CatalogController < ApplicationController
 
 		# FACET LINKS, NO LINKED DATA
 		config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_institution
-		config.add_show_field 'term_facet', label: 'Terms', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_term
+		config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_term
 
 		# TEXTUAL
 		config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_description

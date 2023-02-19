@@ -71,8 +71,7 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end			
+		qsrc = "?"			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -81,7 +80,14 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			if qu.include?("wikidata.org") then qsrc="WIKIDATA" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -100,8 +106,7 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end			
+		qsrc = "?"		
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -110,7 +115,13 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -130,7 +141,6 @@ class SolrDocument
 		ql = data["QL"]
 		qu = data["QU"]
 		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -139,7 +149,13 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -159,8 +175,7 @@ class SolrDocument
 			ql = data["QL"]
 			qu = data["QU"]
 			qsrc = "?"
-			if qu.include?("/aat") then qsrc="AAT" end			
-			
+
 			if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 			if ql  
 				qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -169,8 +184,14 @@ class SolrDocument
 				divstart=""
 				divend=""
 			end
-			if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
-			"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end			
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
 	    end #array
     end #if
   end  #def            
@@ -186,14 +207,19 @@ class SolrDocument
 		ql = data["QL"]
 		qu = data["QU"]
 		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end
 			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
 		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -210,14 +236,21 @@ class SolrDocument
 		ql = data["QL"]
 		qu = data["QU"]
 		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
 			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
 		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -234,14 +267,21 @@ class SolrDocument
 		ql = data["QL"]
 		qu = data["QU"]
 		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
 			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
 		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
@@ -258,14 +298,20 @@ class SolrDocument
 		ql = data["QL"]
 		qu = data["QU"]
 		qsrc = "?"
-		if qu.include?("/aat") then qsrc="AAT" end
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
 			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
 		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
 		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
