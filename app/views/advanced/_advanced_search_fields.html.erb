@@ -1,0 +1,29 @@
+<%- 6.times { |i| -%>
+  <div class="form-group advanced-search-field">
+      <div class="col-sm-7">
+        <%= text_field_tag '', label_tag_default_for(''), :class => 'form-control' %>
+      </div>
+      <div class="col-sm-1 label-alignment">in</div>
+      <div class="col-sm-4">
+        <select class="form-control" id="text_field_<%= i %>">
+			<option value="all_fields">All Fields</option>
+			<option value="institution">Holding Institution</option>
+			<option value="shelfmark">Shelfmark</option>
+			<option value="author">Author</option>
+			<option value="title">Title</option>
+			<option value="place">Production Place</option>
+		</select>
+      </div>
+  </div>
+<%- } -%>
+
+<!--
+<%- search_fields_for_advanced_search.each do |key, field_def| -%>
+  <div class="form-group advanced-search-field">
+      <%= label_tag key, "#{field_def.label }", :class => "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= text_field_tag key, label_tag_default_for(key), :class => 'form-control' %>
+      </div>
+  </div>
+<%- end -%>
+-->
