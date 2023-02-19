@@ -46,7 +46,9 @@
 .text-success, .facet-values li .selected {
   color: #C54B46 !important;
 }
-
+.font-09-em {
+	font-size:0.9em;
+}
 #facets { padding: 20px 20px 20px 0px; }
   
 a { color: #2c14b2 !important; }
@@ -86,3 +88,34 @@ a { color: #2c14b2 !important; }
 	vertical-align: top;
 	padding-right: 7px; 
 	}	
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  float: left;
+}
+.form-horizontal .form-group::after, .limit-criteria {
+  clear: both;
+}
+.form-horizontal .form-group::before, .form-horizontal .form-group::after {
+  content: " ";
+  display: table;
+}
+.float-right {
+	float:right;
+}
+.search-tips {
+	background-color: #eee;
+	margin-top: 0;
+	padding-top: 0;
+	top: 0px;
+	position: absolute;
+	padding: 7px;
+	height: 3rem;
+	display: inline-block;
+	width: 100%;
+	margin-left: 0;
+	left: 0;
+	padding-left: 15px;
+	line-height: 2rem;
+}
+.margin-top-40px {
+	margin-top:40px;
+}
