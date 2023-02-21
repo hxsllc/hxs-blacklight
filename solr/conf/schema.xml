@@ -23,6 +23,7 @@
     <dynamicField name="*_search" type="text" multiValued="true" indexed="true" stored="true"/>
     <dynamicField name="*_meta" type="string" multiValued="true" indexed="true" stored="true"/>
     <dynamicField name="*_link" type="string" multiValued="true" indexed="true" stored="true"/>
+    <dynamicField name="*_int" type="int" multiValued="true" indexed="true" stored="true"/>
 
     <dynamicField name="*_ti" type="text" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_tim" type="text" stored="false" indexed="true" multiValued="true"/>
