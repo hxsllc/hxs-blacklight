@@ -15,6 +15,7 @@
     "jquery": "^3.6.3",
     "mirador": "^3.3.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
+    "rails-erb-loader": "^5.5.2",
     "rails-ujs": "^5.2.8-1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

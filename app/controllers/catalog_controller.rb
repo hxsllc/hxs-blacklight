@@ -3,6 +3,8 @@
 # Blacklight controller that handles searches and document requests
 class CatalogController < ApplicationController
 	include Blacklight::Catalog
+  include BlacklightRangeLimit::ControllerOverride
+
 	include Blacklight::Marc::Catalog
 	include BlacklightAdvancedSearch::Controller
 #include Blacklight::BlacklightHelperBehavior
@@ -110,6 +112,7 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
+		config.add_facet_field 'century_int', label: 'Century', range: true, collapse: false
     config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
 		config.add_facet_field 'title_facet', label: 'Title',limit:5
 		config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
