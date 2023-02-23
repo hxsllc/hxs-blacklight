@@ -11,7 +11,7 @@ class SolrDocument
   def prop_iiif 
 	if fetch('iiif_manifest_link',false)
 	Array(fetch('iiif_manifest_link')).map do |v|
-      link_to(v, v, target: '_blank', class: '')
+      link_to(v, v, target: '_blank', class: 'ds-ld-search')
       #"<span style='text-decoration:line-through;'>#{v}</span>".html_safe
     end
     end
@@ -20,7 +20,7 @@ class SolrDocument
   def prop_record
 	if fetch('institutional_record_link',false)
 	Array(fetch('institutional_record_link')).map do |v|
-      link_to(v, v, target: '_blank', class: '')
+      link_to(v, v, target: '_blank', class: 'ds-ld-search')
       #"<span style='text-decoration:line-through;'>#{v}</span>".html_safe
     end
     end
@@ -58,91 +58,145 @@ class SolrDocument
     end
   end  
   
+  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_author
+	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+	divend = "</div>"	
+	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
+	qfield = "author_facet"  
 	if fetch('author_display',false)
 	Array(fetch('author_display')).map do |v|
 		data = JSON.parse(v)
-		qfield = "author_facet"		
 		pv = data["PV"]
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
-		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if ql  
+			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
+		else 
+			qlink=""
+			divstart=""
+			divend=""
+		end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			if qu.include?("wikidata.org") then qsrc="WIKIDATA" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end    
 
+  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_scribe
+	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+	divend = "</div>"	
+	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
+	qfield = "scribe_facet"  
 	if fetch('scribe_display',false)
 	Array(fetch('scribe_display')).map do |v|
 		data = JSON.parse(v)
-		qfield = "scribe_facet"
 		pv = data["PV"]
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"		
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
-		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if ql  
+			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
+		else 
+			qlink=""
+			divstart=""
+			divend=""
+		end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end      
 
+  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_artist
+	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+	divend = "</div>"	
+	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
+	qfield = "artist_facet"  
 	if fetch('artist_display',false)
 	Array(fetch('artist_display')).map do |v|
 		data = JSON.parse(v)
-		qfield = "artist_facet"
 		pv = data["PV"]
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
-		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if ql  
+			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
+		else 
+			qlink=""
+			divstart=""
+			divend=""
+		end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end     
   
+  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_owner
+	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+	divend = "</div>"	
+	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
+	qfield = "owner_facet"	  
 	if fetch('owner_display',false)
-		divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
-		divend = "</div>"	
-		qfield = "owner_facet"	
 		Array(fetch('owner_display')).map do |v|
 			data = JSON.parse(v)
 			pv = data["PV"]
 			agr = data["AGR"]
 			ql = data["QL"]
 			qu = data["QU"]
+			qsrc = "?"
+
 			if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 			if ql  
-				qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
+				qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
 			else 
 				qlink=""
 				divstart=""
 				divend=""
 			end
-			if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'><img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref="" end
-			"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end			
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
 	    end #array
     end #if
   end  #def            
   
+  #V3 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink
   def prop_date
 	if fetch('date_display',false)
 	Array(fetch('date_display')).map do |v|
@@ -152,17 +206,26 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"
+			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
+		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end       
   
+  #V3 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink
   def prop_language
 	if fetch('language_display',false)
 	Array(fetch('language_display')).map do |v|
@@ -172,17 +235,28 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
+			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
+		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end  
   
+  #V3 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink
   def prop_place
 	if fetch('place_display',false)
 	Array(fetch('place_display')).map do |v|
@@ -192,17 +266,28 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
+			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
+		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
+		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end           
   
+  #V3 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink
   def prop_material
 	if fetch('material_display',false)
 	Array(fetch('material_display')).map do |v|
@@ -212,18 +297,27 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
+		qsrc = "?"
+		#if qu && qu.include?("/aat") then qsrc="AAT" end
+			
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qhref = "<a href='#{qu}' target='_blank' title='Explore this term via Linked Data'>
-			<img class='ds-ld-float' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'/></a>" else qhref = "" end
-		if ql then divend = "</div>" else divend="" end
-		"#{qtext}#{divstart}#{qlink}#{qhref}#{divend}".html_safe
+		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
+		if ql then divend = "</span></div>" else divend="" end
+		if qu 
+			if qu.include?("/aat") then qsrc="AAT" end
+			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
+		else 
+			qhref = "" 
+			qimg = ""
+		end		
+		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
     end
     end
   end        
 
-  # VISUAL BAR, NO LINKED DATA
+  #V2.0 VISUAL BAR, NO LINKED DATA
   def prop_institution
 	if fetch('institution_display',false)
 	divstart = "<div class='ds-bar'>&nbsp;"	
@@ -232,13 +326,13 @@ class SolrDocument
 		data = JSON.parse(v)
 		qfield = "institution_facet"
 		ql = data["QL"]
-		if ql then qlink = "<a class='ds-ld-link' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
+		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		"#{divstart}#{qlink}#{divend}".html_safe
     end
     end
   end        
     
-  # VISUAL BAR, NO LINKED DATA
+  #V2.0 VISUAL BAR, NO LINKED DATA
   def prop_term
 	if fetch('term_facet',false)
 	divstart = "<div style='background-color:#F8F4ED;border-radius:25px 25px 25px;padding:10px 10px 10px 20px;'><img src='https://img.icons8.com/ios-glyphs/30/null/search--v1.png' width='20'/>&nbsp;"
@@ -252,13 +346,13 @@ class SolrDocument
 		#ql = data["QL"]
 		#qu = data["QU"]
 		term = v
-		tlink += "<a href='/?f%5B#{qfield}%5D%5B%5D=#{term}'>#{term}</a><br>"
+		tlink += "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{term}'>#{term}</a><br>"
     end
     "#{divstart}#{tlink}#{divend}".html_safe
     end
   end         
   
-  # TEXT ONLY
+  #V2.0 TEXT ONLY
   def prop_description
 	if fetch('physical_description_display',false)
 	Array(fetch('physical_description_display')).map do |v|
@@ -269,7 +363,7 @@ class SolrDocument
     end
   end       
 
-  # TEXT ONLY  
+  #V2.0 TEXT ONLY
   def prop_note
 	if fetch('note_display',false)
 	Array(fetch('note_display')).map do |v|

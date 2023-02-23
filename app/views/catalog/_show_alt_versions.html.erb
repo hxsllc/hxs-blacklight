@@ -5,8 +5,8 @@
     </h2>
   </div>
   <div class="list-group list-group-flush">
-    <%= link_to 'Institutional Records', document['institutional_record_link'].first, class: 'list-group-item' if document['institutional_record_link'].present? %>
-    <%= link_to 'IIIF Manifest', document['iiif_manifest_link'].first, class: 'list-group-item' if document['iiif_manifest_link'].present? %>
-    <%= link_to 'DS Wikibase', "https://penn-wikibase.site/#{document['qid_meta'][2]}", class: 'list-group-item' if document['qid_meta'].present? %>
+    <%= link_to '→ Institutional Record', document['institutional_record_link'].first, target: "_blank", class: 'list-group-item' if document['institutional_record_link'].present? %>
+    <%= link_to '→ DS Wikibase', "https://catalog.digital-scriptorium.org/wiki/item:#{document['qid_meta'][2]}", target: "_blank", class: 'list-group-item' if document['qid_meta'].present? %>
+    <%= link_to '→ IIIF Manifest', document['iiif_manifest_link'].first, target: "_blank", class: 'list-group-item' if document['iiif_manifest_link'].present? %>
   </div>
 </div>
