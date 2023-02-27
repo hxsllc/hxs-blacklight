@@ -1,3 +1,7 @@
+<% search_fields_for_advanced_search.each do |key, field| %>
+	<%= hidden_field_tag key, nil, class: 'advanced-search-field-value' %>
+<% end %>
+
 <%- 6.times { |i| -%>
   <div class="form-group advanced-search-field">
       <div class="col-sm-7">
