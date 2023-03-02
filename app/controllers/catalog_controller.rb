@@ -79,6 +79,7 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:citation)
 
     ## https://github.com/projectblacklight/blacklight/blob/main/app/views/blacklight/nav/_bookmark.html.erb
+    config.add_nav_action(:home, partial: 'blacklight/nav/home_nav_item')
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
     #config.add_nav_action(:advanced, partial: 'blacklight/nav/advanced')
