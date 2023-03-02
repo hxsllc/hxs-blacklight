@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  alerts:
+    beta_notice:
+      message: "Please note that this is the beta launch of Digital Scriptorium 2.0 website."
