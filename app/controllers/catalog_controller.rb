@@ -113,21 +113,23 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-		config.add_facet_field 'century_int', label: 'Century', range: true, collapse: false
-    config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
-		config.add_facet_field 'title_facet', label: 'Title',limit:5
-		config.add_facet_field 'author_facet', label: 'Author', limit:5
-		config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
-		config.add_facet_field 'artist_facet', label: 'Artist', limit:5
-		config.add_facet_field 'owner_facet', label: 'Former Owner(s)', limit:5
-		config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
-		# config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha'
-		config.add_facet_field 'language_facet', label: 'Language', limit:5
-		config.add_facet_field 'material_facet', label: 'Material', limit:5
-		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
-		config.add_facet_field 'images_facet', label: 'Has IIIF Images'
-		#config.add_facet_field 'owner_facet', label: 'Former Owners', limit:5
-
+	config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
+	config.add_facet_field 'author_facet', label: 'Author', limit:5
+	config.add_facet_field 'title_facet', label: 'Title',limit:5
+	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
+	config.add_facet_field 'artist_facet', label: 'Artist', limit:5
+	config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
+	config.add_facet_field 'century_int', label: 'Century', range: {
+		num_segments:10,
+         assumed_boundaries: [800,1500],
+         segments: true,
+         maxlength: 4
+       }, collapse:false	
+	#config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha'
+	config.add_facet_field 'language_facet', label: 'Language', limit:5
+	config.add_facet_field 'material_facet', label: 'Material', limit:5
+	config.add_facet_field 'owner_facet', label: 'Former owners', limit:5
+	config.add_facet_field 'term_facet', label: 'Keywords', limit:5
 
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     #config.add_facet_field 'language_ssim', label: 'Language', limit: true
@@ -154,7 +156,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'title_facet', label: 'Title'
     config.add_index_field 'author_facet', label: 'Author'
     config.add_index_field 'place_facet', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
-    config.add_index_field 'date_facet', label: 'Date'
+    config.add_index_field 'date_facet', label: 'Century'
     
     #config.add_index_field 'earliest_date', label: 'Date Range (Earliest)'
     #config.add_index_field 'latest_date', label: 'Date Range (Latest)'    
