@@ -347,6 +347,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  addressable (~> 2.8)
   blacklight (>= 7.0)
   blacklight-marc (>= 7.0.0.rc1, < 8)
   blacklight_advanced_search (~> 7.0)

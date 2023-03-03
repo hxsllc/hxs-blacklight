@@ -7,7 +7,24 @@ class SolrDocument
   include ActionView::Helpers::UrlHelper
   
   ## facet link example: http://localhost:3000/?f%5Binstitution_facet%5D%5B%5D=University+of+Pennsylvania
-  
+
+	LINK_DATA_DEFAULT = :other
+	LINK_DATA_ACRONYMS = {
+		wikidata: {
+			domain: 'wikidata.org'
+		},
+		tgn: {
+			host: 'vocab.getty.edu',
+			path: /^\/tgn\//i
+		},
+		aat: {
+			host: 'vocab.getty.edu',
+			path: /^\/aat\//i
+		},
+	}.freeze
+
+	LINK_DATA_ICON = 'https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png'
+
   def prop_iiif 
 	if fetch('iiif_manifest_link',false)
 	Array(fetch('iiif_manifest_link')).map do |v|
@@ -61,9 +78,8 @@ class SolrDocument
   #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_author
 	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
-	divend = "</div>"	
-	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
-	qfield = "author_facet"  
+	divend = "</div>"
+	qfield = "author_facet"
 	if fetch('author_display',false)
 	Array(fetch('author_display')).map do |v|
 		data = JSON.parse(v)
@@ -71,7 +87,7 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"			
+
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -80,15 +96,7 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			if qu.include?("wikidata.org") then qsrc="WIKIDATA" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end    
@@ -97,8 +105,7 @@ class SolrDocument
   def prop_scribe
 	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
 	divend = "</div>"	
-	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
-	qfield = "scribe_facet"  
+	qfield = "scribe_facet"
 	if fetch('scribe_display',false)
 	Array(fetch('scribe_display')).map do |v|
 		data = JSON.parse(v)
@@ -106,7 +113,6 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"		
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -115,14 +121,7 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end      
@@ -131,8 +130,7 @@ class SolrDocument
   def prop_artist
 	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
 	divend = "</div>"	
-	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
-	qfield = "artist_facet"  
+	qfield = "artist_facet"
 	if fetch('artist_display',false)
 	Array(fetch('artist_display')).map do |v|
 		data = JSON.parse(v)
@@ -140,7 +138,6 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql  
 			qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
@@ -149,14 +146,7 @@ class SolrDocument
 			divstart=""
 			divend=""
 		end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end		
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end     
@@ -165,8 +155,7 @@ class SolrDocument
   def prop_owner
 	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
 	divend = "</div>"	
-	qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>"		
-	qfield = "owner_facet"	  
+	qfield = "owner_facet"
 	if fetch('owner_display',false)
 		Array(fetch('owner_display')).map do |v|
 			data = JSON.parse(v)
@@ -174,7 +163,6 @@ class SolrDocument
 			agr = data["AGR"]
 			ql = data["QL"]
 			qu = data["QU"]
-			qsrc = "?"
 
 			if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 			if ql  
@@ -184,14 +172,8 @@ class SolrDocument
 				divstart=""
 				divend=""
 			end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end			
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+
+			"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
 	    end #array
     end #if
   end  #def            
@@ -206,21 +188,13 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-			
+
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
 		if ql then divend = "</span></div>" else divend="" end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end		
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end       
@@ -235,23 +209,13 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-		#if qu && qu.include?("/aat") then qsrc="AAT" end
-			
+
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end		
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end  
@@ -266,23 +230,13 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-		#if qu && qu.include?("/aat") then qsrc="AAT" end
-			
+
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
-		#if qu then qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" else qhref = "" end
 		if ql then divend = "</span></div>" else divend="" end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end		
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end           
@@ -297,22 +251,13 @@ class SolrDocument
 		agr = data["AGR"]
 		ql = data["QL"]
 		qu = data["QU"]
-		qsrc = "?"
-		#if qu && qu.include?("/aat") then qsrc="AAT" end
-			
+
 		if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
 		if ql then qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" else qlink = "" end
 		if ql then divstart = "<br><div class='ds-ld-bar'>&nbsp;" else divstart="" end
-		if qu then qimg = "<span class='ds-ld-float'><img class='ds-ld-img' src='https://img.icons8.com/external-sbts2018-flat-sbts2018/58/null/external-13-nodes-elastic-search-sbts2018-flat-sbts2018.png' title='Linked Data' alt='Linked Data indicator'/>" else qimg="" end
 		if ql then divend = "</span></div>" else divend="" end
-		if qu 
-			if qu.include?("/aat") then qsrc="AAT" end
-			qhref = "&nbsp;<a class='ds-ld-link' href='#{qu}' target='_blank' title='Explore this term via Linked Data'>#{qsrc}</a>&nbsp;" 
-		else 
-			qhref = "" 
-			qimg = ""
-		end		
-		"#{qtext}#{divstart}#{qlink}#{qimg}#{qhref}#{divend}".html_safe
+
+		"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
     end
     end
   end        
@@ -405,5 +350,42 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
-     
+
+	private
+
+	def linked_data_span_tag(url)
+		return nil if url.blank?
+
+		"<span class=\"ds-ld-float\">#{linked_data_icon_tag}#{linked_data_link_tag url}<span>"
+	end
+
+	def linked_data_icon_tag
+		"<img class=\"ds-ld-img\" src=\"#{LINK_DATA_ICON}\" title=\"Linked Data\" alt=\"Linked Data indicator\"/>"
+	end
+
+	def linked_data_link_tag(url)
+		acronym = find_url_acronym url
+		label = acronym_label acronym
+		"<a class=\"ds-ld-link\" href=\"#{url}\" target=\"_blank\" title=\"Explore this term via Linked Data\">#{label}</a>"
+	end
+
+	def acronym_label(acronym)
+		I18n.translate "blacklight.solr_document.link_data_acronyms.#{acronym}", default: acronym.to_s.upcase
+	end
+
+	def find_url_acronym(url, default: LINK_DATA_DEFAULT)
+		uri = Addressable::URI.parse url
+		LINK_DATA_ACRONYMS.keys.find(-> { default }) { |key| acronym_match? uri, LINK_DATA_ACRONYMS[key] }
+	end
+
+	def acronym_match?(uri, acronym)
+		acronym.all? do |part, test|
+			case test
+			when Regexp
+				uri.send(part).match? test
+			else
+				uri.send(part) === test
+			end
+		end
+	end
 end
