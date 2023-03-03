@@ -1,3 +1,4 @@
 <%= render partial: 'show_alt_versions', locals: { document: document } %>
 <%= render 'show_tools' %>
 <%= render(Blacklight::Document::MoreLikeThisComponent.new(document: document)) %>
+<%= render partial: 'show_contact', locals: { document: document } %>

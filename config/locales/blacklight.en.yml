@@ -3,3 +3,9 @@ en:
     application_name: 'Blacklight'
     header_links:
       home: "Home DS"
+    contact_toolbar:
+      header: Contact Institution
+      body: >-
+        Do you have more information to share with the Holding Institution about this manuscript or would you like to 
+        suggest a correction? 
+        Use the link to the Institutional Record to access the Holding Institution’s contact info.
