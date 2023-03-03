@@ -230,15 +230,16 @@ def mergeWIDs (wid)
 
 end
 
+dir = File.dirname __FILE__
 ## read file into variable
-file = File.read('./export-2023-01-10.json')
+file = File.read(File.join(dir, '../../ds-export-2023-03-02.json'))
 
 ## parse JSON into a Ruby array (NOT A HASH!)
 data = JSON.parse(file)
 
 ## read property names into array = from ds-model-ids.json
 $pNameArray={}
-CSV.foreach("property-names-v3.csv", col_sep: ",", liberal_parsing: true) do |line|
+CSV.foreach(File.join(dir, "/property-names.csv"), col_sep: ",", liberal_parsing: true) do |line|
 	@pName = line[0]
 	$pNameArray[@pName] = line[1]
 end
@@ -330,10 +331,10 @@ end
 
 ## MAIN LOOP NEW
 
-@debugQualifiers = true
-@debugProperties = true
+@debugQualifiers = false
+@debugProperties = false
 $solrObjects = {}
-@outputJSON = false
+@outputJSON = true
 $globalCnt = 1
 
 if true
@@ -378,6 +379,7 @@ if true
 					@propArrayLoopCount += 1
 					propArray ? @propValue = returnMDVifNotNil(propArray): nil
 					directJSONforSolr @wid, "id", @propValue if property=="P1" && !@propValue.empty?
+					directJSONforSolr(@wid, "images_facet", "Yes") if property == 'P41' && !@propValue.empty?
 
 					#check for mainsnak-datavalue-value that looks like {"entity-type"=>"item", "numeric-id"=>1102, "id"=>"Q1102"}
 					if @propValue.kind_of?(Hash)
@@ -474,7 +476,7 @@ if true
 
 							if @debugProperties then puts "#{@wid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 							createJSONforSolr(@wid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
-              				createJSONforSolr(@wid, property, "_search", "", @propValue)
+              createJSONforSolr(@wid, property, "_search", "", @propValue)
 							createJSONforSolr(@wid, property, "_search", "", @qualLabel)
 							createJSONforSolr(@wid, property, "_facet", "", @qualLabel)
 							createJSONforSolr(@wid, 'P25', "_int", "", Time.parse(@qualCentury).year)
@@ -485,10 +487,10 @@ if true
 							#if @debugProperties then puts "#{@wid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 							if @debugProperties then puts "P31 material_facet #{@qualMaterial} #{@qualLabel}" end
 							createJSONforSolr(@wid, 'P31', "_facet", "", @qualLabel)
-						else
+            else
 							if @debugProperties then puts "#{@wid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 
-              				createJSONforSolr(@wid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })              				
+              createJSONforSolr(@wid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
 							createJSONforSolr(@wid, property, "_search", "", @propValue)
 							createJSONforSolr(@wid, property, "_search", "", @qualLabel)
 							createJSONforSolr(@wid, property, "_facet", "", @qualLabel)
@@ -503,7 +505,7 @@ if true
 						@qualAuth = ''
 
 						#else if no @qualifiers exist
-					else
+          else
 
 						if @debugProperties then puts "#{@wid} PP #{property} #{@propValue}" end
 
@@ -514,7 +516,7 @@ if true
 						createJSONforSolr(@wid, property, "_facet", "", @propValue)
 						createJSONforSolr(@wid, property, "_link", "", @propValue)
 						#end if @qualifiers
-					end
+          end
 
 					#end @propArrayX.each loop
 				end

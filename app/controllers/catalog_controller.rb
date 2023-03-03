@@ -125,6 +125,7 @@ class CatalogController < ApplicationController
 		config.add_facet_field 'language_facet', label: 'Language', limit:5
 		config.add_facet_field 'material_facet', label: 'Material', limit:5
 		config.add_facet_field 'term_facet', label: 'Keywords', limit:5
+		config.add_facet_field 'images_facet', label: 'Has IIIF Images'
 		#config.add_facet_field 'owner_facet', label: 'Former Owners', limit:5
 
 
