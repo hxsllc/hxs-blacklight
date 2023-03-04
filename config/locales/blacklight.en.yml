@@ -2,7 +2,7 @@ en:
   blacklight:
     application_name: 'Blacklight'
     header_links:
-      home: "Home DS"
+      home: "DS Home"
     contact_toolbar:
       header: Contact Institution
       body: >-
