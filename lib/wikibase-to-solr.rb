@@ -146,7 +146,7 @@ def checkJSONforSolr (propertyid, solr_append, value)
 
 	#v2 facetFieldIDs = [5,10,14,18,19,23,25,29,32]
 	#v3
-	facetFieldIDs = [5,10,11,14,20,21,23,25,27,31]
+	facetFieldIDs = [5,10,11,14,20,21,23,25,26,27,31]
 
 	#v2 + v3
 	linkFieldIDs = [9,41]
@@ -172,7 +172,7 @@ def isPropertyJSONOutput (propertyid)
 
 	displayFieldIDs = [1,5,6,8,10,14,20,21,23,26,27,29,30,32,33]
 	searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,20,21,22,23,27,28,29,32]
-	facetFieldIDs = [5,10,11,14,20,21,23,25,27,31]
+	facetFieldIDs = [5,10,11,14,20,21,23,25,26,27,31]
 	linkFieldIDs = [9,41]
 	intFieldIDs = [25,36,37]
 
@@ -232,7 +232,7 @@ end
 
 dir = File.dirname __FILE__
 ## read file into variable
-file = File.read(File.join(dir, '../../ds-export-2023-03-02.json'))
+file = File.read(File.join(dir, '/ds-export-2023-03-02.json'))
 
 ## parse JSON into a Ruby array (NOT A HASH!)
 data = JSON.parse(file)
@@ -378,12 +378,16 @@ if true
 				@propArrayX.each do |propArray|
 					@propArrayLoopCount += 1
 					propArray ? @propValue = returnMDVifNotNil(propArray): nil
+
+					#custom properties that are not part of property-names.csv
 					directJSONforSolr @wid, "id", @propValue if property=="P1" && !@propValue.empty?
 					directJSONforSolr(@wid, "images_facet", "Yes") if property == 'P41' && !@propValue.empty?
 
 					#check for mainsnak-datavalue-value that looks like {"entity-type"=>"item", "numeric-id"=>1102, "id"=>"Q1102"}
+					#P26 example = {"entity-type":"item","numeric-id":14,"id":"Q14"}
 					if @propValue.kind_of?(Hash)
-						@propValue = returnIDifNotNil(@propValue)
+						@propID = returnIDifNotNil(@propValue)
+						@propValue = labels[@propID]
 					end
 
 					propArray ? @qualifiers = returnPropQuals(propArray): nil
@@ -423,14 +427,20 @@ if true
 
 							# most properties only have one qualifier, but P14 has 1-3 qualifiers
 							# so you have to extract them from the loop
+
+							#P10 contains qualifiers P13, P15, and P17 (agr, role, auth)
 							qual=='P13' ? @qualAGR = @qualValue: nil
 							qual=='P15' ? @qualRole = @qualLabel: nil
 							qual=='P17' ? @qualAuth = @qualLabel: nil
+
+							#P23 contains qualifiers P24, P25, P36, P37
 							qual=='P24' ? @qualDate = @qualValue: nil
 							qual=='P25' ? @qualCentury = @qualValue: nil 
 							qual=='P36' ? @qualLatest = @qualValue: nil 
-							qual=='P31' ? @qualMaterial = @qualValue: nil
 							qual=='P37' ? @qualEarliest = @qualValue: nil 
+
+							#P30 contains qualifiers P31
+							qual=='P31' ? @qualMaterial = @qualValue: nil
 
 							if @debugQualifiers
 								puts "#{@wid} QQ #{property} >> has qualifiers"
