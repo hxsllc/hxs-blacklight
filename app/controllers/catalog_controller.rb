@@ -114,6 +114,7 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
 	config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
+  config.add_facet_field 'images_facet', label: 'Has Images', limit:5
 	config.add_facet_field 'author_facet', label: 'Author', limit:5
 	config.add_facet_field 'title_facet', label: 'Title',limit:5
 	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
