@@ -115,17 +115,18 @@ class CatalogController < ApplicationController
 
 	config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
   config.add_facet_field 'images_facet', label: 'Has Images', limit:5
+  config.add_facet_field 'dated_facet', label: 'Dated', limit:5  
 	config.add_facet_field 'author_facet', label: 'Author', limit:5
 	config.add_facet_field 'title_facet', label: 'Title',limit:5
 	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
 	config.add_facet_field 'artist_facet', label: 'Artist', limit:5
-	config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
-	config.add_facet_field 'century_int', label: 'Century', range: {
-		num_segments:10,
-         assumed_boundaries: [800,1500],
-         segments: true,
-         maxlength: 4
-       }, collapse:false	
+	config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
+	#config.add_facet_field 'century_int', label: 'Century', range: {
+	#	num_segments:10,
+  #       assumed_boundaries: [800,1500],
+  #       segments: true,
+  #       maxlength: 4
+  #     }, collapse:false	
 	#config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha'
 	config.add_facet_field 'language_facet', label: 'Language', limit:5
 	config.add_facet_field 'material_facet', label: 'Material', limit:5
@@ -156,7 +157,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field 'title_facet', label: 'Title'
     config.add_index_field 'author_facet', label: 'Author'
-    config.add_index_field 'place_facet', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
+    config.add_index_field 'place_facet', label: 'Production Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
     config.add_index_field 'date_facet', label: 'Century'
     
     #config.add_index_field 'earliest_date', label: 'Date Range (Earliest)'
@@ -273,7 +274,7 @@ class CatalogController < ApplicationController
 		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
 		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_owner
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'place_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
+		config.add_show_field 'place_display', label: 'Production Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
 		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
 		config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_language
 		config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_material
@@ -337,19 +338,44 @@ class CatalogController < ApplicationController
     }
 	end
 
+  config.add_search_field 'title', label: 'Title' do |field|
+      field.solr_parameters = {
+    qf: 'title_facet title_search',
+    pf: ''
+    }
+    end   
+
 	config.add_search_field 'author', label: 'Author' do |field|
 		field.solr_parameters = {
 			qf: 'author_facet author_search',
 			pf: ''
 		}
 	end
-  	
-	config.add_search_field 'title', label: 'Title' do |field|
-    	field.solr_parameters = {
-		qf: 'title_facet title_search',
-		pf: ''
+
+  config.add_search_field 'artist', label: 'Artist' do |field|
+    field.include_in_simple_select = false    
+    field.solr_parameters = {
+      qf: 'artist_facet artist_search',
+      pf: ''
     }
-  	end  	
+  end
+
+  config.add_search_field 'scribe', label: 'Scribe' do |field|
+    field.include_in_simple_select = false    
+    field.solr_parameters = {
+      qf: 'scribe_facet scribe_search',
+      pf: ''
+    }
+  end
+
+  config.add_search_field 'owner', label: 'Owner' do |field|
+    field.include_in_simple_select = false    
+    field.solr_parameters = {
+      qf: 'owner_facet owner_search',
+      pf: ''
+    }
+  end      	
+
 
 	config.add_search_field 'place', label: 'Production Place' do |field|
     	field.solr_parameters = {
