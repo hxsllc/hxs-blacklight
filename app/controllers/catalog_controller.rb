@@ -121,12 +121,12 @@ class CatalogController < ApplicationController
 	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
 	config.add_facet_field 'artist_facet', label: 'Artist', limit:5
 	config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
-	#config.add_facet_field 'century_int', label: 'Century', range: {
-	#	num_segments:10,
-  #       assumed_boundaries: [800,1500],
-  #       segments: true,
-  #       maxlength: 4
-  #     }, collapse:false	
+	config.add_facet_field 'century_int', label: 'Century Range', range: {
+		num_segments:10,
+         assumed_boundaries: [800,1700],
+         segments: true,
+         maxlength: 4
+       }, collapse:false	
 	#config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha'
 	config.add_facet_field 'language_facet', label: 'Language', limit:5
 	config.add_facet_field 'material_facet', label: 'Material', limit:5
