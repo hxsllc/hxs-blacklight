@@ -59,7 +59,7 @@ require 'Time'
 importJSONfile = 'export.json'
 importPropertyFile = 'property-names.csv'
 debugLabels = false
-debugQualifiers = true
+debugQualifiers = false
 debugProperties = false
 outputJSON = true
 
@@ -415,7 +415,7 @@ data.each do |item|
 					end
 
 					if property=='P14'
-						p @qualAuth
+						#p @qualAuth
 						## ISSUE: this code assumes there is only one value per qualifier
 
 						#special data format output rules for P14 (associated name)
