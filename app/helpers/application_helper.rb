@@ -17,5 +17,13 @@ module ApplicationHelper
       link_to("Institutional Record", v, class: 'btn btn-secondary')
     end, ',')
   end  
-    
+
+  def link_with_copy document:, field:, value:, context:, config:
+    values = value.map do |v|
+      render partial: 'shared/link_with_icon',
+             locals: { document: document, field: field, value: v, context: context, config: config }
+    end
+
+    safe_join values, "\n"
+  end
 end
