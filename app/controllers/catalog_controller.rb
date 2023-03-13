@@ -293,8 +293,8 @@ class CatalogController < ApplicationController
 		config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_note
 
 		# TECHNICAL
-		config.add_show_field 'institutional_record_link', label: 'Institutional Record', accessor: :prop_record
-		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest'
+		config.add_show_field 'institutional_record_link', label: 'Institutional Record', helper_method: :link_with_copy
+		config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', helper_method: :link_with_copy
 
 		#config.add_show_field 'genre_display', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 		#config.add_show_field 'subject_display', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }

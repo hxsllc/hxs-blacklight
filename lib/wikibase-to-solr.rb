@@ -394,7 +394,15 @@ data.each do |item|
 						#P10 contains qualifiers P13, P15, and P17 (agr, role, authority)
 						qualPropertyId=='P13' ? @qualAGR = @qualValue: nil
 						qualPropertyId=='P15' ? @qualRole = @qualLabel: nil
-						qualPropertyId=='P17' ? @qualAuth.push(@qualLabel): nil ##there can be multiple P17s inside P10 qualifiers
+
+            ##there can be multiple P17s inside P10 qualifiers
+						if qualPropertyId === 'P17'
+              @qualAuth += @qualifiers[qualPropertyId].map do |qualifier|
+                data = returnDVifNotNil qualifier
+                id = returnIDifNotNil data
+                labels[id]
+              end
+            end
 
 						#P23 contains qualifiers P24, P25, P36, P37
 						qualPropertyId=='P24' ? @qualDate = @qualValue: nil
@@ -415,7 +423,6 @@ data.each do |item|
 					end
 
 					if property=='P14'
-						#p @qualAuth
 						## ISSUE: this code assumes there is only one value per qualifier
 
 						#special data format output rules for P14 (associated name)

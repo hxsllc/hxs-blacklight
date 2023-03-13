@@ -61,14 +61,17 @@
       "Antonius de Bozollo"
     ],
     "owner_display": [
-      "{\"PV\":\"Carlo Archinto of Milan (1669-1732); Adolph Sutro (1830-1898), mayor of San Francisco. A letter from George Moss (librarian of Sutro) addressed to Mrs. Morbio (presumably Mrs. Albert Morbio, Sutro's daughter), 23 May 1890, accompanies the manuscript.\",\"QL\":\"Carlo Archinto\",\"QU\":\"https://www.wikidata.org/wiki/Q665628\"}"
+      "{\"PV\":\"Carlo Archinto of Milan (1669-1732); Adolph Sutro (1830-1898), mayor of San Francisco. A letter from George Moss (librarian of Sutro) addressed to Mrs. Morbio (presumably Mrs. Albert Morbio, Sutro's daughter), 23 May 1890, accompanies the manuscript.\",\"QL\":\"Carlo Archinto\",\"QU\":\"https://www.wikidata.org/wiki/Q665628\"}",
+      "{\"PV\":\"Carlo Archinto of Milan (1669-1732); Adolph Sutro (1830-1898), mayor of San Francisco. A letter from George Moss (librarian of Sutro) addressed to Mrs. Morbio (presumably Mrs. Albert Morbio, Sutro's daughter), 23 May 1890, accompanies the manuscript.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q665628\"}"
     ],
     "owner_search": [
       "Carlo Archinto of Milan (1669-1732); Adolph Sutro (1830-1898), mayor of San Francisco. A letter from George Moss (librarian of Sutro) addressed to Mrs. Morbio (presumably Mrs. Albert Morbio, Sutro's daughter), 23 May 1890, accompanies the manuscript.",
-      "Carlo Archinto"
+      "Carlo Archinto",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Carlo Archinto"
+      "Carlo Archinto",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -206,14 +209,23 @@
       "John Halgren of Abbeville"
     ],
     "owner_display": [
-      "{\"PV\":\"The dean of Lu\\\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \\\"N. 175\\\" in ink on f. 1 and on the spine; \\\"386\\\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.\",\"QL\":\"Dean of Lukirch\",\"QU\":\"https://www.wikidata.org/wiki/Q116523957\"}"
+      "{\"PV\":\"The dean of Lu\\\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \\\"N. 175\\\" in ink on f. 1 and on the spine; \\\"386\\\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.\",\"QL\":\"Dean of Lukirch\",\"QU\":\"https://www.wikidata.org/wiki/Q116523957\"}",
+      "{\"PV\":\"The dean of Lu\\\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \\\"N. 175\\\" in ink on f. 1 and on the spine; \\\"386\\\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.\",\"QL\":\"Buxheim Charterhouse\",\"QU\":\"https://www.wikidata.org/wiki/Q116523957\"}",
+      "{\"PV\":\"The dean of Lu\\\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \\\"N. 175\\\" in ink on f. 1 and on the spine; \\\"386\\\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.\",\"QL\":\"Hugo Philipp Waldbott-Bassenheim\",\"QU\":\"https://www.wikidata.org/wiki/Q116523957\"}",
+      "{\"PV\":\"The dean of Lu\\\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \\\"N. 175\\\" in ink on f. 1 and on the spine; \\\"386\\\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q116523957\"}"
     ],
     "owner_search": [
       "The dean of Lu\"kirch; Carthusians of Buxheim (cf. note on f. i verso), with \"N. 175\" in ink on f. 1 and on the spine; \"386\" also on the spine; Hugo, Graf von Waldbott-Basenheim (Munich, 20 Sept. 1883, lot 2616); Adolph Sutro (1830-1898), mayor of S. F.",
-      "Dean of Lukirch"
+      "Dean of Lukirch",
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Dean of Lukirch"
+      "Dean of Lukirch",
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -361,14 +373,17 @@
       "Jachopo di Domenicho vinattiere de' Seghalorzi di Firenze"
     ],
     "owner_display": [
-      "{\"PV\":\"Inside front cover: Ex bibliotheca Com. Eq. Fabricii Orsini Rilli di Poppi. N. 263 in a Sotheby sale, ca. 1890 (according to De Ricci); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Fabrizio Rilli Orsini\",\"QU\":\"https://www.wikidata.org/wiki/Q87706284\"}"
+      "{\"PV\":\"Inside front cover: Ex bibliotheca Com. Eq. Fabricii Orsini Rilli di Poppi. N. 263 in a Sotheby sale, ca. 1890 (according to De Ricci); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Fabrizio Rilli Orsini\",\"QU\":\"https://www.wikidata.org/wiki/Q87706284\"}",
+      "{\"PV\":\"Inside front cover: Ex bibliotheca Com. Eq. Fabricii Orsini Rilli di Poppi. N. 263 in a Sotheby sale, ca. 1890 (according to De Ricci); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q87706284\"}"
     ],
     "owner_search": [
       "Inside front cover: Ex bibliotheca Com. Eq. Fabricii Orsini Rilli di Poppi. N. 263 in a Sotheby sale, ca. 1890 (according to De Ricci); Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Fabrizio Rilli Orsini"
+      "Fabrizio Rilli Orsini",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Fabrizio Rilli Orsini"
+      "Fabrizio Rilli Orsini",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Italian\",\"QL\":\"Italian\",\"QU\":\"https://www.wikidata.org/wiki/Q652\"}"
@@ -490,14 +505,20 @@
       "Antiphonary"
     ],
     "owner_display": [
-      "{\"PV\":\"On f. 121, rubric for St. John the Baptist \\\"patroni ordinis nostri et ecclesie huius\\\"; Carthusians of Buxheim; in the sale of Hugo, Graf von Waldbott-Bassenheim (Munich, 20 September 1883, lot 2533); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Buxheim Charterhouse\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}"
+      "{\"PV\":\"On f. 121, rubric for St. John the Baptist \\\"patroni ordinis nostri et ecclesie huius\\\"; Carthusians of Buxheim; in the sale of Hugo, Graf von Waldbott-Bassenheim (Munich, 20 September 1883, lot 2533); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Buxheim Charterhouse\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}",
+      "{\"PV\":\"On f. 121, rubric for St. John the Baptist \\\"patroni ordinis nostri et ecclesie huius\\\"; Carthusians of Buxheim; in the sale of Hugo, Graf von Waldbott-Bassenheim (Munich, 20 September 1883, lot 2533); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Hugo Philipp Waldbott-Bassenheim\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}",
+      "{\"PV\":\"On f. 121, rubric for St. John the Baptist \\\"patroni ordinis nostri et ecclesie huius\\\"; Carthusians of Buxheim; in the sale of Hugo, Graf von Waldbott-Bassenheim (Munich, 20 September 1883, lot 2533); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}"
     ],
     "owner_search": [
       "On f. 121, rubric for St. John the Baptist \"patroni ordinis nostri et ecclesie huius\"; Carthusians of Buxheim; in the sale of Hugo, Graf von Waldbott-Bassenheim (Munich, 20 September 1883, lot 2533); Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Buxheim Charterhouse"
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Buxheim Charterhouse"
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -736,14 +757,17 @@
       "Book of hours"
     ],
     "owner_display": [
-      "{\"PV\":\"Rosenthal, antiquarian bookdealer in Munich; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Jacques Rosenthal\",\"QU\":\"https://www.wikidata.org/wiki/Q114667678\"}"
+      "{\"PV\":\"Rosenthal, antiquarian bookdealer in Munich; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Jacques Rosenthal\",\"QU\":\"https://www.wikidata.org/wiki/Q114667678\"}",
+      "{\"PV\":\"Rosenthal, antiquarian bookdealer in Munich; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q114667678\"}"
     ],
     "owner_search": [
       "Rosenthal, antiquarian bookdealer in Munich; Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Jacques Rosenthal"
+      "Jacques Rosenthal",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Jacques Rosenthal"
+      "Jacques Rosenthal",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -857,14 +881,20 @@
       "Psalter"
     ],
     "owner_display": [
-      "{\"PV\":\"Carthusians of Buxheim; Hugo, Graf von Waldbott-Bassenhim (his sale, Munich, 20 September 1883, lot 2672); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Buxheim Charterhouse\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}"
+      "{\"PV\":\"Carthusians of Buxheim; Hugo, Graf von Waldbott-Bassenhim (his sale, Munich, 20 September 1883, lot 2672); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Buxheim Charterhouse\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}",
+      "{\"PV\":\"Carthusians of Buxheim; Hugo, Graf von Waldbott-Bassenhim (his sale, Munich, 20 September 1883, lot 2672); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Hugo Philipp Waldbott-Bassenheim\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}",
+      "{\"PV\":\"Carthusians of Buxheim; Hugo, Graf von Waldbott-Bassenhim (his sale, Munich, 20 September 1883, lot 2672); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q460224\"}"
     ],
     "owner_search": [
       "Carthusians of Buxheim; Hugo, Graf von Waldbott-Bassenhim (his sale, Munich, 20 September 1883, lot 2672); Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Buxheim Charterhouse"
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Buxheim Charterhouse"
+      "Buxheim Charterhouse",
+      "Hugo Philipp Waldbott-Bassenheim",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -1138,14 +1168,17 @@
       "Book of hours"
     ],
     "owner_display": [
-      "{\"PV\":\"On ff. 105v, 109v-141v, in margins, notes of the Floriani family, 1591-1702, in areas near Bologna (S. Martino in Argile, S. Lorenzo del Castello di Budrio, Dozza; Budrio); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Floriani family\",\"QU\":\"https://www.wikidata.org/wiki/Q116522686\"}"
+      "{\"PV\":\"On ff. 105v, 109v-141v, in margins, notes of the Floriani family, 1591-1702, in areas near Bologna (S. Martino in Argile, S. Lorenzo del Castello di Budrio, Dozza; Budrio); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Floriani family\",\"QU\":\"https://www.wikidata.org/wiki/Q116522686\"}",
+      "{\"PV\":\"On ff. 105v, 109v-141v, in margins, notes of the Floriani family, 1591-1702, in areas near Bologna (S. Martino in Argile, S. Lorenzo del Castello di Budrio, Dozza; Budrio); Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q116522686\"}"
     ],
     "owner_search": [
       "On ff. 105v, 109v-141v, in margins, notes of the Floriani family, 1591-1702, in areas near Bologna (S. Martino in Argile, S. Lorenzo del Castello di Budrio, Dozza; Budrio); Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Floriani family"
+      "Floriani family",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Floriani family"
+      "Floriani family",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin; Italian\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -1265,14 +1298,17 @@
       "History of France"
     ],
     "owner_display": [
-      "{\"PV\":\"On front pastedown, pressmark, \\\"a.37\\\"; bookplate of Victor Albert George Child-Villiers (1845-1915), Earl of Jersey, Osterley Park; clipping from Sotheby's, lot 56; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Victor Child Villiers, 7th Earl of Jersey\",\"QU\":\"https://www.wikidata.org/wiki/Q336737\"}"
+      "{\"PV\":\"On front pastedown, pressmark, \\\"a.37\\\"; bookplate of Victor Albert George Child-Villiers (1845-1915), Earl of Jersey, Osterley Park; clipping from Sotheby's, lot 56; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Victor Child Villiers, 7th Earl of Jersey\",\"QU\":\"https://www.wikidata.org/wiki/Q336737\"}",
+      "{\"PV\":\"On front pastedown, pressmark, \\\"a.37\\\"; bookplate of Victor Albert George Child-Villiers (1845-1915), Earl of Jersey, Osterley Park; clipping from Sotheby's, lot 56; Adolph Sutro (1830-1898), mayor of San Francisco.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q336737\"}"
     ],
     "owner_search": [
       "On front pastedown, pressmark, \"a.37\"; bookplate of Victor Albert George Child-Villiers (1845-1915), Earl of Jersey, Osterley Park; clipping from Sotheby's, lot 56; Adolph Sutro (1830-1898), mayor of San Francisco.",
-      "Victor Child Villiers, 7th Earl of Jersey"
+      "Victor Child Villiers, 7th Earl of Jersey",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "Victor Child Villiers, 7th Earl of Jersey"
+      "Victor Child Villiers, 7th Earl of Jersey",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"French\",\"QL\":\"French\",\"QU\":\"https://www.wikidata.org/wiki/Q150\"}"
@@ -1389,14 +1425,17 @@
       "Lease"
     ],
     "owner_display": [
-      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}",
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
     ],
     "owner_search": [
       "Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.",
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -1509,14 +1548,17 @@
       "Document"
     ],
     "owner_display": [
-      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}",
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
     ],
     "owner_search": [
       "Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.",
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -1630,14 +1672,17 @@
       "Document"
     ],
     "owner_display": [
-      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}",
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
     ],
     "owner_search": [
       "Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.",
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
@@ -1752,14 +1797,17 @@
       "Document"
     ],
     "owner_display": [
-      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"James Halliwell-Phillipps\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}",
+      "{\"PV\":\"Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.\",\"QL\":\"Adolph Sutro\",\"QU\":\"https://www.wikidata.org/wiki/Q321691\"}"
     ],
     "owner_search": [
       "Mr. James Orchard Halliwell-Phillips; Adolph Sutro (1830-1898), mayor of San Francisco; bought at Sotheby, Wilkinson & Hodge auction, 1-4 July 1889.",
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "owner_facet": [
-      "James Halliwell-Phillipps"
+      "James Halliwell-Phillipps",
+      "Adolph Sutro"
     ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
