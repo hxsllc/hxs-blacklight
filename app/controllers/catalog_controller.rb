@@ -114,8 +114,6 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
 	config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse:false, limit:4
-  config.add_facet_field 'images_facet', label: 'Has Images', limit:5
-  config.add_facet_field 'dated_facet', label: 'Dated', limit:5  
 	config.add_facet_field 'author_facet', label: 'Author', limit:5
 	config.add_facet_field 'title_facet', label: 'Title',limit:5
 	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
@@ -133,11 +131,12 @@ class CatalogController < ApplicationController
          segments: true,
          maxlength: 4
        }, collapse:false         
-	#config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha'
 	config.add_facet_field 'language_facet', label: 'Language', limit:5
 	config.add_facet_field 'material_facet', label: 'Material', limit:5
 	config.add_facet_field 'owner_facet', label: 'Former owners', limit:5
 	config.add_facet_field 'term_facet', label: 'Keywords', limit:5
+  config.add_facet_field 'images_facet', label: 'Has Images', limit:5
+  config.add_facet_field 'dated_facet', label: 'Dated', limit:5  
 
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     #config.add_facet_field 'language_ssim', label: 'Language', limit: true
