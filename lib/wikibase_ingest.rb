@@ -15,10 +15,10 @@ class WikibaseIngest
   # @param [String] path The relative path to the local instance of the repository relative to the app root directory.
   # @param [String] repository The public Git repository for the exported data.
   # @param [String] json_file The relative path to the exported json file relative to the repository root directory.
-  def initialize(path: DEFAULT_PATH, repository: DEFAULT_REPOSITORY, json_file: DEFAULT_JSON_FILE)
-    @path = path
-    @repository = repository
-    @json_file_path = json_file
+  def initialize(path: nil, repository: nil, json_file: nil)
+    @path = path || ENV.fetch('WIKIBASE_REPOSITORY_PATH', DEFAULT_PATH)
+    @repository = repository || ENV.fetch('WIKIBASE_REPOSITORY_URL', DEFAULT_REPOSITORY)
+    @json_file_path = json_file || ENV.fetch('WIKIBASE_EXPORT_JSON_FILE', DEFAULT_JSON_FILE)
   end
 
   # Gets the full path to the local git repository
