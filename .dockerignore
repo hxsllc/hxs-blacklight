@@ -13,3 +13,6 @@ config/master.key
 
 # Node modules
 node_modules/
+
+# DS Export
+/ds_exports
