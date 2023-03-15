@@ -4,11 +4,6 @@ require 'csv'
 require 'Date'
 require 'Time'
 
-##REFACTOR: Add filestream instead of puts
-##REFACTOR: Filenames into variables (output, input, etc.) for script config
-##REFACTOR: Remove @ (global variables)
-#COMPLETED: Nil checking (e.g. MDVN)
-
 # Wikibase JSON data structure
 #
 #  type=...
@@ -47,15 +42,16 @@ require 'Time'
 # => _facet (for displaying in sidebar facets, not tokenized)
 # => _link (for displaying as a hyperlink)
 # => _int (for dates)
-# => _meta (for data that is useful in Solr but not displayed or used in the interface)
+# => _meta (for plain text data)
 
 ## configuration
 
-@displayFieldIDs = [1,5,6,8,10,14,20,21,23,26,27,29,30,32,33]
-@searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,20,21,22,23,27,28,29,32]
-@facetFieldIDs = [5,10,11,14,20,21,23,25,26,27,31]
-@linkFieldIDs = [9,41]
-@intFieldIDs = [25,36,37]
+@displayFieldIDs = [1,5,6,8,10,14,18,21,23,26,27,29,30,32,33].freeze
+@searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,18,21,22,23,27,28,29,32].freeze
+@facetFieldIDs = [5,10,11,14,18,21,23,25,26,27,31].freeze
+@linkFieldIDs = [9,41].freeze
+@intFieldIDs = [25,36,37].freeze
+
 importJSONfile = 'export.json'
 importPropertyFile = 'property-names.csv'
 debugLabels = false
@@ -423,7 +419,6 @@ data.each do |item|
 					end
 
 					if property=='P14'
-						## ISSUE: this code assumes there is only one value per qualifier
 
 						#special data format output rules for P14 (associated name)
 						#P14 is the only property-qualifier that might contain AGR (P13)
@@ -466,6 +461,8 @@ data.each do |item|
 						# - P36 latest date (UTC format)
 
 						if debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
+
+						if property=='P23' then generateJSONforSolr @wikibaseid, "date_meta", @propValue end
 						createJSONforSolr(@wikibaseid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
             createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
 						createJSONforSolr(@wikibaseid, property, "_search", "", @qualLabel)
@@ -475,14 +472,33 @@ data.each do |item|
 						createJSONforSolr(@wikibaseid, 'P25', "_int", "", Time.parse(@qualCentury).year)
 						createJSONforSolr(@wikibaseid, 'P37', "_int", "", Time.parse(@qualEarliest).year)
 						createJSONforSolr(@wikibaseid, 'P36', "_int", "", Time.parse(@qualLatest).year)
-						createJSONforSolr(@wikibaseid, 'P25', "_facet", "", Time.parse(@qualCentury).year.to_s)
+
+						centuryDate = Time.parse(@qualCentury).year.to_s
+						if centuryDate=='101' then centuryName = "(0#{centuryDate}) 1st century" end 
+						if centuryDate=='201' then centuryName = "(0#{centuryDate}) 2nd century" end 
+						if centuryDate=='301' then centuryName = "(0#{centuryDate}) 3rd century" end 
+						if centuryDate=='401' then centuryName = "(0#{centuryDate}) 4th century" end 
+						if centuryDate=='501' then centuryName = "(0#{centuryDate}) 5th century" end 
+						if centuryDate=='601' then centuryName = "(0#{centuryDate}) 6th century" end 
+						if centuryDate=='701' then centuryName = "(0#{centuryDate}) 7th century" end 
+						if centuryDate=='801' then centuryName = "(0#{centuryDate}) 8th century" end 
+						if centuryDate=='901' then centuryName = "(0#{centuryDate}) 9th century" end 
+						if centuryDate=='1001' then centuryName = "(#{centuryDate}) 10th century" end 
+						if centuryDate=='1101' then centuryName = "(#{centuryDate}) 11th century" end 
+						if centuryDate=='1201' then centuryName = "(#{centuryDate}) 12th century" end 
+						if centuryDate=='1301' then centuryName = "(#{centuryDate}) 13th century" end 
+						if centuryDate=='1401' then centuryName = "(#{centuryDate}) 14th century" end 
+						if centuryDate=='1501' then centuryName = "(#{centuryDate}) 15th century" end 
+						if centuryDate=='1601' then centuryName = "(#{centuryDate}) 16th century" end 
+						if centuryDate=='1701' then centuryName = "(#{centuryDate}) 17th century" end 							
+						createJSONforSolr(@wikibaseid, 'P25', "_facet", "", centuryName)
 					elsif property=='P30'
 						#if @debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 						if debugProperties then puts "P31 material_facet #{@qualMaterial} #{@qualLabel}" end
 						createJSONforSolr(@wikibaseid, 'P31', "_facet", "", @qualLabel)
           else
 						if debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
-
+						if debugProperties then puts "#{@wikibaseid} #{property} #{@qualLabel}" end
             createJSONforSolr(@wikibaseid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
 						createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
 						createJSONforSolr(@wikibaseid, property, "_search", "", @qualLabel)
@@ -500,6 +516,7 @@ data.each do |item|
 					createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
 					createJSONforSolr(@wikibaseid, property, "_facet", "", @propValue)
 					createJSONforSolr(@wikibaseid, property, "_link", "", @propValue)
+
 					#end if @qualifiers
         end
 

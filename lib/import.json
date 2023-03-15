@@ -82,6 +82,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -102,7 +105,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
@@ -236,6 +239,10 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(med), 1440-1460",
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(med), 1440-1460\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}",
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -263,8 +270,8 @@
       1399
     ],
     "century_facet": [
-      "1401",
-      "1301"
+      "(1401) 14th century",
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -394,6 +401,9 @@
     "language_facet": [
       "Italian"
     ],
+    "date_meta": [
+      "s. XIV(ex), 1385-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV(ex), 1385-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -414,7 +424,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
@@ -529,6 +539,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -549,7 +562,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -654,6 +667,9 @@
     "language_facet": [
       "Italian"
     ],
+    "date_meta": [
+      "s. XVI, 1500-1599"
+    ],
     "date_display": [
       "{\"PV\":\"s. XVI, 1500-1599\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
     ],
@@ -674,7 +690,7 @@
       1599
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -778,6 +794,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -798,7 +817,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -905,6 +924,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -925,7 +947,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1051,6 +1073,10 @@
       "Latin",
       "Italian"
     ],
+    "date_meta": [
+      "s. XV(2), 1450-1499",
+      "s. XVII, 1600-1699"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2), 1450-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}",
       "{\"PV\":\"s. XVII, 1600-1699\",\"QL\":\"seventeenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404511\"}"
@@ -1078,8 +1104,8 @@
       1699
     ],
     "century_facet": [
-      "1401",
-      "1601"
+      "(1401) 14th century",
+      "(1601) 16th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1190,6 +1216,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1210,7 +1239,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1319,6 +1348,9 @@
     "language_facet": [
       "French"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1339,7 +1371,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1446,6 +1478,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV(ex), 1385-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV(ex), 1385-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -1466,7 +1501,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1569,6 +1604,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(1/4), 1400-1425"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(1/4), 1400-1425\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1589,7 +1627,7 @@
       1425
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1693,6 +1731,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1713,7 +1754,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1818,6 +1859,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1838,7 +1882,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1941,6 +1985,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -1961,7 +2008,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2062,6 +2109,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2082,7 +2132,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2182,6 +2232,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2202,7 +2255,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2292,6 +2345,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2312,7 +2368,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2398,6 +2454,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2418,7 +2477,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2504,6 +2563,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2524,7 +2586,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2610,6 +2672,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2630,7 +2695,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2716,6 +2781,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(ex), 1485-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(ex), 1485-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2736,7 +2804,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2831,6 +2899,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(4/4), 1475-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(4/4), 1475-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2851,7 +2922,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2946,6 +3017,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(4/4), 1475-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(4/4), 1475-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -2966,7 +3040,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3061,6 +3135,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3081,7 +3158,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3176,6 +3253,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3196,7 +3276,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3291,6 +3371,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(in), 1400-1415"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(in), 1400-1415\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3311,7 +3394,7 @@
       1415
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3408,6 +3491,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(1/4), 1400-1425"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(1/4), 1400-1425\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3428,7 +3514,7 @@
       1425
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3514,6 +3600,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3534,7 +3623,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3629,6 +3718,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3649,7 +3741,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3735,6 +3827,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3755,7 +3850,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3850,6 +3945,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3870,7 +3968,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3958,6 +4056,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -3978,7 +4079,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4064,6 +4165,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(1/4), 1400-1425"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(1/4), 1400-1425\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -4084,7 +4188,7 @@
       1425
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4183,6 +4287,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -4203,7 +4310,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4283,6 +4390,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2/4), 1425-1450"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2/4), 1425-1450\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -4303,7 +4413,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4391,6 +4501,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(in), 1400-1415"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(in), 1400-1415\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -4411,7 +4524,7 @@
       1415
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4521,6 +4634,10 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(2), 1450-1499",
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(2), 1450-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}",
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -4544,7 +4661,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4663,6 +4780,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV(3/4), 1450-1475"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV(3/4), 1450-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -4683,7 +4803,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4800,6 +4920,35 @@
       "Sir James Alleyn",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, English (Middle)--15th century\",\"QL\":\"Manuscripts, English (Middle)\",\"QU\":\"http://id.worldcat.org/fast/1008329\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Commentaries",
+      "commentaries",
+      "Tables (documents)",
+      "tables (documents)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Renaissance",
+      "Manuscripts, English (Middle)--15th century",
+      "Manuscripts, English (Middle)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "commentaries",
+      "tables (documents)",
+      "treatises",
+      "Manuscripts, Renaissance",
+      "Manuscripts, English (Middle)"
+    ],
     "language_display": [
       "{\"PV\":\"Middle English\",\"QL\":\"Middle English\",\"QU\":\"https://www.wikidata.org/wiki/Q36395\"}"
     ],
@@ -4808,6 +4957,9 @@
     ],
     "language_facet": [
       "Middle English"
+    ],
+    "date_meta": [
+      "1496"
     ],
     "date_display": [
       "{\"PV\":\"1496\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -4829,7 +4981,7 @@
       1496
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 18 leaves : paper ; 190 x 140 (170 x 112) mm bound to 197 x 150 mm.\"}"
@@ -4924,6 +5076,37 @@
       "Antoine de Court",
       "Jehan de Gaignières"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Poems\",\"QL\":\"poems\",\"QU\":\"http://vocab.getty.edu/aat/300026451\"}",
+      "{\"PV\":\"Manuscripts, French\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Diagrams",
+      "diagrams",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Poems",
+      "poems",
+      "Manuscripts, French",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "diagrams",
+      "illuminations (paintings)",
+      "poems",
+      "Manuscripts, French",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Middle French\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -4932,6 +5115,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "1400"
     ],
     "date_display": [
       "{\"PV\":\"1400\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -4953,7 +5139,7 @@
       1400
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 132 leaves : parchment ; 210 x 153 (144 x 80) mm bound to 220 x 160 mm.\"}"
@@ -5060,6 +5246,26 @@
       "Harry Creswick",
       "Thomas Phillipps"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Encyclopedias\",\"QL\":\"encyclopedias\",\"QU\":\"http://vocab.getty.edu/aat/300129439\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Chronicles\",\"QL\":\"chronicles\",\"QU\":\"http://vocab.getty.edu/aat/300026361\"}"
+    ],
+    "term_search": [
+      "Manuscripts, Medieval",
+      "Encyclopedias",
+      "encyclopedias",
+      "Manuscripts, Latin",
+      "Chronicles",
+      "chronicles"
+    ],
+    "term_facet": [
+      "Manuscripts, Medieval",
+      "encyclopedias",
+      "Manuscripts, Latin",
+      "chronicles"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -5068,6 +5274,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1400"
     ],
     "date_display": [
       "{\"PV\":\"1400\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -5089,7 +5298,7 @@
       1400
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 176 leaves : parchment, illustrations ; 370 x 255 (254 x 155) mm bound to 381 x 275 mm.\"}"
@@ -5162,6 +5371,33 @@
     "title_facet": [
       "Commentaries on Aristotle and Porphyry"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Manuscripts, Hebrew\",\"QL\":\"Manuscripts, Hebrew\",\"QU\":\"http://id.worldcat.org/fast/1008360\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Diagrams",
+      "diagrams",
+      "Manuscripts, Hebrew",
+      "Manuscripts, Medieval",
+      "Commentaries",
+      "commentaries"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "diagrams",
+      "Manuscripts, Hebrew",
+      "Manuscripts, Medieval",
+      "commentaries"
+    ],
     "language_display": [
       "{\"PV\":\"Hebrew\",\"QL\":\"Hebrew\",\"QU\":\"https://www.wikidata.org/wiki/Q9288\"}"
     ],
@@ -5170,6 +5406,9 @@
     ],
     "language_facet": [
       "Hebrew"
+    ],
+    "date_meta": [
+      "[between 1450 and 1499]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1450 and 1499]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -5191,7 +5430,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Provence or Spain],\",\"QL\":\"Provence\",\"QU\":\"http://vocab.getty.edu/tgn/7012209\"}"
@@ -5304,6 +5543,30 @@
       "John D. Stanitz",
       "Paul Grinke"
     ],
+    "term_display": [
+      "{\"PV\":\"Legal documents\",\"QL\":\"legal documents\",\"QU\":\"http://vocab.getty.edu/aat/300027590\"}",
+      "{\"PV\":\"Deeds\",\"QL\":\"deeds\",\"QU\":\"http://vocab.getty.edu/aat/300027249\"}",
+      "{\"PV\":\"Seals (artifacts)\",\"QL\":\"seals (artifacts)\",\"QU\":\"http://vocab.getty.edu/aat/300028877\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Legal documents",
+      "legal documents",
+      "Deeds",
+      "deeds",
+      "Seals (artifacts)",
+      "seals (artifacts)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "legal documents",
+      "deeds",
+      "seals (artifacts)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"In Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -5313,6 +5576,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "ca. 1201-1205."
     ],
     "date_display": [
       "{\"PV\":\"ca. 1201-1205.\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -5334,7 +5600,7 @@
       1205
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 111 x 167 mm.\"}"
@@ -5437,6 +5703,26 @@
       "Irvine Masson",
       "Thomas Phillipps"
     ],
+    "term_display": [
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Excerpts\",\"QL\":\"excerpts\",\"QU\":\"http://vocab.getty.edu/aat/300026939\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Excerpts",
+      "excerpts",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "fragments (object portions)",
+      "excerpts",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -5445,6 +5731,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "ca. 1400."
     ],
     "date_display": [
       "{\"PV\":\"ca. 1400.\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -5466,7 +5755,7 @@
       1400
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 368 x 262 mm.\"}"
@@ -5562,6 +5851,40 @@
       "John D. Stanitz",
       "Hagop Kevorkian Fund"
     ],
+    "term_display": [
+      "{\"PV\":\"Encyclopedias\",\"QL\":\"encyclopedias\",\"QU\":\"http://vocab.getty.edu/aat/300129439\"}",
+      "{\"PV\":\"Illuminations (painting)\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Manuscripts, Persian\",\"QL\":\"Manuscripts, Persian\",\"QU\":\"http://id.worldcat.org/fast/1008462\"}",
+      "{\"PV\":\"Manuscripts, 14th century\",\"QL\":\"Manuscripts\",\"QU\":\"http://id.worldcat.org/fast/1424060\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Miniatures (paintings)\",\"QL\":\"miniatures (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300033936\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}"
+    ],
+    "term_search": [
+      "Encyclopedias",
+      "encyclopedias",
+      "Illuminations (painting)",
+      "illuminations (paintings)",
+      "Manuscripts, Persian",
+      "Manuscripts, 14th century",
+      "Manuscripts",
+      "Manuscripts, Medieval",
+      "Miniatures (paintings)",
+      "miniatures (paintings)",
+      "Illuminations",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)"
+    ],
+    "term_facet": [
+      "encyclopedias",
+      "illuminations (paintings)",
+      "Manuscripts, Persian",
+      "Manuscripts",
+      "Manuscripts, Medieval",
+      "miniatures (paintings)",
+      "codices (bound manuscripts)"
+    ],
     "language_display": [
       "{\"PV\":\"Persian\",\"QL\":\"Persian\",\"QU\":\"https://www.wikidata.org/wiki/Q9168\"}"
     ],
@@ -5570,6 +5893,9 @@
     ],
     "language_facet": [
       "Persian"
+    ],
+    "date_meta": [
+      "[between 1300 and 1399?]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1300 and 1399?]\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -5591,7 +5917,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "place_display": [
       "{\"PV\":\"[Persia?],\",\"QL\":\"Persia\",\"QU\":\"http://vocab.getty.edu/tgn/7024079\"}"
@@ -5682,6 +6008,30 @@
     "author_facet": [
       "Johannes de Sacrobosco"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin",
+      "Diagrams",
+      "diagrams"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "treatises",
+      "Manuscripts, Latin",
+      "diagrams"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -5690,6 +6040,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1225 and 1275]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1225 and 1275]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -5711,7 +6064,7 @@
       1275
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -5792,6 +6145,33 @@
     "title_facet": [
       "Recueil de diverses recettes médécinales"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Prescriptions\",\"QL\":\"prescriptions\",\"QU\":\"http://vocab.getty.edu/aat/300027231\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, French\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Recipes\",\"QL\":\"recipes\",\"QU\":\"http://vocab.getty.edu/aat/300027043\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Prescriptions",
+      "prescriptions",
+      "Manuscripts, Renaissance",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "Recipes",
+      "recipes"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "prescriptions",
+      "Manuscripts, Renaissance",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "recipes"
+    ],
     "language_display": [
       "{\"PV\":\"Middle French, with some sections in Latin (f. 77r-81v, 85v-87r, 93r-98r, 137v, 141r)\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -5801,6 +6181,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "[between 1475 and 1490]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1475 and 1490]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -5822,7 +6205,7 @@
       1490
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[France],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -5927,6 +6310,39 @@
       "David McRoberts",
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Specimens\",\"QL\":\"Specimens\",\"QU\":\"http://id.worldcat.org/fast/1423861\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Letters patent\",\"QL\":\"letters patent\",\"QU\":\"http://vocab.getty.edu/aat/300027820\"}",
+      "{\"PV\":\"Manuscripts, Spanish\",\"QL\":\"Manuscripts, Spanish\",\"QU\":\"http://id.worldcat.org/fast/1008500\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Portraits\",\"QL\":\"Portraits\",\"QU\":\"http://id.worldcat.org/fast/1423831\"}",
+      "{\"PV\":\"Art\",\"QL\":\"Art\",\"QU\":\"http://id.worldcat.org/fast/815177\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Specimens",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Letters patent",
+      "letters patent",
+      "Manuscripts, Spanish",
+      "Manuscripts, Renaissance",
+      "Portraits",
+      "Art"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Specimens",
+      "illuminations (paintings)",
+      "letters patent",
+      "Manuscripts, Spanish",
+      "Manuscripts, Renaissance",
+      "Portraits",
+      "Art"
+    ],
     "language_display": [
       "{\"PV\":\"Spanish\",\"QL\":\"Spanish\",\"QU\":\"https://www.wikidata.org/wiki/Q1321\"}"
     ],
@@ -5935,6 +6351,9 @@
     ],
     "language_facet": [
       "Spanish"
+    ],
+    "date_meta": [
+      "1578"
     ],
     "date_display": [
       "{\"PV\":\"1578\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -5956,7 +6375,7 @@
       1578
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 67 leaves : parchment ; 310 x 207 (234 x 130) mm bound to 321 x 226 mm.\"}"
@@ -6052,6 +6471,40 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, Persian\",\"QL\":\"Manuscripts, Persian\",\"QU\":\"http://id.worldcat.org/fast/1008462\"}",
+      "{\"PV\":\"Pictorial works\",\"QL\":\"Pictorial works\",\"QU\":\"http://id.worldcat.org/fast/1423874\"}",
+      "{\"PV\":\"Illustrated works\",\"QL\":\"Illustrated works\",\"QU\":\"http://id.worldcat.org/fast/1423873\"}",
+      "{\"PV\":\"Watercolors (paintings)\",\"QL\":\"watercolors (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300078925\"}",
+      "{\"PV\":\"Herbals (reference sources)\",\"QL\":\"herbals (reference sources)\",\"QU\":\"http://vocab.getty.edu/aat/300185352\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, 16th century\",\"QL\":\"Manuscripts\",\"QU\":\"http://id.worldcat.org/fast/1424060\"}"
+    ],
+    "term_search": [
+      "Manuscripts, Persian",
+      "Pictorial works",
+      "Illustrated works",
+      "Watercolors (paintings)",
+      "watercolors (paintings)",
+      "Herbals (reference sources)",
+      "herbals (reference sources)",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, 16th century",
+      "Manuscripts"
+    ],
+    "term_facet": [
+      "Manuscripts, Persian",
+      "Pictorial works",
+      "Illustrated works",
+      "watercolors (paintings)",
+      "herbals (reference sources)",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts"
+    ],
     "language_display": [
       "{\"PV\":\"Persian\",\"QL\":\"Persian\",\"QU\":\"https://www.wikidata.org/wiki/Q9168\"}"
     ],
@@ -6060,6 +6513,9 @@
     ],
     "language_facet": [
       "Persian"
+    ],
+    "date_meta": [
+      "A.H. 1004 (1595) or 1054 (1645)"
     ],
     "date_display": [
       "{\"PV\":\"A.H. 1004 (1595) or 1054 (1645)\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -6081,7 +6537,7 @@
       1645
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "place_display": [
       "{\"PV\":\"[Deccan, India],\",\"QL\":\"Deccan\",\"QU\":\"http://vocab.getty.edu/tgn/7001693\"}"
@@ -6175,6 +6631,22 @@
     "author_facet": [
       "Aristotle"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6183,6 +6655,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[1275-1299?]"
     ],
     "date_display": [
       "{\"PV\":\"[1275-1299?]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -6204,7 +6679,7 @@
       1299
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -6295,6 +6770,39 @@
     "scribe_facet": [
       "Theodoric Ungelter"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin--16th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Annotations\",\"QL\":\"annotations\",\"QU\":\"http://vocab.getty.edu/aat/300026100\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Commentaries",
+      "commentaries",
+      "Diagrams",
+      "diagrams",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin--16th century",
+      "Manuscripts, Latin",
+      "Annotations",
+      "annotations"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "commentaries",
+      "diagrams",
+      "treatises",
+      "Manuscripts, Latin",
+      "annotations"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6303,6 +6811,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1510"
     ],
     "date_display": [
       "{\"PV\":\"1510\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -6324,7 +6835,7 @@
       1510
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 206 leaves : paper, color illustrations ; 270 x 200 (204 x 115) mm bound to 280 x 215 mm.\"}"
@@ -6406,6 +6917,41 @@
     "author_facet": [
       "John XXI"
     ],
+    "term_display": [
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Drawings (visual works)\",\"QL\":\"drawings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033973\"}",
+      "{\"PV\":\"Prescriptions\",\"QL\":\"prescriptions\",\"QU\":\"http://vocab.getty.edu/aat/300027231\"}",
+      "{\"PV\":\"Recipes\",\"QL\":\"recipes\",\"QU\":\"http://vocab.getty.edu/aat/300027043\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Italian\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Diagrams",
+      "diagrams",
+      "Codices",
+      "codices (bound manuscripts)",
+      "Drawings (visual works)",
+      "drawings (visual works)",
+      "Prescriptions",
+      "prescriptions",
+      "Recipes",
+      "recipes",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "diagrams",
+      "codices (bound manuscripts)",
+      "drawings (visual works)",
+      "prescriptions",
+      "recipes",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin, with one section (f. 267r-272r) and some recipes, notes, and names in Italian\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6415,6 +6961,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[1450-1499?]"
     ],
     "date_display": [
       "{\"PV\":\"[1450-1499?]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -6436,7 +6985,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -6546,6 +7095,59 @@
       "Helmut Beck",
       "Fleury Abbey"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin--11th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Latin--9th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Illuminations (visual works)\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Poems\",\"QL\":\"poems\",\"QU\":\"http://vocab.getty.edu/aat/300026451\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Criticism, interpretation, etc\",\"QL\":\"Criticism, interpretation, etc.\",\"QU\":\"http://id.worldcat.org/fast/1411635\"}",
+      "{\"PV\":\"Early works\",\"QL\":\"Early works\",\"QU\":\"http://id.worldcat.org/fast/1411636\"}",
+      "{\"PV\":\"Specimens\",\"QL\":\"Specimens\",\"QU\":\"http://id.worldcat.org/fast/1423861\"}",
+      "{\"PV\":\"Translations (documents)\",\"QL\":\"translations (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027389\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}"
+    ],
+    "term_search": [
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin--11th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Latin--9th century",
+      "Codices",
+      "codices (bound manuscripts)",
+      "Commentaries",
+      "commentaries",
+      "Illuminations (visual works)",
+      "illuminations (paintings)",
+      "Poems",
+      "poems",
+      "Treatises",
+      "treatises",
+      "Criticism, interpretation, etc",
+      "Criticism, interpretation, etc.",
+      "Early works",
+      "Specimens",
+      "Translations (documents)",
+      "translations (documents)",
+      "Diagrams",
+      "diagrams"
+    ],
+    "term_facet": [
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "codices (bound manuscripts)",
+      "commentaries",
+      "illuminations (paintings)",
+      "poems",
+      "treatises",
+      "Criticism, interpretation, etc.",
+      "Early works",
+      "Specimens",
+      "translations (documents)",
+      "diagrams"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6554,6 +7156,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "850"
     ],
     "date_display": [
       "{\"PV\":\"850\",\"QL\":\"ninth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404501\"}"
@@ -6575,7 +7180,7 @@
       850
     ],
     "century_facet": [
-      "801"
+      "(801) 8th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 64 leaves : parchment ; 204-206 x 172-174 (136-148 x 100-128) mm bound to 219 x 190 mm.\"}"
@@ -6666,6 +7271,39 @@
     "artist_facet": [
       "Gioacchino di Giovanni"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"illuminations (visual works)\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Manuals (instructional materials)\",\"QL\":\"manuals (instructional materials)\",\"QU\":\"http://vocab.getty.edu/aat/300026395\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin--15th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Italian--15th century\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "illuminations (visual works)",
+      "illuminations (paintings)",
+      "Manuals (instructional materials)",
+      "manuals (instructional materials)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian--15th century",
+      "Manuscripts, Italian",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "illuminations (paintings)",
+      "manuals (instructional materials)",
+      "treatises",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Latin (f. 1r-5r) and Italian with rubrics in Latin (f. 5v-20r)\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6675,6 +7313,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1455 and 1458]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1455 and 1458]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -6696,7 +7337,7 @@
       1458
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Rome?, Italy],\",\"QL\":\"Rome\",\"QU\":\"http://vocab.getty.edu/tgn/7000874\"}"
@@ -6791,6 +7432,26 @@
       "Giannalisa Feltrinelli",
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Laws (documents)\",\"QL\":\"laws (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027894\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "Laws (documents)",
+      "laws (documents)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "laws (documents)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -6799,6 +7460,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1346"
     ],
     "date_display": [
       "{\"PV\":\"1346\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -6820,7 +7484,7 @@
       1346
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 28 leaves : paper ; 297 x 208 (221 x 105) mm bound to 298 x 212 mm.\"}"
@@ -6913,6 +7577,43 @@
       "Thomas Phillipps",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, European\",\"QL\":\"Manuscripts, European\",\"QU\":\"http://id.worldcat.org/fast/1008335\"}",
+      "{\"PV\":\"Accounts\",\"QL\":\"accounts\",\"QU\":\"http://vocab.getty.edu/aat/300145802\"}",
+      "{\"PV\":\"Maps (documents)\",\"QL\":\"maps (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300028094\"}",
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\": \"Finding tabs\"}",
+      "{\"PV\": \"Hybrid books\"}",
+      "{\"PV\":\"Manuscripts, Italian\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Reports\",\"QL\":\"reports\",\"QU\":\"http://vocab.getty.edu/aat/300027267\"}"
+    ],
+    "term_search": [
+      "Manuscripts, European",
+      "Accounts",
+      "accounts",
+      "Maps (documents)",
+      "maps (documents)",
+      "Codices",
+      "codices (bound manuscripts)",
+      "Finding tabs",
+      "Hybrid books",
+      "Manuscripts, Italian",
+      "Manuscripts, Renaissance",
+      "Reports",
+      "reports"
+    ],
+    "term_facet": [
+      "Manuscripts, European",
+      "accounts",
+      "maps (documents)",
+      "codices (bound manuscripts)",
+      "Finding tabs",
+      "Hybrid books",
+      "Manuscripts, Italian",
+      "Manuscripts, Renaissance",
+      "reports"
+    ],
     "language_display": [
       "{\"PV\":\"Italian and Latin\",\"QL\":\"Italian\",\"QU\":\"https://www.wikidata.org/wiki/Q652\"}"
     ],
@@ -6922,6 +7623,9 @@
     ],
     "language_facet": [
       "Italian"
+    ],
+    "date_meta": [
+      "[1586-1760?]"
     ],
     "date_display": [
       "{\"PV\":\"[1586-1760?]\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -6943,7 +7647,7 @@
       1760
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -7048,6 +7752,31 @@
       "John D. Stanitz",
       "Sir James Alleyn"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuals (instructional materials)\",\"QL\":\"manuals (instructional materials)\",\"QU\":\"http://vocab.getty.edu/aat/300026395\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, English--16th century\",\"QL\":\"Manuscripts, English\",\"QU\":\"http://id.worldcat.org/fast/1008324\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuals (instructional materials)",
+      "manuals (instructional materials)",
+      "Tables (documents)",
+      "tables (documents)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, English--16th century",
+      "Manuscripts, English"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "manuals (instructional materials)",
+      "tables (documents)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, English"
+    ],
     "language_display": [
       "{\"PV\":\"Middle English\",\"QL\":\"Middle English\",\"QU\":\"https://www.wikidata.org/wiki/Q36395\"}"
     ],
@@ -7056,6 +7785,9 @@
     ],
     "language_facet": [
       "Middle English"
+    ],
+    "date_meta": [
+      "1540"
     ],
     "date_display": [
       "{\"PV\":\"1540\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -7077,7 +7809,7 @@
       1540
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 20 leaves : paper ; 188 x 142 (146-156 x 107) mm bound to 196 x 152 mm.\"}"
@@ -7173,6 +7905,22 @@
     "owner_facet": [
       "Pierre Gorman"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -7181,6 +7929,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1250 and 1275]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1250 and 1275]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -7202,7 +7953,7 @@
       1275
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[France or Flanders],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -7293,6 +8044,30 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Deeds\",\"QL\":\"deeds\",\"QU\":\"http://vocab.getty.edu/aat/300027249\"}",
+      "{\"PV\":\"Indentures\",\"QL\":\"indentures\",\"QU\":\"http://vocab.getty.edu/aat/300027753\"}",
+      "{\"PV\":\"Legal documents\",\"QL\":\"legal documents\",\"QU\":\"http://vocab.getty.edu/aat/300027590\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Deeds",
+      "deeds",
+      "Indentures",
+      "indentures",
+      "Legal documents",
+      "legal documents",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "deeds",
+      "indentures",
+      "legal documents",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"In Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -7302,6 +8077,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1358."
     ],
     "date_display": [
       "{\"PV\":\"1358.\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -7323,7 +8101,7 @@
       1358
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 170 x 245 mm.\"}"
@@ -7400,6 +8178,29 @@
       "Ulrich Fugger",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Anthologies\",\"QL\":\"anthologies\",\"QU\":\"http://vocab.getty.edu/aat/300026037\"}",
+      "{\"PV\":\"Manuscripts, German\",\"QL\":\"Manuscripts, German\",\"QU\":\"http://id.worldcat.org/fast/1008346\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Anthologies",
+      "anthologies",
+      "Manuscripts, German",
+      "Manuscripts, Medieval",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "anthologies",
+      "Manuscripts, German",
+      "Manuscripts, Medieval",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Middle High German, with some Latin\",\"QL\":\"Middle High German\",\"QU\":\"https://www.wikidata.org/wiki/Q837985\"}"
     ],
@@ -7409,6 +8210,9 @@
     ],
     "language_facet": [
       "Middle High German"
+    ],
+    "date_meta": [
+      "[between 1450 and 1499]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1450 and 1499]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -7430,7 +8234,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Germany],\",\"QL\":\"Germany\",\"QU\":\"http://vocab.getty.edu/tgn/7000084\"}"
@@ -7531,6 +8335,36 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Specimens\",\"QL\":\"Specimens\",\"QU\":\"http://id.worldcat.org/fast/1423861\"}",
+      "{\"PV\":\"Letters patent\",\"QL\":\"letters patent\",\"QU\":\"http://vocab.getty.edu/aat/300027820\"}",
+      "{\"PV\":\"Manuscripts, Spanish\",\"QL\":\"Manuscripts, Spanish\",\"QU\":\"http://id.worldcat.org/fast/1008500\"}",
+      "{\"PV\":\"Art\",\"QL\":\"Art\",\"QU\":\"http://id.worldcat.org/fast/815177\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Illuminations",
+      "illuminations (paintings)",
+      "Codices",
+      "codices (bound manuscripts)",
+      "Specimens",
+      "Letters patent",
+      "letters patent",
+      "Manuscripts, Spanish",
+      "Art",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "illuminations (paintings)",
+      "codices (bound manuscripts)",
+      "Specimens",
+      "letters patent",
+      "Manuscripts, Spanish",
+      "Art",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Spanish\",\"QL\":\"Spanish\",\"QU\":\"https://www.wikidata.org/wiki/Q1321\"}"
     ],
@@ -7539,6 +8373,9 @@
     ],
     "language_facet": [
       "Spanish"
+    ],
+    "date_meta": [
+      "1553"
     ],
     "date_display": [
       "{\"PV\":\"1553\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -7560,7 +8397,7 @@
       1553
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 38 leaves : parchment ; 334 x 216 (220 x 135) mm bound to 334 x 230 mm.\"}"
@@ -7662,6 +8499,31 @@
       "Robert Brodhead Honeyman",
       "Bergendal Collection"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Illuminations (painting)\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Manuscripts, Latin--14th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Commentaries",
+      "commentaries",
+      "Illuminations (painting)",
+      "illuminations (paintings)",
+      "Manuscripts, Latin--14th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "commentaries",
+      "illuminations (paintings)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -7670,6 +8532,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1349"
     ],
     "date_display": [
       "{\"PV\":\"1349\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -7691,7 +8556,7 @@
       1349
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 94 leaves : parchment ; 320 x 225 (242 x 170) mm bound to 325 x 235 mm.\"}"
@@ -7790,6 +8655,33 @@
       "Lionel Tollemache, 4th Earl of Dysart",
       "Bentley Lyonel John Tollemache, 3rd Baron Tollemache"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Art\",\"QL\":\"Art\",\"QU\":\"http://id.worldcat.org/fast/815177\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Treatises",
+      "treatises",
+      "Art",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "illuminations (paintings)",
+      "treatises",
+      "Art",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -7798,6 +8690,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1225 and 1275]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1225 and 1275]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -7819,7 +8714,7 @@
       1275
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Paris],\",\"QL\":\"Paris\",\"QU\":\"http://vocab.getty.edu/tgn/7008038\"}"
@@ -7923,6 +8818,22 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "fragments (object portions)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"In Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -7932,6 +8843,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "circa 1300."
     ],
     "date_display": [
       "{\"PV\":\"circa 1300.\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -7953,7 +8867,7 @@
       1300
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 316 x 162 (233 x 133) mm.\"}"
@@ -8026,6 +8940,26 @@
     "owner_facet": [
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Accounts\",\"QL\":\"accounts\",\"QU\":\"http://vocab.getty.edu/aat/300145802\"}",
+      "{\"PV\":\"Manuscripts, French\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Accounts",
+      "accounts",
+      "Manuscripts, French",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "fragments (object portions)",
+      "accounts",
+      "Manuscripts, French",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Middle French\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -8034,6 +8968,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "1380."
     ],
     "date_display": [
       "{\"PV\":\"1380.\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -8055,7 +8992,7 @@
       1380
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 430 x 298 mm.\"}"
@@ -8140,6 +9077,33 @@
     "author_facet": [
       "Giovanni Boccaccio"
     ],
+    "term_display": [
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Translations (documents)\",\"QL\":\"translations (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027389\"}",
+      "{\"PV\":\"Manuscripts, French\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Translations (documents)",
+      "translations (documents)",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "fragments (object portions)",
+      "illuminations (paintings)",
+      "translations (documents)",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"In Middle French\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -8149,6 +9113,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "1425-1475"
     ],
     "date_display": [
       "{\"PV\":\"1425-1475\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -8170,7 +9137,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 leaf : parchment ; 330 x 296 mm.\"}"
@@ -8267,6 +9234,26 @@
       "David Solomon Sassoon",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Hebrew\",\"QL\":\"Manuscripts, Hebrew\",\"QU\":\"http://id.worldcat.org/fast/1008360\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Hebrew",
+      "Tables (documents)",
+      "tables (documents)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Hebrew",
+      "tables (documents)"
+    ],
     "language_display": [
       "{\"PV\":\"Hebrew\",\"QL\":\"Hebrew\",\"QU\":\"https://www.wikidata.org/wiki/Q9288\"}"
     ],
@@ -8275,6 +9262,9 @@
     ],
     "language_facet": [
       "Hebrew"
+    ],
+    "date_meta": [
+      "1509"
     ],
     "date_display": [
       "{\"PV\":\"1509\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -8296,7 +9286,7 @@
       1509
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 27 leaves : parchment ; 164 x 116 (111 x 81) mm bound to 172 x 127 mm.\"}"
@@ -8389,6 +9379,34 @@
       "B.C. Barker-Benfield",
       "Llanthony Priory"
     ],
+    "term_display": [
+      "{\"PV\":\"Excerpts\",\"QL\":\"excerpts\",\"QU\":\"http://vocab.getty.edu/aat/300026939\"}",
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Etymological dictionaries\",\"QL\":\"etymological dictionaries\",\"QU\":\"http://vocab.getty.edu/aat/300026200\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Glossaries\",\"QL\":\"glossaries\",\"QU\":\"http://vocab.getty.edu/aat/300026189\"}"
+    ],
+    "term_search": [
+      "Excerpts",
+      "excerpts",
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Etymological dictionaries",
+      "etymological dictionaries",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "Glossaries",
+      "glossaries"
+    ],
+    "term_facet": [
+      "excerpts",
+      "fragments (object portions)",
+      "etymological dictionaries",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "glossaries"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -8397,6 +9415,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "ca. 1220."
     ],
     "date_display": [
       "{\"PV\":\"ca. 1220.\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -8418,7 +9439,7 @@
       1220
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 206 x 150 (145 x 115) mm.\"}"
@@ -8506,6 +9527,30 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Decretals\",\"QL\":\"decretals\",\"QU\":\"http://vocab.getty.edu/aat/300026927\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Commentaries",
+      "commentaries",
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Decretals",
+      "decretals",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "commentaries",
+      "fragments (object portions)",
+      "decretals",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"In Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -8515,6 +9560,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1300s."
     ],
     "date_display": [
       "{\"PV\":\"1300s.\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -8536,7 +9584,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 210 x 116 mm.\"}"
@@ -8637,6 +9685,39 @@
       "Guglielmo Libri Carucci dalla Sommaja",
       "Thomas Phillipps"
     ],
+    "term_display": [
+      "{\"PV\":\"Annals and chronicles\",\"QL\":\"Annals and chronicles\",\"QU\":\"http://id.worldcat.org/fast/1919892\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Poetry\",\"QL\":\"Poetry\",\"QU\":\"http://id.worldcat.org/fast/1423828\"}",
+      "{\"PV\":\"Prayers\",\"QL\":\"Prayers\",\"QU\":\"http://id.worldcat.org/fast/1074737\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Recipes\",\"QL\":\"Recipes\",\"QU\":\"http://id.worldcat.org/fast/1424190\"}",
+      "{\"PV\":\"Manuscripts, Latin--15th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Italian--15th century\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}"
+    ],
+    "term_search": [
+      "Annals and chronicles",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Poetry",
+      "Prayers",
+      "Manuscripts, Renaissance",
+      "Recipes",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian--15th century",
+      "Manuscripts, Italian"
+    ],
+    "term_facet": [
+      "Annals and chronicles",
+      "codices (bound manuscripts)",
+      "Poetry",
+      "Prayers",
+      "Manuscripts, Renaissance",
+      "Recipes",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian"
+    ],
     "language_display": [
       "{\"PV\":\"Latin, with several items in Italian\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -8646,6 +9727,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1449-1453."
     ],
     "date_display": [
       "{\"PV\":\"1449-1453.\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -8667,7 +9751,7 @@
       1453
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Šibenik, Croatia],\",\"QL\":\"Šibenik\",\"QU\":\"http://vocab.getty.edu/tgn/7015447\"}"
@@ -8792,6 +9876,30 @@
       "Lawrence J. Schoenberg",
       "Poblet Monastery"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Encyclopedias\",\"QL\":\"encyclopedias\",\"QU\":\"http://vocab.getty.edu/aat/300129439\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Encyclopedias",
+      "encyclopedias",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "Illuminations",
+      "illuminations (paintings)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "encyclopedias",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin",
+      "illuminations (paintings)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -8800,6 +9908,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1265 and 1299]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1265 and 1299]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -8821,7 +9932,7 @@
       1299
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Catalonia],\",\"QL\":\"Catalonia\",\"QU\":\"http://vocab.getty.edu/tgn/7030216\"}"
@@ -8932,6 +10043,37 @@
     "owner_facet": [
       "Giannalisa Feltrinelli"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Dialogues\",\"QL\":\"dialogues\",\"QU\":\"http://vocab.getty.edu/aat/300026185\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Italian\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Diagrams",
+      "diagrams",
+      "Dialogues",
+      "dialogues",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Italian",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "diagrams",
+      "dialogues",
+      "treatises",
+      "Manuscripts, Italian",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Italian with a short section in Latin (f. 49r-49v)\",\"QL\":\"Italian\",\"QU\":\"https://www.wikidata.org/wiki/Q652\"}"
     ],
@@ -8941,6 +10083,9 @@
     ],
     "language_facet": [
       "Italian"
+    ],
+    "date_meta": [
+      "1539"
     ],
     "date_display": [
       "{\"PV\":\"1539\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -8962,7 +10107,7 @@
       1539
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 60 leaves : paper, illustrations ; 220 x 166 (168 x 126) mm bound to 236 x 172 mm.\"}"
@@ -9053,6 +10198,22 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Italian\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}",
+      "{\"PV\":\"Receipts (financial records)\",\"QL\":\"receipts (financial records)\",\"QU\":\"http://vocab.getty.edu/aat/300027573\"}"
+    ],
+    "term_search": [
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian",
+      "Receipts (financial records)",
+      "receipts (financial records)"
+    ],
+    "term_facet": [
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian",
+      "receipts (financial records)"
+    ],
     "language_display": [
       "{\"PV\":\"In Italian\",\"QL\":\"Italian\",\"QU\":\"https://www.wikidata.org/wiki/Q652\"}"
     ],
@@ -9062,6 +10223,9 @@
     ],
     "language_facet": [
       "Italian"
+    ],
+    "date_meta": [
+      "1531."
     ],
     "date_display": [
       "{\"PV\":\"1531.\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -9083,7 +10247,7 @@
       1531
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 paper ; 330 x 228 mm.\"}"
@@ -9174,6 +10338,35 @@
       "Robert Brodhead Honeyman",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin--13th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}"
+    ],
+    "term_search": [
+      "Manuscripts, Medieval",
+      "Diagrams",
+      "diagrams",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin--13th century",
+      "Manuscripts, Latin",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)"
+    ],
+    "term_facet": [
+      "Manuscripts, Medieval",
+      "diagrams",
+      "illuminations (paintings)",
+      "treatises",
+      "Manuscripts, Latin",
+      "codices (bound manuscripts)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -9182,6 +10375,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1256 and 1270]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1256 and 1270]\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -9203,7 +10399,7 @@
       1270
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Paris?, France],\",\"QL\":\"Paris\",\"QU\":\"http://vocab.getty.edu/tgn/7008038\"}"
@@ -9348,6 +10544,26 @@
       "Hermann Marx",
       "Pius VI"
     ],
+    "term_display": [
+      "{\"PV\":\"Facsimiles\",\"QL\":\"facsimiles (reproductions)\",\"QU\":\"http://vocab.getty.edu/aat/300121391\"}",
+      "{\"PV\":\"Illuminations\",\"QL\":\"illuminations (paintings)\",\"QU\":\"http://vocab.getty.edu/aat/300264522\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Facsimiles",
+      "facsimiles (reproductions)",
+      "Illuminations",
+      "illuminations (paintings)",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "facsimiles (reproductions)",
+      "illuminations (paintings)",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -9356,6 +10572,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1464"
     ],
     "date_display": [
       "{\"PV\":\"1464\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -9377,7 +10596,7 @@
       1464
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 online resource (172 leaves) : illustrations.\"}"
@@ -9462,6 +10681,33 @@
       "Johannes Lethe",
       "Sir John Chetwode, 4th Baronet"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Diagrams",
+      "diagrams",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "fragments (object portions)",
+      "diagrams",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Medieval",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin, with a few words in Spanish (f. 7r)\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -9471,6 +10717,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[1410?]"
     ],
     "date_display": [
       "{\"PV\":\"[1410?]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -9492,7 +10741,7 @@
       1410
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[England and Spain],\",\"QL\":\"England\",\"QU\":\"http://vocab.getty.edu/tgn/7002445\"}"
@@ -9597,6 +10846,39 @@
       "Anthelme-Michel-Laurent de Migieu, marquis de Savigny",
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Anthologies\",\"QL\":\"anthologies\",\"QU\":\"http://vocab.getty.edu/aat/300026037\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Latin--16th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, French--16th century\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Anthologies",
+      "anthologies",
+      "Diagrams",
+      "diagrams",
+      "Tables (documents)",
+      "tables (documents)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin--16th century",
+      "Manuscripts, Latin",
+      "Manuscripts, French--16th century",
+      "Manuscripts, French"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "anthologies",
+      "diagrams",
+      "tables (documents)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin",
+      "Manuscripts, French"
+    ],
     "language_display": [
       "{\"PV\":\"Middle French and Latin\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -9606,6 +10888,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "1511"
     ],
     "date_display": [
       "{\"PV\":\"1511\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -9627,7 +10912,7 @@
       1511
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 283 leaves : paper ; 101 x 70 (80 x 53) mm bound to 105 x 76 mm.\"}"
@@ -9718,6 +11003,31 @@
     "owner_facet": [
       "Stefano Scarella"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Drawings (visual works)\",\"QL\":\"drawings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033973\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Italian--15th century\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Drawings (visual works)",
+      "drawings (visual works)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian--15th century",
+      "Manuscripts, Italian"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "drawings (visual works)",
+      "treatises",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Italian"
+    ],
     "language_display": [
       "{\"PV\":\"Italian\",\"QL\":\"Italian\",\"QU\":\"https://www.wikidata.org/wiki/Q652\"}"
     ],
@@ -9726,6 +11036,9 @@
     ],
     "language_facet": [
       "Italian"
+    ],
+    "date_meta": [
+      "1478"
     ],
     "date_display": [
       "{\"PV\":\"1478\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -9747,7 +11060,7 @@
       1478
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 113 leaves : parchment, color illustrations ; 213 x 154 (144 x 95) mm bound to 220 x 162 mm.\"}"
@@ -9840,6 +11153,18 @@
       "Mark Lansburgh",
       "John Fenn"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, English\",\"QL\":\"Manuscripts, English\",\"QU\":\"http://id.worldcat.org/fast/1008324\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Manuscripts, English",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "Manuscripts, English",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"eng\",\"QL\":\"English\",\"QU\":\"https://www.wikidata.org/wiki/Q1860\"}"
     ],
@@ -9849,6 +11174,9 @@
     ],
     "language_facet": [
       "English"
+    ],
+    "date_meta": [
+      "1500s."
     ],
     "date_display": [
       "{\"PV\":\"1500s.\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -9870,7 +11198,7 @@
       1599
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 443 x 338 mm.\"}"
@@ -9974,6 +11302,35 @@
       "Harrison Horblit",
       "Hieronymus Wilhelm Ebner von Eschenbach"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Annotations\",\"QL\":\"annotations\",\"QU\":\"http://vocab.getty.edu/aat/300026100\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin--12th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Annotations",
+      "annotations",
+      "Manuscripts, Medieval",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin--12th century",
+      "Manuscripts, Latin",
+      "Diagrams",
+      "diagrams"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "annotations",
+      "Manuscripts, Medieval",
+      "treatises",
+      "Manuscripts, Latin",
+      "diagrams"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -9982,6 +11339,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1125 and 1175]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1125 and 1175]\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
@@ -10003,7 +11363,7 @@
       1175
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "place_display": [
       "{\"PV\":\"[Austria?],\",\"QL\":\"Austria\",\"QU\":\"http://vocab.getty.edu/tgn/1000062\"}"
@@ -10101,6 +11461,45 @@
       "Irene Ludwig",
       "J. Paul Getty Museum"
     ],
+    "term_display": [
+      "{\"PV\":\"Prayers\",\"QL\":\"Prayers\",\"QU\":\"http://id.worldcat.org/fast/1074737\"}",
+      "{\"PV\":\"Palimpsests\",\"QL\":\"palimpsests (manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300028576\"}",
+      "{\"PV\":\"Poems\",\"QL\":\"poems\",\"QU\":\"http://vocab.getty.edu/aat/300026451\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Sermons\",\"QL\":\"Sermons\",\"QU\":\"http://id.worldcat.org/fast/1423904\"}",
+      "{\"PV\":\"Manuscripts, Latin--15th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Italian--15th century\",\"QL\":\"Manuscripts, Italian\",\"QU\":\"http://id.worldcat.org/fast/1008378\"}"
+    ],
+    "term_search": [
+      "Prayers",
+      "Palimpsests",
+      "palimpsests (manuscripts)",
+      "Poems",
+      "poems",
+      "Treatises",
+      "treatises",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Sermons",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian--15th century",
+      "Manuscripts, Italian"
+    ],
+    "term_facet": [
+      "Prayers",
+      "palimpsests (manuscripts)",
+      "poems",
+      "treatises",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Sermons",
+      "Manuscripts, Latin",
+      "Manuscripts, Italian"
+    ],
     "language_display": [
       "{\"PV\":\"Latin, with a few poems in Italian (f. 106r-108v)\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -10110,6 +11509,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1409"
     ],
     "date_display": [
       "{\"PV\":\"1409\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -10131,7 +11533,7 @@
       1409
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 175 leaves : parchment, illustrations ; 190 x 122 (130 x 75-80) mm bound to 200 x 135 mm.\"}"
@@ -10227,6 +11629,38 @@
       "Lawrence J. Schoenberg",
       "Prince Sadruddin Aga Khan"
     ],
+    "term_display": [
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Manuscripts, Persian\",\"QL\":\"Manuscripts, Persian\",\"QU\":\"http://id.worldcat.org/fast/1008462\"}",
+      "{\"PV\":\"Manuscripts, 15th century\",\"QL\":\"Manuscripts\",\"QU\":\"http://id.worldcat.org/fast/1424060\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}"
+    ],
+    "term_search": [
+      "Diagrams",
+      "diagrams",
+      "Manuscripts, Renaissance",
+      "Tables (documents)",
+      "tables (documents)",
+      "Commentaries",
+      "commentaries",
+      "Manuscripts, Persian",
+      "Manuscripts, 15th century",
+      "Manuscripts",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)"
+    ],
+    "term_facet": [
+      "diagrams",
+      "Manuscripts, Renaissance",
+      "tables (documents)",
+      "commentaries",
+      "Manuscripts, Persian",
+      "Manuscripts",
+      "codices (bound manuscripts)"
+    ],
     "language_display": [
       "{\"PV\":\"Persian\",\"QL\":\"Persian\",\"QU\":\"https://www.wikidata.org/wiki/Q9168\"}"
     ],
@@ -10235,6 +11669,9 @@
     ],
     "language_facet": [
       "Persian"
+    ],
+    "date_meta": [
+      "1523"
     ],
     "date_display": [
       "{\"PV\":\"1523\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -10256,7 +11693,7 @@
       1523
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 242 leaves : paper, illustrations ; 244 x 174 (190 x 130) mm bound to 247 x 186 mm +.\"}"
@@ -10349,6 +11786,26 @@
     "owner_facet": [
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "treatises",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -10357,6 +11814,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1350 and 1380]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1350 and 1380]\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -10378,7 +11838,7 @@
       1380
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "place_display": [
       "{\"PV\":\"[Spain],\",\"QL\":\"Spain\",\"QU\":\"http://vocab.getty.edu/tgn/1000095\"}"
@@ -10483,6 +11943,29 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Fragments (object portions)\",\"QL\":\"fragments (object portions)\",\"QU\":\"http://vocab.getty.edu/aat/300117130\"}",
+      "{\"PV\":\"Manuals (instructional materials)\",\"QL\":\"manuals (instructional materials)\",\"QU\":\"http://vocab.getty.edu/aat/300026395\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Handbooks and manuals\",\"QL\":\"Handbooks and manuals\",\"QU\":\"http://id.worldcat.org/fast/1423877\"}"
+    ],
+    "term_search": [
+      "Fragments (object portions)",
+      "fragments (object portions)",
+      "Manuals (instructional materials)",
+      "manuals (instructional materials)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval",
+      "Handbooks and manuals"
+    ],
+    "term_facet": [
+      "fragments (object portions)",
+      "manuals (instructional materials)",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval",
+      "Handbooks and manuals"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -10491,6 +11974,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "between 1225 and 1275."
     ],
     "date_display": [
       "{\"PV\":\"between 1225 and 1275.\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
@@ -10512,7 +11998,7 @@
       1275
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 178 x 120 mm.\"}"
@@ -10596,6 +12082,41 @@
     "owner_facet": [
       "Lawrence J. Schoenberg"
     ],
+    "term_display": [
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\": \"Stamps (Provenance)\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, Arabic\",\"QL\":\"Manuscripts, Arabic\",\"QU\":\"http://id.worldcat.org/fast/1008278\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, 16th century\",\"QL\":\"Manuscripts\",\"QU\":\"http://id.worldcat.org/fast/1424060\"}"
+    ],
+    "term_search": [
+      "Commentaries",
+      "commentaries",
+      "Stamps (Provenance)",
+      "Diagrams",
+      "diagrams",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Arabic",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, 16th century",
+      "Manuscripts"
+    ],
+    "term_facet": [
+      "commentaries",
+      "Stamps (Provenance)",
+      "diagrams",
+      "treatises",
+      "Manuscripts, Arabic",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts"
+    ],
     "language_display": [
       "{\"PV\":\"Arabic\",\"QL\":\"Arabic\",\"QU\":\"https://www.wikidata.org/wiki/Q13955\"}"
     ],
@@ -10604,6 +12125,9 @@
     ],
     "language_facet": [
       "Arabic"
+    ],
+    "date_meta": [
+      "[between 1500 and 1599?]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1500 and 1599?]\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -10625,7 +12149,7 @@
       1599
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 12 leaves : paper, illustrations ; 235 x 165 (200 x 135) mm bound to 244 x 176 mm.\"}"
@@ -10716,6 +12240,30 @@
     "owner_facet": [
       "Charles Marriette"
     ],
+    "term_display": [
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\": \"Manuscripts, Latin--15th century\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Commentaries",
+      "commentaries",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "commentaries",
+      "codices (bound manuscripts)",
+      "treatises",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"Latin, with some French translations in the first conjugation table (f. 8r-9r)\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -10725,6 +12273,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1470"
     ],
     "date_display": [
       "{\"PV\":\"1470\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -10746,7 +12297,7 @@
       1470
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 20 leaves : parchment ; 198 x 138 (138 x 75) mm bound to 205 x 148 mm.\"}"
@@ -10831,6 +12382,29 @@
     "owner_facet": [
       "John D. Stanitz"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval",
+      "Tables (documents)",
+      "tables (documents)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin",
+      "Manuscripts, Medieval",
+      "tables (documents)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -10839,6 +12413,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1401-1404."
     ],
     "date_display": [
       "{\"PV\":\"1401-1404.\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -10860,7 +12437,7 @@
       1404
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Prague],\",\"QL\":\"Prague\",\"QU\":\"http://vocab.getty.edu/tgn/7006464\"}"
@@ -10961,6 +12538,30 @@
     "scribe_facet": [
       "Georg Ganser"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Paintings (visual works)\",\"QL\":\"paintings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033618\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Manuscripts, German\",\"QL\":\"Manuscripts, German\",\"QU\":\"http://id.worldcat.org/fast/1008346\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Paintings (visual works)",
+      "paintings (visual works)",
+      "Treatises",
+      "treatises",
+      "Manuscripts, German",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "paintings (visual works)",
+      "treatises",
+      "Manuscripts, German",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"German\",\"QL\":\"German\",\"QU\":\"https://www.wikidata.org/wiki/Q188\"}"
     ],
@@ -10969,6 +12570,9 @@
     ],
     "language_facet": [
       "German"
+    ],
+    "date_meta": [
+      "1562"
     ],
     "date_display": [
       "{\"PV\":\"1562\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -10990,7 +12594,7 @@
       1562
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 285 leaves : paper, color illustrations ; 320 x 210 (215 x 115) mm bound to 323 x 230 mm.\"}"
@@ -11103,6 +12707,30 @@
       "Franz Josef von Hahn",
       "William Ewart Gladstone"
     ],
+    "term_display": [
+      "{\"PV\":\"Facsimiles\",\"QL\":\"facsimiles (reproductions)\",\"QU\":\"http://vocab.getty.edu/aat/300121391\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Annotations\",\"QL\":\"annotations\",\"QU\":\"http://vocab.getty.edu/aat/300026100\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Histories\",\"QL\":\"histories (literary works)\",\"QU\":\"http://vocab.getty.edu/aat/300026358\"}"
+    ],
+    "term_search": [
+      "Facsimiles",
+      "facsimiles (reproductions)",
+      "Manuscripts, Renaissance",
+      "Annotations",
+      "annotations",
+      "Manuscripts, Latin",
+      "Histories",
+      "histories (literary works)"
+    ],
+    "term_facet": [
+      "facsimiles (reproductions)",
+      "Manuscripts, Renaissance",
+      "annotations",
+      "Manuscripts, Latin",
+      "histories (literary works)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -11111,6 +12739,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1460"
     ],
     "date_display": [
       "{\"PV\":\"1460\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -11132,7 +12763,7 @@
       1460
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 online resource (185 leaves) : illustrations.\"}"
@@ -11237,6 +12868,30 @@
       "John D. Stanitz",
       "Harrison Horblit"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Tables (Data)\",\"QL\":\"Tables (Data)\",\"QU\":\"http://id.worldcat.org/fast/1919974\"}",
+      "{\"PV\":\"Manuscripts, Latin--15th century\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Tables (documents)\",\"QL\":\"tables (documents)\",\"QU\":\"http://vocab.getty.edu/aat/300027364\"}"
+    ],
+    "term_search": [
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Tables (Data)",
+      "Manuscripts, Latin--15th century",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance",
+      "Tables (documents)",
+      "tables (documents)"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "Tables (Data)",
+      "Manuscripts, Latin",
+      "Manuscripts, Renaissance",
+      "tables (documents)"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -11245,6 +12900,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "1476"
     ],
     "date_display": [
       "{\"PV\":\"1476\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -11266,7 +12924,7 @@
       1476
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 95 leaves : parchment and paper ; 214 x 142 mm bound to 220 x 152 (170 x 98) mm.\"}"
@@ -11355,6 +13013,34 @@
       "G. Heilbrun",
       "Edwin Dloss"
     ],
+    "term_display": [
+      "{\"PV\":\"Manuscripts, German--16th century\",\"QL\":\"Manuscripts, German\",\"QU\":\"http://id.worldcat.org/fast/1008346\"}",
+      "{\"PV\":\"Paintings (visual works)\",\"QL\":\"paintings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033618\"}",
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Early works\",\"QL\":\"Early works\",\"QU\":\"http://id.worldcat.org/fast/1411636\"}",
+      "{\"PV\":\"Drawings (visual works)\",\"QL\":\"drawings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033973\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}"
+    ],
+    "term_search": [
+      "Manuscripts, German--16th century",
+      "Manuscripts, German",
+      "Paintings (visual works)",
+      "paintings (visual works)",
+      "Codices",
+      "codices (bound manuscripts)",
+      "Early works",
+      "Drawings (visual works)",
+      "drawings (visual works)",
+      "Manuscripts, Renaissance"
+    ],
+    "term_facet": [
+      "Manuscripts, German",
+      "paintings (visual works)",
+      "codices (bound manuscripts)",
+      "Early works",
+      "drawings (visual works)",
+      "Manuscripts, Renaissance"
+    ],
     "language_display": [
       "{\"PV\":\"German\",\"QL\":\"German\",\"QU\":\"https://www.wikidata.org/wiki/Q188\"}"
     ],
@@ -11363,6 +13049,9 @@
     ],
     "language_facet": [
       "German"
+    ],
+    "date_meta": [
+      "1560"
     ],
     "date_display": [
       "{\"PV\":\"1560\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
@@ -11384,7 +13073,7 @@
       1560
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 175 leaves : paper ; 505 x 350 (335 x 245) mm bound to 510 x 360 mm.\"}"
@@ -11474,6 +13163,36 @@
       "Lawrence J. Schoenberg",
       "Sébastien de Rosmadec, marquis de Molac"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Chronicles\",\"QL\":\"chronicles\",\"QU\":\"http://vocab.getty.edu/aat/300026361\"}",
+      "{\"PV\":\"Genealogies (histories)\",\"QL\":\"genealogies (histories)\",\"QU\":\"http://vocab.getty.edu/aat/300027015\"}",
+      "{\"PV\":\"Manuscripts, French\",\"QL\":\"Manuscripts, French\",\"QU\":\"http://id.worldcat.org/fast/1008338\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}",
+      "{\"PV\":\"Genealogy\",\"QL\":\"Genealogy\",\"QU\":\"http://id.worldcat.org/fast/1423818\"}",
+      "{\"PV\":\"Family histories\",\"QL\":\"Family histories\",\"QU\":\"http://id.worldcat.org/fast/1919924\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Chronicles",
+      "chronicles",
+      "Genealogies (histories)",
+      "genealogies (histories)",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "Genealogy",
+      "Family histories"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "chronicles",
+      "genealogies (histories)",
+      "Manuscripts, French",
+      "Manuscripts, Medieval",
+      "Genealogy",
+      "Family histories"
+    ],
     "language_display": [
       "{\"PV\":\"Middle French\",\"QL\":\"Middle French\",\"QU\":\"https://www.wikidata.org/wiki/Q1473289\"}"
     ],
@@ -11482,6 +13201,9 @@
     ],
     "language_facet": [
       "Middle French"
+    ],
+    "date_meta": [
+      "[between 1440 and 1460?]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1440 and 1460?]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -11503,7 +13225,7 @@
       1450
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[France],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -11594,6 +13316,37 @@
     "author_facet": [
       "Paul of Venice"
     ],
+    "term_display": [
+      "{\"PV\":\"Codices\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Commentaries\",\"QL\":\"commentaries\",\"QU\":\"http://vocab.getty.edu/aat/300026098\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Drawings (visual works)\",\"QL\":\"drawings (visual works)\",\"QU\":\"http://vocab.getty.edu/aat/300033973\"}",
+      "{\"PV\":\"Art\",\"QL\":\"Art\",\"QU\":\"http://id.worldcat.org/fast/815177\"}",
+      "{\"PV\":\"Manuscripts, Renaissance\",\"QL\":\"Manuscripts, Renaissance\",\"QU\":\"http://id.worldcat.org/fast/1008472\"}",
+      "{\"PV\":\"Manuscripts, Latin\",\"QL\":\"Manuscripts, Latin\",\"QU\":\"http://id.worldcat.org/fast/1008395\"}"
+    ],
+    "term_search": [
+      "Codices",
+      "codices (bound manuscripts)",
+      "Commentaries",
+      "commentaries",
+      "Diagrams",
+      "diagrams",
+      "Drawings (visual works)",
+      "drawings (visual works)",
+      "Art",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin"
+    ],
+    "term_facet": [
+      "codices (bound manuscripts)",
+      "commentaries",
+      "diagrams",
+      "drawings (visual works)",
+      "Art",
+      "Manuscripts, Renaissance",
+      "Manuscripts, Latin"
+    ],
     "language_display": [
       "{\"PV\":\"Latin\",\"QL\":\"Latin\",\"QU\":\"https://www.wikidata.org/wiki/Q397\"}"
     ],
@@ -11602,6 +13355,9 @@
     ],
     "language_facet": [
       "Latin"
+    ],
+    "date_meta": [
+      "[between 1425 and 1475]"
     ],
     "date_display": [
       "{\"PV\":\"[between 1425 and 1475]\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
@@ -11623,7 +13379,7 @@
       1475
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Verona?, Italy],\",\"QL\":\"Verona\",\"QU\":\"http://vocab.getty.edu/tgn/7003262\"}"
@@ -11741,6 +13497,40 @@
       "Aḥmad ibn Mubārak Luṭf Allāh",
       "Muḥammad al-Raʼīs"
     ],
+    "term_display": [
+      "{\"PV\":\"Tables (Data)\",\"QL\":\"Tables (Data)\",\"QU\":\"http://id.worldcat.org/fast/1919974\"}",
+      "{\"PV\": \"Annotations (Provenance)\"}",
+      "{\"PV\":\"Manuscripts, Arabic\",\"QL\":\"Manuscripts, Arabic\",\"QU\":\"http://id.worldcat.org/fast/1008278\"}",
+      "{\"PV\":\"Manuscripts, 14th century\",\"QL\":\"Manuscripts\",\"QU\":\"http://id.worldcat.org/fast/1424060\"}",
+      "{\"PV\":\"Treatises\",\"QL\":\"treatises\",\"QU\":\"http://vocab.getty.edu/aat/300026681\"}",
+      "{\"PV\":\"Codices (bound manuscripts)\",\"QL\":\"codices (bound manuscripts)\",\"QU\":\"http://vocab.getty.edu/aat/300224200\"}",
+      "{\"PV\":\"Diagrams\",\"QL\":\"diagrams\",\"QU\":\"http://vocab.getty.edu/aat/300015387\"}",
+      "{\"PV\":\"Manuscripts, Medieval\",\"QL\":\"Manuscripts, Medieval\",\"QU\":\"http://id.worldcat.org/fast/1008422\"}"
+    ],
+    "term_search": [
+      "Tables (Data)",
+      "Annotations (Provenance)",
+      "Manuscripts, Arabic",
+      "Manuscripts, 14th century",
+      "Manuscripts",
+      "Treatises",
+      "treatises",
+      "Codices (bound manuscripts)",
+      "codices (bound manuscripts)",
+      "Diagrams",
+      "diagrams",
+      "Manuscripts, Medieval"
+    ],
+    "term_facet": [
+      "Tables (Data)",
+      "Annotations (Provenance)",
+      "Manuscripts, Arabic",
+      "Manuscripts",
+      "treatises",
+      "codices (bound manuscripts)",
+      "diagrams",
+      "Manuscripts, Medieval"
+    ],
     "language_display": [
       "{\"PV\":\"Arabic\",\"QL\":\"Arabic\",\"QU\":\"https://www.wikidata.org/wiki/Q13955\"}"
     ],
@@ -11749,6 +13539,9 @@
     ],
     "language_facet": [
       "Arabic"
+    ],
+    "date_meta": [
+      "1381"
     ],
     "date_display": [
       "{\"PV\":\"1381\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
@@ -11770,7 +13563,7 @@
       1381
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: i, 174, i leaves : paper ; 280 x 215 (220 x 145) mm bound to 280 x 225 mm.\"}"
@@ -11860,6 +13653,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. IX/X, 890-910"
+    ],
     "date_display": [
       "{\"PV\":\"s. IX/X, 890-910\",\"QL\":\"ninth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404501\"}"
     ],
@@ -11880,7 +13676,7 @@
       910
     ],
     "century_facet": [
-      "801"
+      "(801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -11987,6 +13783,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. X, 900-999"
+    ],
     "date_display": [
       "{\"PV\":\"s. X, 900-999\",\"QL\":\"tenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404502\"}"
     ],
@@ -12007,7 +13806,7 @@
       999
     ],
     "century_facet": [
-      "901"
+      "(901) 9th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12227,6 +14026,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -12247,7 +14049,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12346,6 +14148,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -12366,7 +14171,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12473,6 +14278,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -12493,7 +14301,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12600,6 +14408,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -12620,7 +14431,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12727,6 +14538,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -12747,7 +14561,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12854,6 +14668,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -12874,7 +14691,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12981,6 +14798,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -13001,7 +14821,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13108,6 +14928,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -13128,7 +14951,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13235,6 +15058,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -13255,7 +15081,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13360,6 +15186,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIII, 1200-1299"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIII, 1200-1299\",\"QL\":\"thirteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404505\"}"
     ],
@@ -13380,7 +15209,7 @@
       1299
     ],
     "century_facet": [
-      "1201"
+      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13483,6 +15312,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -13503,7 +15335,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13610,6 +15442,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -13630,7 +15465,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13735,6 +15570,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -13755,7 +15593,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13860,6 +15698,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -13880,7 +15721,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13983,6 +15824,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -14003,7 +15847,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14100,6 +15944,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -14120,7 +15967,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14223,6 +16070,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -14243,7 +16093,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14346,6 +16196,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -14366,7 +16219,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14478,6 +16331,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -14498,7 +16354,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14604,6 +16460,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -14624,7 +16483,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14719,6 +16578,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. IX/X, 890-910"
+    ],
     "date_display": [
       "{\"PV\":\"s. IX/X, 890-910\",\"QL\":\"ninth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404501\"}"
     ],
@@ -14739,7 +16601,7 @@
       910
     ],
     "century_facet": [
-      "801"
+      "(801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14848,6 +16710,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. IX/X, 890-910"
+    ],
     "date_display": [
       "{\"PV\":\"s. IX/X, 890-910\",\"QL\":\"ninth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404501\"}"
     ],
@@ -14868,7 +16733,7 @@
       910
     ],
     "century_facet": [
-      "801"
+      "(801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14973,6 +16838,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XI, 1000-1099"
+    ],
     "date_display": [
       "{\"PV\":\"s. XI, 1000-1099\",\"QL\":\"eleventh century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404503\"}"
     ],
@@ -14993,7 +16861,7 @@
       1099
     ],
     "century_facet": [
-      "1001"
+      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15104,6 +16972,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XI, 1000-1099"
+    ],
     "date_display": [
       "{\"PV\":\"s. XI, 1000-1099\",\"QL\":\"eleventh century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404503\"}"
     ],
@@ -15124,7 +16995,7 @@
       1099
     ],
     "century_facet": [
-      "1001"
+      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15235,6 +17106,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XI, 1000-1099"
+    ],
     "date_display": [
       "{\"PV\":\"s. XI, 1000-1099\",\"QL\":\"eleventh century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404503\"}"
     ],
@@ -15255,7 +17129,7 @@
       1099
     ],
     "century_facet": [
-      "1001"
+      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15364,6 +17238,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -15384,7 +17261,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15493,6 +17370,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -15513,7 +17393,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15610,6 +17490,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XI/XII, 1090-1110"
+    ],
     "date_display": [
       "{\"PV\":\"s. XI/XII, 1090-1110\",\"QL\":\"eleventh century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404503\"}"
     ],
@@ -15630,7 +17513,7 @@
       1110
     ],
     "century_facet": [
-      "1001"
+      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15733,6 +17616,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -15753,7 +17639,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15846,6 +17732,9 @@
     "language_facet": [
       "French"
     ],
+    "date_meta": [
+      "s. XVI, 1500-1599"
+    ],
     "date_display": [
       "{\"PV\":\"s. XVI, 1500-1599\",\"QL\":\"sixteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404510\"}"
     ],
@@ -15866,7 +17755,7 @@
       1599
     ],
     "century_facet": [
-      "1501"
+      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15958,6 +17847,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XVII, 1600-1699"
+    ],
     "date_display": [
       "{\"PV\":\"s. XVII, 1600-1699\",\"QL\":\"seventeenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404511\"}"
     ],
@@ -15978,7 +17870,7 @@
       1699
     ],
     "century_facet": [
-      "1601"
+      "(1601) 16th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16073,6 +17965,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XVIII, 1700-1799"
+    ],
     "date_display": [
       "{\"PV\":\"s. XVIII, 1700-1799\",\"QL\":\"eighteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404512\"}"
     ],
@@ -16093,7 +17988,7 @@
       1799
     ],
     "century_facet": [
-      "1701"
+      "(1701) 17th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16191,6 +18086,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XVII, 1600-1699"
+    ],
     "date_display": [
       "{\"PV\":\"s. XVII, 1600-1699\",\"QL\":\"seventeenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404511\"}"
     ],
@@ -16211,7 +18109,7 @@
       1699
     ],
     "century_facet": [
-      "1601"
+      "(1601) 16th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16320,6 +18218,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -16340,7 +18241,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16447,6 +18348,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XV, 1400-1499"
+    ],
     "date_display": [
       "{\"PV\":\"s. XV, 1400-1499\",\"QL\":\"fifteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404465\"}"
     ],
@@ -16467,7 +18371,7 @@
       1499
     ],
     "century_facet": [
-      "1401"
+      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16575,6 +18479,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XIV, 1300-1399"
+    ],
     "date_display": [
       "{\"PV\":\"s. XIV, 1300-1399\",\"QL\":\"fourteenth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404506\"}"
     ],
@@ -16595,7 +18502,7 @@
       1399
     ],
     "century_facet": [
-      "1301"
+      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16706,6 +18613,9 @@
     "language_facet": [
       "Latin"
     ],
+    "date_meta": [
+      "s. XII, 1100-1199"
+    ],
     "date_display": [
       "{\"PV\":\"s. XII, 1100-1199\",\"QL\":\"twelfth century (dates CE)\",\"QU\":\"http://vocab.getty.edu/aat/300404504\"}"
     ],
@@ -16726,7 +18636,7 @@
       1199
     ],
     "century_facet": [
-      "1101"
+      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
