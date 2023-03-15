@@ -118,25 +118,35 @@ class CatalogController < ApplicationController
 	config.add_facet_field 'title_facet', label: 'Title',limit:5
 	config.add_facet_field 'scribe_facet', label: 'Scribe', limit:5
 	config.add_facet_field 'artist_facet', label: 'Artist', limit:5
-	config.add_facet_field 'place_facet', label: 'Production Place', limit:5 #, single: true
-	config.add_facet_field 'earliest_int', label: 'Date (Earliest)', range: {
-		num_segments:10,
-         assumed_boundaries: [800,1700],
-         segments: true,
-         maxlength: 4
-       }, collapse:false	
-  config.add_facet_field 'latest_int', label: 'Date (Latest)', range: {
-    num_segments:10,
-         assumed_boundaries: [800,1700],
-         segments: true,
-         maxlength: 4
-       }, collapse:false         
+	config.add_facet_field 'place_facet', label: 'Place', limit:5 #, single: true
+   
+  config.add_facet_field 'century_int', label: 'Century', limit:5, sort:'alpha', helper_method: :century_label
+
+  #config.add_facet_field 'century_facet', label: 'Century', limit:5, sort:'alpha'
+  #config.add_facet_field 'earliest_int', label: 'Earliest Date', limit:5
+  #config.add_facet_field 'latest_int', label: 'Latest Date', limit:5
+
+ #config.add_facet_field 'earliest_int', label: 'Date (Earliest)', range: {
+ #  num_segments:10,
+ #        assumed_boundaries: [800,1700],
+ #        segments: true,
+ #        maxlength: 4
+ #      }, collapse:false 
+ # config.add_facet_field 'latest_int', label: 'Date (Latest)', range: {
+ #   num_segments:10,
+ #        assumed_boundaries: [800,1700],
+ #        segments: true,
+ #        maxlength: 4
+ #      }, collapse:false     
+
 	config.add_facet_field 'language_facet', label: 'Language', limit:5
 	config.add_facet_field 'material_facet', label: 'Material', limit:5
 	config.add_facet_field 'owner_facet', label: 'Former owners', limit:5
 	config.add_facet_field 'term_facet', label: 'Keywords', limit:5
   config.add_facet_field 'images_facet', label: 'Has Images', limit:5
-  config.add_facet_field 'dated_facet', label: 'Dated', limit:5  
+  config.add_facet_field 'dated_facet', label: 'Dated', limit:5
+
+
 
     #config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     #config.add_facet_field 'language_ssim', label: 'Language', limit: true
@@ -162,8 +172,9 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field 'title_facet', label: 'Title'
     config.add_index_field 'author_facet', label: 'Author'
-    config.add_index_field 'place_facet', label: 'Production Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
-    config.add_index_field 'date_facet', label: 'Century'
+    config.add_index_field 'place_facet', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
+    config.add_index_field 'date_meta', label: 'Century'
+
     
     #config.add_index_field 'earliest_date', label: 'Date Range (Earliest)'
     #config.add_index_field 'latest_date', label: 'Date Range (Latest)'    
@@ -277,9 +288,9 @@ class CatalogController < ApplicationController
 		config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
 		config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
 		config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
-		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_owner
+		config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '', two_words_connector: '', last_word_connector: '' }, accessor: :prop_owner
 		#config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-		config.add_show_field 'place_display', label: 'Production Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
+		config.add_show_field 'place_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
 		config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
 		config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_language
 		config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_material
@@ -382,7 +393,7 @@ class CatalogController < ApplicationController
   end      	
 
 
-	config.add_search_field 'place', label: 'Production Place' do |field|
+	config.add_search_field 'place', label: 'Place' do |field|
     	field.solr_parameters = {
 		qf: 'place_facet place_search',
 		pf: ''
