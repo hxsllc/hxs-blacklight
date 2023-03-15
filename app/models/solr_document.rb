@@ -265,7 +265,7 @@ class SolrDocument
   #V2.0 VISUAL BAR, NO LINKED DATA
   def prop_institution
 	if fetch('institution_display',false)
-	divstart = "<div class='ds-bar'>&nbsp;"	
+	divstart = "<div class='ds-bar' style='margin-top:20px;'>&nbsp;"	
 	divend = "</div>"	
 	Array(fetch('institution_display')).map do |v|
 		data = JSON.parse(v)
@@ -280,7 +280,7 @@ class SolrDocument
   #V2.0 VISUAL BAR, NO LINKED DATA
   def prop_term
 	if fetch('term_facet',false)
-	divstart = "<div style='background-color:#F8F4ED;border-radius:25px 25px 25px;padding:10px 10px 10px 20px;'><img src='https://img.icons8.com/ios-glyphs/30/null/search--v1.png' width='20'/>&nbsp;"
+	divstart = "<div class='ds-bar'>&nbsp;"
 	divend = "</div>"
 	tlink = ''
 	Array(fetch('term_facet')).map do |v|
