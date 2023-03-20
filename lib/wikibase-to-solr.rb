@@ -3,6 +3,7 @@ require 'json'
 require 'csv'
 require 'Date'
 require 'Time'
+require 'optparse'
 
 # Wikibase JSON data structure
 #
@@ -52,12 +53,31 @@ require 'Time'
 @linkFieldIDs = [9,41].freeze
 @intFieldIDs = [25,36,37].freeze
 
-importJSONfile = 'export.json'
-importPropertyFile = 'property-names.csv'
+dir = File.dirname __FILE__
+importJSONfile = File.expand_path 'export.json', dir
+outputJSONFile = File.expand_path 'import.json', dir
+importPropertyFile = File.expand_path 'property-names.csv', dir
 debugLabels = false
 debugQualifiers = false
 debugProperties = false
-outputJSON = true
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: wikibase-to-solr.rb [options]'
+
+  opts.on('-i', '--wiki-export=FILE', 'The file path to the Wikibase JSON export file.') do |f|
+    importJSONfile = File.expand_path f, dir
+  end
+
+  opts.on('-o', '--output=FILE', 'The file path to output the formatted Solr JSON file.') do |f|
+    outputJSONFile = File.expand_path f, dir
+  end
+
+  opts.on('-v', '--verbose', 'Verbose logging') do |v|
+    debugProperties = true
+    debugLabels = true
+    debugQualifiers = true
+  end
+end.parse!
 
 ## functions
 
@@ -203,19 +223,13 @@ outputJSON = true
 
 		end
 
-## read file into variable
-
-dir = File.dirname __FILE__
-file = File.read(File.join(dir, '/', importJSONfile))
-
 ## parse JSON into a Ruby array (NOT A HASH!)
-
-data = JSON.parse(file)
+data = JSON.load_file importJSONfile
 
 ## read property names into array = from ds-model-ids.json
 
 $propertyNameArray={}
-CSV.foreach(File.join(dir, "/", importPropertyFile), col_sep: ",", liberal_parsing: true) do |line|
+CSV.foreach(importPropertyFile, col_sep: ",", liberal_parsing: true) do |line|
 	@propertyName = line[0]
 	$propertyNameArray[@propertyName] = line[1]
 end
@@ -534,5 +548,4 @@ end
 
 
 # output JSON to stdout
-
-puts JSON.pretty_generate($solrObjects.values) if outputJSON
+File.write outputJSONFile, JSON.pretty_generate($solrObjects.values)

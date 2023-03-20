@@ -8,29 +8,19 @@ class WikibaseIngest
 
   attr_reader :path, :repository, :json_file_path
 
-  DEFAULT_PATH = '../ds_exports'
-  DEFAULT_REPOSITORY = 'https://github.com/DigitalScriptorium/ds-exports'
-  DEFAULT_JSON_FILE = 'json/ds-latest.json'
-
   # @param [String] path The relative path to the local instance of the repository relative to the app root directory.
   # @param [String] repository The public Git repository for the exported data.
   # @param [String] json_file The relative path to the exported json file relative to the repository root directory.
-  def initialize(path: nil, repository: nil, json_file: nil)
-    @path = path || ENV.fetch('WIKIBASE_REPOSITORY_PATH', DEFAULT_PATH)
-    @repository = repository || ENV.fetch('WIKIBASE_REPOSITORY_URL', DEFAULT_REPOSITORY)
-    @json_file_path = json_file || ENV.fetch('WIKIBASE_EXPORT_JSON_FILE', DEFAULT_JSON_FILE)
-  end
-
-  # Gets the full path to the local git repository
-  # @return [String]
-  def full_path
-    Rails.root.join(path).to_s
+  def initialize(path: self.class.repository_path, repository: self.class.repository_url, json_file: self.class.json_file_path)
+    @path = path
+    @repository = repository
+    @json_file_path = json_file
   end
 
   # Gets the full path to the json export file
   # @return [String]
   def json_file_full_path
-    Rails.root.join(json_file_path).to_s
+    File.expand_path(json_file_path, path).to_s
   end
 
   # Ingest the new changes to the export file
@@ -51,17 +41,17 @@ class WikibaseIngest
 
   # Check if the repository exists
   def repository_exists?
-    Dir.exist? full_path
+    Dir.exist? path
   end
 
   # Clone the repository
   def clone_repository!
-    execute_command('git', 'clone', repository, full_path) || raise(CloneFailed, "Unable to clone '#{repository}' repository")
+    execute_command('git', 'clone', repository, path) || raise(CloneFailed, "Unable to clone '#{repository}' repository")
   end
 
   # Pull the latest changes in the repository
   def pull_repository!
-    execute_command('git', 'pull', '--ff-only', dir: full_path) || raise(PullFailed, 'Unable to get the latest changes')
+    execute_command('git', 'pull', '--ff-only', dir: path) || raise(PullFailed, 'Unable to get the latest changes')
   end
 
   # Run the command
@@ -80,5 +70,22 @@ class WikibaseIngest
   rescue
     nil
   end
-end
 
+  class << self
+    def repository_path
+      Rails.root.join(ENV.fetch('WIKIBASE_REPOSITORY_PATH', '../ds_exports')).to_s
+    end
+
+    def repository_url
+      ENV.fetch('WIKIBASE_REPOSITORY_URL', 'https://github.com/DigitalScriptorium/ds-exports')
+    end
+
+    def json_file_path
+      ENV.fetch('WIKIBASE_EXPORT_JSON_FILE', 'json/ds-latest.json')
+    end
+
+    def json_file_full_path
+      File.expand_path(json_file_path, repository_path).to_s
+    end
+  end
+end
