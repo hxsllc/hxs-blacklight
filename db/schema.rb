@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_26_201641) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_134825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_201641) do
     t.boolean "guest", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wikibase_export_versions", force: :cascade do |t|
+    t.string "file_hash", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["file_hash"], name: "index_wikibase_export_versions_on_file_hash", unique: true
   end
 
 end
