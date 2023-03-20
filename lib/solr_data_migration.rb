@@ -31,7 +31,7 @@ class SolrDataMigration
     file = File.expand_path(file, Rails.root).to_s
     Rails.logger.info "[SolrDataMigration] Migrating solr data (file: #{file})"
     documents = JSON.load_file file
-    backup_id = "backup#{Time.now.utc}"
+    backup_id = "backup#{Time.now.utc.to_i}"
     solr_collection.create_backup backup_id, timeout:, interval:, location: backup_location if backup_solr?
 
     begin

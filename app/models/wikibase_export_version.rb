@@ -21,10 +21,9 @@ class WikibaseExportVersion < ApplicationRecord
     end
 
     def file_signature path
-      hash = IO.popen(['git', 'hash-object', path]) { |io| io.gets&.strip }
-      raise FileNotFound.new(path) unless $?&.success?
+      raise FileNotFound.new(path) unless File.exist? path
 
-      hash
+      IO.popen(['git', 'hash-object', path]) { |io| io.gets&.strip }
     end
   end
 end

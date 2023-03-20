@@ -6,6 +6,8 @@ class SolrCollection
   class TimedOut < SolrCollectionError; end
   class RequestNotFound < SolrCollectionError; end
   class RequestInvalid < SolrCollectionError; end
+  class BackupFailed < SolrCollectionError; end
+  class RestoreFailed < SolrCollectionError; end
 
   attr_reader :uri, :collection
 
@@ -34,7 +36,10 @@ class SolrCollection
   def create_backup(id, timeout: nil, interval: nil, location: nil)
     Rails.logger.info "[SolrCollection] Creating Backup #{id}"
     params = { action: 'BACKUP', name: id, collection: @collection, location: location || default_backup_location}
-    execute_and_wait params, timeout, interval
+    response = execute_and_wait params, timeout, interval
+    raise BackupFailed, "Unable to create the backup: #{response['status']['msg']}" if response['status']['state'] == 'failed'
+
+    response
   end
 
   # Restore from a backup of the collection
@@ -49,7 +54,10 @@ class SolrCollection
   def restore_backup(id, timeout: nil, interval: nil, location: nil)
     Rails.logger.info "[SolrCollection] Restoring Backup #{id}"
     params = { action: 'RESTORE', name: id, collection: @collection, location: location || default_backup_location}
-    execute_and_wait params, timeout, interval
+    response = execute_and_wait params, timeout, interval
+    raise RestoreFailed, "Unable to restore the backup: #{response['status']['msg']}" if response['status']['state'] == 'failed'
+
+    response
   end
 
   # Get the request status of an async task
@@ -65,7 +73,7 @@ class SolrCollection
     status = response.body.dig('status')&.dig('state')
     raise RequestNotFound if status == 'notfound'
 
-    response.body if status === 'completed'
+    response.body if %w[completed failed].include? status # Might be better to use the wait status here
   end
 
   private

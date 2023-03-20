@@ -1,8 +1,8 @@
 ## import functions
 require 'json'
 require 'csv'
-require 'Date'
-require 'Time'
+require 'date'
+require 'time'
 require 'optparse'
 
 # Wikibase JSON data structure

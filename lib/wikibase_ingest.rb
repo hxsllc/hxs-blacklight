@@ -32,7 +32,7 @@ class WikibaseIngest
   def execute!
     clone_repository! unless repository_exists?
     pull_repository!
-    return false if WikibaseExportVersion.exists? json_file_full_path
+    return false if WikibaseExportVersion.version_exists? json_file_full_path
 
     WikibaseExportVersion.create_by_file! json_file_full_path
   end

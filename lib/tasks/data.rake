@@ -11,7 +11,10 @@ namespace :data do
   #
   # @param [Boolean] force Still succeed when there are no changes
   task :ingest, [:force] => [:environment, :verbose, :stdout] do |task, args|
-    exit 1 unless WikibaseIngest.new.execute! || args[:force]
+    unless WikibaseIngest.new.execute! || args[:force]
+      Rails.logger.warn "No changes"
+      exit 1
+    end
   end
 
   # Convert the Wikibase export JSON file to Solr documents. Depends on the `lib/wiki-to-solr.rb` script file.
@@ -41,7 +44,7 @@ namespace :data do
     commands << '-v' if args[:verbose]
     File.unlink args[:output] if File.exist? args[:output]
     output = IO.popen(commands, err: :out, chdir: Rails.root.join('lib').to_s) { |io| io.readlines.compact }
-    Rails.logger.info output unless output.blank?
+    Rails.logger.info "[wiki-to-solr.rb] Converted Wiki data\n\t#{output}"
     exit 1 unless File.exist? args[:output]
   end
 
