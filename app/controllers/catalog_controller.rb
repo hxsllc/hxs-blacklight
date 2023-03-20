@@ -21,10 +21,16 @@ class CatalogController < ApplicationController
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
     # config.advanced_search[:qt] ||= 'advanced'
     config.advanced_search[:url_key] ||= 'advanced'
-    config.advanced_search[:query_parser] ||= 'dismax'
+    config.advanced_search[:query_parser] ||= 'edismax'
     config.advanced_search[:form_solr_parameters] ||= {}
     config.advanced_search.enabled = true
+    config.advanced_search[:form_solr_parameters]['facet.query'] ||= ''
+    config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'
 
+    # The 'facet.limit' -1 value is not respected here, catalog_controller.rb configuration facet limits are still passed along to Solr. This manually adjusts the facet count to -1 for schema_provider_s and gbl_resourceType_sm
+    config.advanced_search[:form_solr_parameters]['f.institution_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.author_facet.facet.limit'] ||= -1
 
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
@@ -334,7 +340,7 @@ class CatalogController < ApplicationController
 		qf: '
 		id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search 
 		term_search language_search date_search place_search material_search
-		institution_facet title_facet artist_facet author_facet scribe_facet owner_facet term_Facet language_facet date_facet place_facet material_facet
+		institution_facet title_facet artist_facet author_facet scribe_facet owner_facet term_facet language_facet date_facet place_facet material_facet
 		',
 		pf: ''
     }
@@ -428,10 +434,10 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case). Add the sort: option to configure a
     # custom Blacklight url parameter value separate from the Solr sort fields.
-    config.add_sort_field 'relevance', sort: 'score desc, pub_date_si desc, title_si asc', label: 'relevance'
-    config.add_sort_field 'year-desc', sort: 'pub_date_si desc, title_si asc', label: 'year'
-    config.add_sort_field 'author', sort: 'author_si asc, title_si asc', label: 'author'
-    config.add_sort_field 'title_si asc, pub_date_si desc', label: 'title'
+    ##config.add_sort_field 'relevance', sort: 'score desc, pub_date_si desc, title_si asc', label: 'relevance'
+    ##config.add_sort_field 'year-desc', sort: 'pub_date_si desc, title_si asc', label: 'year'
+    ##config.add_sort_field 'author', sort: 'author_si asc, title_si asc', label: 'author'
+    ##config.add_sort_field 'title_si asc, pub_date_si desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -442,6 +448,6 @@ class CatalogController < ApplicationController
     config.autocomplete_path = 'suggest'
     # if the name of the solr.SuggestComponent provided in your solrconfig.xml is not the
     # default 'mySuggester', uncomment and provide it below
-    # config.autocomplete_suggester = 'mySuggester'
+    #config.autocomplete_suggester = 'mySuggester'
   end
 end
