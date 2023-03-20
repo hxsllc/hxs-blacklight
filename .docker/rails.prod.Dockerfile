@@ -22,6 +22,7 @@ RUN apt-get update -qq && \
   default-jre \
   git \
   curl \
+  cron \
   bash \
   libxml2-dev \
   libxslt-dev \
@@ -69,6 +70,12 @@ RUN rm -rf $APP_ROOT/solr
 RUN rm -rf $APP_ROOT/tmp
 RUN rm -rf $APP_ROOT/log
 RUN rm -rf $APP_ROOT/node_modules # Making the image smaller
+
+# Create empty crontab file
+RUN crontab -l | { cat; echo ""; } | crontab -
+
+# Update crontab file using whenever command
+RUN bundle exec whenever --update-crontab
 
 # Expose port
 EXPOSE $RAILS_PORT

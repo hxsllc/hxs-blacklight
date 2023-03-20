@@ -98,3 +98,4 @@ gem "jsbundling-rails", "~> 1.1"
 gem "blacklight_range_limit", "~> 7.8"
 gem "addressable", "~> 2.8"
 gem "faraday", "~> 2.7"
+gem "whenever", "~> 1.0", require: false
