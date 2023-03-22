@@ -148,6 +148,8 @@ end.parse!
 				@outputFieldName = "owner"
 			elsif(fieldname=="Artist")
 				@outputFieldName = "artist"
+			elsif(fieldname=="Associated agent")
+				@outputFieldName = "agent"
 			elsif(fieldname=="")
 				if $propertyNameArray.keys.include?(propertyid)
 					@outputFieldName = $propertyNameArray[propertyid]
@@ -186,27 +188,27 @@ end.parse!
 			## retrieve ID from item JSON array
 			#@wid = mergeWIDs(item.fetch('id'))
 
-			#{
-			#"qid_meta": "Q644",
+			# DEBUG OUTPUT FROM WIKIBASE-TO-SOLR
+			#{"qid_meta": "Q644",
 			# => Q644 PP P16 Q2
-			#Q644 PP P38 false
-			#-- P4 {"entity-type"=>"item", "numeric-id"=>374, "id"=>"Q374"}
-			#---- PV University of Pennsylvania QL University of Pennsylvania QU
-			#Q644 QQ P5 University of Pennsylvania QL University of Pennsylvania QU
-			#Q644 PP P6 Q4
-			#Q644 PP P7 9959387343503681
-			#Q644 PP P8 Oversize LJS 224
-			#Q644 PP P9 https://franklin.library.upenn.edu/catalog/FRANKLIN_9959387343503681
-			#},{
-			#"qid_meta": "Q645",
-			#"id": "DS55",
-			#Q645 PP P1 DS55
+			# => Q644 PP P38 false
+			# => -- P4 {"entity-type"=>"item", "numeric-id"=>374, "id"=>"Q374"}
+			# => ---- PV University of Pennsylvania QL University of Pennsylvania QU
+			# => Q644 QQ P5 University of Pennsylvania QL University of Pennsylvania QU
+			# => Q644 PP P6 Q4
+			# => Q644 PP P7 9959387343503681
+			# => Q644 PP P8 Oversize LJS 224
+			# => Q644 PP P9 https://franklin.library.upenn.edu/catalog/FRANKLIN_9959387343503681
+			#},{"qid_meta": "Q645",
+			# => "id": "DS55",
+			# => Q645 PP P1 DS55
 			# => Q645 PP P16 Q1
 			# => Q645 PP P2 Q644
-			#},{
-			#"qid_meta": "Q646",
+			#},{"qid_meta": "Q646",
 			# => Q646 PP P3 Q645
 			# => Q646 PP P16 Q3
+
+			#Q646 > points to Q645 > points to Q644
 
 			@widP2search = $p2Records.key(wikibaseid)
 			if @widP2search.nil?
@@ -223,10 +225,10 @@ end.parse!
 
 		end
 
-## parse JSON into a Ruby array (NOT A HASH!)
+## load JSON into a Ruby array
 data = JSON.load_file importJSONfile
 
-## read property names into array = from ds-model-ids.json
+## read property names into array < from property-names.csv
 
 $propertyNameArray={}
 CSV.foreach(importPropertyFile, col_sep: ",", liberal_parsing: true) do |line|
@@ -332,9 +334,7 @@ data.each do |item|
 
 	##only process "instance of" [P16] values 1, 2, 3
 	if @instance.to_i>=1 && @instance.to_i<=3
-    # solrItem['merge'] = "merge: #{@instance} - #{mergeWIDs @owid}"
 
-		#puts "DEBUG: OWID #{@owid} WID #{@wid} LPK #{@lastPropertyKey}"
 		generateJSONforSolr @wikibaseid, "qid_meta", @owid
 
 		@claims.keys.each do |property|
@@ -343,7 +343,6 @@ data.each do |item|
 			@propArrayTotal = @propArrayX.length
 			@propArrayLoopCount = 0
 			@propArrayX.each do |propArray|
-				#@propArrayLoopCount += 1
 				propArray ? @propValue = returnMDVifNotNil(propArray): nil
 
 				#custom properties that are not part of property-names.csv
@@ -360,14 +359,6 @@ data.each do |item|
 				end
 
 				propArray ? @qualifiers = returnPropQuals(propArray): nil
-
-				#if @propArrayLoopCount==@propArrayTotal
-				#	@lastPropertyValue=true
-				#else
-				#	@lastPropertyValue=false
-				#end
-
-				
 
 				if @qualifiers
 
@@ -387,7 +378,7 @@ data.each do |item|
 					@qualifiers.keys.each do |qualPropertyId|
 						
 						@qualArray = returnPropArrayFirst(@qualifiers, qualPropertyId)
-						#@qualValue = returnDVifNotNil(@qualArray)
+						#if P25, P36, P37 then return datavalue-value-time, otherwise return datavalue-value
 						qualPropertyId.include_any?(['P25','P36','P37']) ? @qualValue = returnDVTifNotNil(@qualArray): @qualValue = returnDVifNotNil(@qualArray)
 
 						#check for MDV (mainsnak-datavalue-value) that looks like
@@ -397,9 +388,6 @@ data.each do |item|
 							@qualID ? @qualLabel = labels[@qualID]: nil
 							@qualID ? @qualURI = uris[@qualID]: nil
 						end
-
-						# most properties only have one qualifier, but P14 has 1-3 qualifiers
-						# so you have to extract them from the loop
 
 						#P10 contains qualifiers P13, P15, and P17 (agr, role, authority)
 						qualPropertyId=='P13' ? @qualAGR = @qualValue: nil
@@ -432,6 +420,8 @@ data.each do |item|
 						#end of @qualifiers loop
 					end
 
+					# most properties only have one qualifier, but P14 has 0, 1, 2, or 3 qualifiers
+					# so you have to extract them from the loop
 					if property=='P14'
 
 						#special data format output rules for P14 (associated name)
@@ -487,29 +477,11 @@ data.each do |item|
 						createJSONforSolr(@wikibaseid, 'P37', "_int", "", Time.parse(@qualEarliest).year)
 						createJSONforSolr(@wikibaseid, 'P36', "_int", "", Time.parse(@qualLatest).year)
 
-						centuryDate = Time.parse(@qualCentury).year.to_s
-						if centuryDate=='101' then centuryName = "(0#{centuryDate}) 1st century" end 
-						if centuryDate=='201' then centuryName = "(0#{centuryDate}) 2nd century" end 
-						if centuryDate=='301' then centuryName = "(0#{centuryDate}) 3rd century" end 
-						if centuryDate=='401' then centuryName = "(0#{centuryDate}) 4th century" end 
-						if centuryDate=='501' then centuryName = "(0#{centuryDate}) 5th century" end 
-						if centuryDate=='601' then centuryName = "(0#{centuryDate}) 6th century" end 
-						if centuryDate=='701' then centuryName = "(0#{centuryDate}) 7th century" end 
-						if centuryDate=='801' then centuryName = "(0#{centuryDate}) 8th century" end 
-						if centuryDate=='901' then centuryName = "(0#{centuryDate}) 9th century" end 
-						if centuryDate=='1001' then centuryName = "(#{centuryDate}) 10th century" end 
-						if centuryDate=='1101' then centuryName = "(#{centuryDate}) 11th century" end 
-						if centuryDate=='1201' then centuryName = "(#{centuryDate}) 12th century" end 
-						if centuryDate=='1301' then centuryName = "(#{centuryDate}) 13th century" end 
-						if centuryDate=='1401' then centuryName = "(#{centuryDate}) 14th century" end 
-						if centuryDate=='1501' then centuryName = "(#{centuryDate}) 15th century" end 
-						if centuryDate=='1601' then centuryName = "(#{centuryDate}) 16th century" end 
-						if centuryDate=='1701' then centuryName = "(#{centuryDate}) 17th century" end 							
-						createJSONforSolr(@wikibaseid, 'P25', "_facet", "", centuryName)
 					elsif property=='P30'
 						#if @debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 						if debugProperties then puts "P31 material_facet #{@qualMaterial} #{@qualLabel}" end
 						createJSONforSolr(@wikibaseid, 'P31', "_facet", "", @qualLabel)
+
           else
 						if debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
 						if debugProperties then puts "#{@wikibaseid} #{property} #{@qualLabel}" end
@@ -517,9 +489,10 @@ data.each do |item|
 						createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
 						createJSONforSolr(@wikibaseid, property, "_search", "", @qualLabel)
 						createJSONforSolr(@wikibaseid, property, "_facet", "", @qualLabel)
+
 					end
 
-					#else if no @qualifiers exist
+				#else if no @qualifiers exist
         else
 
 					if debugProperties then puts "#{@wikibaseid} PP #{property} #{@propValue}" end
@@ -531,7 +504,7 @@ data.each do |item|
 					createJSONforSolr(@wikibaseid, property, "_facet", "", @propValue)
 					createJSONforSolr(@wikibaseid, property, "_link", "", @propValue)
 
-					#end if @qualifiers
+				#end if @qualifiers
         end
 
 			#end @propArrayX.each loop
