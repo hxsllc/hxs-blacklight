@@ -29,7 +29,6 @@ class SolrDocument
 	if fetch('iiif_manifest_link',false)
 	Array(fetch('iiif_manifest_link')).map do |v|
       link_to(v, v, target: '_blank', class: 'ds-ld-search')
-      #"<span style='text-decoration:line-through;'>#{v}</span>".html_safe
     end
     end
   end  
@@ -38,7 +37,6 @@ class SolrDocument
 	if fetch('institutional_record_link',false)
 	Array(fetch('institutional_record_link')).map do |v|
       link_to(v, v, target: '_blank', class: 'ds-ld-search')
-      #"<span style='text-decoration:line-through;'>#{v}</span>".html_safe
     end
     end
   end    
@@ -54,8 +52,6 @@ class SolrDocument
   def prop_shelfmark
 	if fetch('shelfmark_display',false)
 	Array(fetch('shelfmark_display')).map do |v|
-      #a = v.sub("PV ","")
-      #"#{a}"
       data = JSON.parse(v)
       output = data["PV"]
       "#{output}"
@@ -66,8 +62,6 @@ class SolrDocument
   def prop_title
 	if fetch('title_display',false)
 	Array(fetch('title_display')).map do |v|
-      #a = v.sub("PV ","")
-      #"#{a}"
       data = JSON.parse(v)
       output = data["PV"]
       "#{output}"
@@ -176,7 +170,35 @@ class SolrDocument
 			"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
 	    end #array
     end #if
-  end  #def            
+  end  #def     
+
+  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
+  def prop_agent
+	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+	divend = "</div>"	
+	qfield = "agent_facet"
+	if fetch('agent_display',false)
+		Array(fetch('agent_display')).map do |v|
+			data = JSON.parse(v)
+			pv = data["PV"]
+			agr = data["AGR"]
+			ql = data["QL"]
+			qu = data["QU"]
+
+			if agr then qtext = "#{pv} / #{agr}" else qtext = "#{pv}" end
+			if ql  
+				qlink = "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{ql}'>#{ql}</a>" 
+			else 
+				qlink=""
+				divstart=""
+				divend=""
+			end
+
+			"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
+	    end #array
+    end #if
+  end  #def   
+
   
   #V3 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink
   def prop_date
@@ -284,12 +306,7 @@ class SolrDocument
 	divend = "</div>"
 	tlink = ''
 	Array(fetch('term_facet')).map do |v|
-		#data = JSON.parse(v)
 		qfield = "term_facet"
-		#pv = data["PV"]
-		#agr = data["AGR"]
-		#ql = data["QL"]
-		#qu = data["QU"]
 		term = v
 		tlink += "<a class='ds-ld-search' href='/?f%5B#{qfield}%5D%5B%5D=#{term}'>#{term}</a><br>"
     end
@@ -319,23 +336,6 @@ class SolrDocument
     end
   end         
   
-    
-  # The following shows how to setup this blacklight document to display marc documents
-  #extension_parameters[:marc_source_field] = :marc_ss
-  #extension_parameters[:marc_format_type] = :marcxml
-  #use_extension(Blacklight::Marc::DocumentExtension) do |document|
-  #  document.key?(SolrDocument.extension_parameters[:marc_source_field])
-  #end
-
-  #field_semantics.merge!(
-  #                       :title => "title_ssm",
-  #                       :author => "author_ssm",
-  #                       :language => "language_ssim",
-  #                       :format => "format"
-  #                       )
-
-
-
   # self.unique_key = 'id'
 
   # Email uses the semantic field mappings below to generate the body of an email.
