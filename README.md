@@ -1,5 +1,61 @@
 # README
 
+This repo contains Blacklight 7.31.0 customized for Digital Scriptorium
+
+## Blacklight Customizations
+
+### app/assets
+- /images contains custom images for the Digital Scriptorium UI
+- /stylesheets contains custom CSS for for the Digital Scriptorium UI
+
+### app/components
+- ds_document_metadata_component (.rb + .html.erb)
+- ds_metadata_field_component (.rb + .html.erb)
+- ds_search_bar_component (.rb + .html.erb)
+
+### app/controllers
+- catalog_controller.rb contains configuration for
+-- advanced_search
+-- document title (index and show)
+-- show_tools
+-- nav_action
+-- facet_field (all metadata displayed in facet sidebar)
+-- index_field (title, author, place, date)
+-- show_field (all metadata displayed in full record view)
+-- search_field (all fields displayed in simple search drop-down + advanced search page)
+
+### app/helpers
+- application_helper.rb contains custom UI functions
+
+### app/javascript
+- /components contains custom JS functions for
+-- advanced search form
+-- pop-up alert bar
+-- copy to clipboard in full record view
+- application.js contains Mirador integration
+
+### app/models
+- /concerns/solr_document.rb contains custom accessor methods used in full record view
+- /presenters contains customized Ruby functions to modify default document title display
+
+### app/views
+- /advanced contains customized/overriden views for advanced search
+- /blacklight/nav contains customized/overridden views for navigation
+- /catalog contains customized/overridden views for 
+-- citation
+-- homepage
+-- search form
+-- "show" page (full record view)
+-- Links sidebar widget (full record view)
+-- Contact Institution sidebar widget
+-- sidebar widget config
+- /shared contains customized/overridden views for
+-- pop-up alert (beta notice)
+-- header navbar
+-- footer
+-- copy to clipboard icon
+
+###
 ## Docker Development Environment
 
 ### Dependencies
