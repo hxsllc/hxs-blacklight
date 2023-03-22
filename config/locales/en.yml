@@ -33,4 +33,4 @@ en:
   hello: "Hello world"
   alerts:
     beta_notice:
-      message: "You are currently using the beta version which has been launched for public use to enable our user community to test the platform and provide feedback for improvement. Did you find a bug? Want to suggest an improvement? Take the user survey to tell us about your experience and report issues."
+      message: "You are currently using the beta version which has been launched for public use to enable our user community to test the platform and provide feedback for improvement."
