@@ -179,7 +179,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'title_facet', label: 'Title'
     config.add_index_field 'author_facet', label: 'Author'
     config.add_index_field 'place_facet', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } 
-    config.add_index_field 'date_meta', label: 'Century'
+    config.add_index_field 'date_meta', label: 'Date'
 
     
     #config.add_index_field 'earliest_date', label: 'Date Range (Earliest)'
