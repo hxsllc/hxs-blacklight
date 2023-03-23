@@ -174,11 +174,11 @@ class SolrDocument
 
   #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   def prop_agent
-	divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
-	divend = "</div>"	
 	qfield = "agent_facet"
 	if fetch('agent_display',false)
 		Array(fetch('agent_display')).map do |v|
+			divstart = "<br><div class='ds-ld-bar'>&nbsp;" 
+			divend = "</div><br>"				
 			data = JSON.parse(v)
 			pv = data["PV"]
 			agr = data["AGR"]
@@ -191,7 +191,7 @@ class SolrDocument
 			else 
 				qlink=""
 				divstart=""
-				divend=""
+				divend="<br><br>"
 			end
 
 			"#{qtext}#{divstart}#{qlink}#{linked_data_span_tag qu}#{divend}".html_safe
