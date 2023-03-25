@@ -55,6 +55,54 @@ This repo contains Blacklight 7.31.0 customized for Digital Scriptorium
 - -- footer
 - -- copy to clipboard icon
 
+## Solr Customizations
+
+### config/
+- solr-schema.yml contains custom dynamic fields (below)
+- solr-seed.json contains Wikibase data from 2023-03-17
+
+### dynamic fields (xml)
+
+<dynamicField name="*_display" type="string" multiValued="true" indexed="true" stored="true"/>
+<dynamicField name="*_search" type="text" multiValued="true" indexed="true" stored="true"/>
+<dynamicField name="*_facet" type="string" docValues="true" multiValued="true" indexed="true" stored="true"/>
+<dynamicField name="*_meta" type="string" multiValued="true" indexed="true" stored="true"/>
+<dynamicField name="*_link" type="string" multiValued="true" indexed="true" stored="true"/>
+<dynamicField name="*_int" type="int" multiValued="true" indexed="true" stored="true"/>
+
+### dynamic fields (yml)
+ - name: "*_display" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_search" 
+    type: "text" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_facet" 
+    type: "string" 
+    docValues: true
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_meta" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_link" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_int" 
+    type: "int" 
+    multiValued: true
+    indexed: true
+    stored: true
+    
 ###
 ## Docker Development Environment
 
