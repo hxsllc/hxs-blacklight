@@ -108,6 +108,82 @@ This repo contains Blacklight 7.31.0 customized for Digital Scriptorium
     stored: true
 ```
 
+## Wikibase to Solr Script
+wikibase-to-solr.rb
+
+### property-names.csv
+
+The fieldnames are used as the root of the Solr fieldname, combined with the appropriate dynamic field as outlined above.
+
+In Wikibase:
+P1 = "DS ID"
+
+In property-names.csv:
+P1 = "id"
+
+After wikibase-to-solr.rb, in import.json:
+id, id_display, id_search
+
+### root field names
+
+- P1,id
+- P2,manuscript_holding
+- P3,described_manuscript
+- P4,institution_authority
+- P5,institution
+- P6,holding_status
+- P7,institutional_id
+- P8,shelfmark
+- P9,institutional_record
+- P10,title
+- P11,standard title
+- P12,uniform_title
+- P13,original_script
+- P14,associated_name
+- P15,role_authority
+- P16,instance_of
+- P17,name_authority
+- P18,term
+- P19,subject
+- P20,term_authority
+- P21,language
+- P22,language_authority
+- P23,date
+- P24,century_authority
+- P25,century
+- P26,dated
+- P27,place
+- P28,place_authority
+- P29,physical_description
+- P30,material
+- P31,material
+- P32,note
+- P33,acknowledgements
+- P34,date_added
+- P35,date_updated
+- P36,latest
+- P37,earliest
+- P38,start_time
+- P39,end_time
+- P40,external_identifier
+- P41,iiif_manifest
+- P42,wikidata_qid
+- P43,viaf_id
+- P44,external_uri
+- P45,equivalent_property
+- P46,formatter_url
+- P47,subclass_of
+
+### dynamic field names
+
+- _display (has LD syntax structure, needs to be parsed with Blacklight)
+- _search (for text search, tokenized)
+- _facet (for displaying in sidebar facets, not tokenized)
+- _link (for displaying as a hyperlink)
+- _int (for dates)
+- _meta (for plain text data)
+
+
 ###
 ## Docker Development Environment
 
