@@ -116,13 +116,13 @@ wikibase-to-solr.rb
 The fieldnames are used as the root of the Solr fieldname, combined with the appropriate dynamic field as outlined above.
 
 In Wikibase:
-P1 = "DS ID"
+- P1 = "DS ID"
 
 In property-names.csv:
-P1 = "id"
+- P1 = "id"
 
 After wikibase-to-solr.rb, in import.json:
-id, id_display, id_search
+- id, id_display, id_search
 
 ### root field names
 
@@ -183,6 +183,24 @@ id, id_display, id_search
 - _int (for dates)
 - _meta (for plain text data)
 
+### overview (pseudo-code)
+
+1. require ruby libraries
+2. configure field output arrays (by P-id)
+3. configure general settings
+4. define custom functions
+5. load JSON
+6. load property-names.csv into a lookup array
+7. first EACH-DO = populate lookup arrays (labels, uris, p2records, p3records)
+8. second EACH-DO = main loop
+  1. fetch Wikibase item id
+  2. merge ids (3 Wikibase records become 1 merged Solr record)
+  3. load the claims
+  4. when the item matches instance_of=1,2,3, parse
+  5. evaluate all properties in the claims array
+  6. if the property contains qualifiers, evaluate all qualifiers inside that property
+  7. data transformation rules and logic for special cases (P14, P23, P25, P36, P37, P30, P31)
+9. output $solrObjects array as JSON to file
 
 ###
 ## Docker Development Environment
