@@ -155,350 +155,6 @@ fieldTypes:
   - name: "tlong"
     class: "solr.LongPointField"
     docValues: true
-fields:
-  - name: "id_ds"
-    type: "string"
-    multiValued: false
-    stored: true
-  - name: "IIIF_manifest"
-    type: "text"
-    uninvertible: true
-    indexed: true
-    stored: true
-  - name: "described_manuscript"
-    type: "text"
-    uninvertible: true
-    indexed: true
-    stored: true
-  - name: "all_text_timv"
-    type: "text"
-    indexed: true
-    termOffsets: true
-    stored: false
-    termPositions: true
-    termVectors: true
-    multiValued: true
-  - name: "format"
-    type: "string"
-    multiValued: true
-    indexed: true
-    stored: true
-  - name: "id"
-    type: "string"
-    multiValued: false
-    indexed: true
-    required: true
-    stored: true
-  - name: "lat"
-    type: "tdouble"
-    multiValued: false
-    indexed: true
-    stored: true
-  - name: "lng"
-    type: "tdouble"
-    multiValued: false
-    indexed: true
-    stored: true
-  - name: "timestamp"
-    type: "date"
-    default: "NOW"
-    multiValued: false
-    indexed: true
-    stored: true
-  - name: "id_wikibase"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "manuscript_holding"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "title_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "date_updated"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "date_added"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "genre_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "subject_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "place_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "language_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "material"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "physical_description"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "acknowledgements"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "production_date_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "dated"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "note"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "associated_name_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "uniform_title_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "external_identifier"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "genre_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "subject_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "place_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "language_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "century"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "century_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "aat_id"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "earliest_date"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "latest_date"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "equivalent_property"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "name_authority"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "place"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "role"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "holding_institution"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "institutional_ID"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "holding_status"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "start_time"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "end_time"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "institutional_URL"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "shelfmark"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "instance_of"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "iiif_manifest"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "viaf_id "
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "formatter_url"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "material_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "holding_institution_recorded"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "wikidata_qid"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "external_uri"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "original_script"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "uniform_title_recorded "
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
-  - name: "term"
-    type: "string"
-    stored: true
-    multiValued: true
-    docValues: true
-    indexed: true
 dynamicFields:
   - name: "*_coordinate"
     type: "tdouble"
@@ -1026,6 +682,37 @@ dynamicFields:
     type: "boolean"
     multiValued: false
     indexed: false
+    stored: true
+  - name: "*_display" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_search" 
+    type: "text" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_facet" 
+    type: "string" 
+    docValues: true
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_meta" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_link" 
+    type: "string" 
+    multiValued: true
+    indexed: true
+    stored: true
+  - name: "*_int" 
+    type: "int" 
+    multiValued: true
+    indexed: true
     stored: true
 copyFields:
   - source: "*_tsim"
