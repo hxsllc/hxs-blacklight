@@ -45,13 +45,15 @@ require 'optparse'
 # => _int (for dates)
 # => _meta (for plain text data)
 
-## configuration
+## field output configuration
 
 @displayFieldIDs = [1,5,6,8,10,14,18,21,23,26,27,29,30,32,33].freeze
 @searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,18,21,22,23,27,28,29,32].freeze
 @facetFieldIDs = [5,10,11,14,18,21,23,25,26,27,31].freeze
 @linkFieldIDs = [9,41].freeze
 @intFieldIDs = [25,36,37].freeze
+
+## general configuration
 
 dir = File.dirname __FILE__
 importJSONfile = File.expand_path 'export.json', dir
