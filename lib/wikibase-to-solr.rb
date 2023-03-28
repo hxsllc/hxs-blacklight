@@ -396,6 +396,7 @@ data.each do |item|
 						qualPropertyId=='P15' ? @qualRole = @qualLabel: nil
 
             ##there can be multiple P17s inside P10 qualifiers
+            ##there can be multiple name authorities inside an associated name
 						if qualPropertyId === 'P17'
               @qualAuth += @qualifiers[qualPropertyId].map do |qualifier|
                 data = returnDVifNotNil qualifier
@@ -404,7 +405,11 @@ data.each do |item|
               end
             end
 
-						#P23 contains qualifiers P24, P25, P36, P37
+						# P23 (..) contains qualifiers 
+						# => P24 (name_authority)
+						# => P25 (..)
+						# => P36 (..) 
+						# => P37 (..)
 						qualPropertyId=='P24' ? @qualDate = @qualValue: nil
 						qualPropertyId=='P25' ? @qualCentury = @qualValue: nil 
 						qualPropertyId=='P36' ? @qualLatest = @qualValue: nil 
@@ -523,4 +528,5 @@ end
 
 
 # output JSON to stdout
+# here is where you could implement output batching
 File.write outputJSONFile, JSON.pretty_generate($solrObjects.values)
