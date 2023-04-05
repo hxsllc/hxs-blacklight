@@ -1,3 +1,6 @@
-class DsMetadataFieldComponent < Blacklight::MetadataFieldComponent 
+# Metadata Field View Component
+#
+# Overrides the blacklight MetadataFieldComponent to override the view for the component
+class DsMetadataFieldComponent < Blacklight::MetadataFieldComponent
     
 end

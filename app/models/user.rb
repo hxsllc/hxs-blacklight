@@ -1,3 +1,7 @@
+# User of the application
+#
+# Blacklight depends on Devise which depends on a User model even though this is currently not used in the
+# application.
 class User < ApplicationRecord
 
   # Connects this user object to Blacklights Bookmarks.

@@ -1,3 +1,4 @@
+# Application view helper methods
 module ApplicationHelper
 	
   def make_link document:, field:, value:, context:, config:
