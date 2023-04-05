@@ -81,7 +81,7 @@ end
 gem "blacklight", ">= 7.0"
 
 group :development, :test do
-  gem "solr_wrapper", ">= 0.3"
+  gem 'upennlib-rubocop', '~> 1.1', require: false
 end
 
 gem "rsolr", ">= 1.0", "< 3"
@@ -91,7 +91,6 @@ gem "sassc-rails", "~> 2.1"
 gem "jquery-rails"
 gem "devise"
 gem "devise-guests", "~> 0.8"
-gem "blacklight-marc", ">= 7.0.0.rc1", "< 8"
 gem "blacklight_advanced_search", "~> 7.0"
 gem "hashdiff", "~> 1.0"
 gem "jsbundling-rails", "~> 1.1"
