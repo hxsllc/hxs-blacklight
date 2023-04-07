@@ -1,3 +1,4 @@
+# Overrides the default Blacklight title presenter for the catalog index action
 class TitlePresenterIndex < Blacklight::IndexPresenter
   def heading
     # Assuming that :main_title and :sub_title are field names on the Solr document.
@@ -8,7 +9,7 @@ class TitlePresenterIndex < Blacklight::IndexPresenter
       b=document.first(:shelfmark_search)
     end
     if a && b
-      a + ", " + b
+      "#{a}, #{b}"
     end
   end
 end

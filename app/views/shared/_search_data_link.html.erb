@@ -1,0 +1,15 @@
+<%= label %>
+<% if term.present? %>
+    <br />
+    <div class='ds-ld-bar'>
+      <%= link_to term, root_path(f: { facet_field => Array(term) }), class: 'ds-ld-search' %>
+      <% if source.present? %>
+        <span class="ds-ld-float">
+          <%= image_tag 'sbts2018-flat.png', class: 'ds-ld-img', title: 'Linked Data', alt: 'Linked Data indicator' %>
+          <%= link_to source, class: 'ds-ld-link', target: :_blank, title: 'Explore this term via Linked Data' do %>
+            <%= t "blacklight.solr_document.link_data_acronyms.#{source_acronym}", default: source_acronym.to_s.upcase %>
+          <% end %>
+        </span>
+      <% end %>
+    </div>
+<% end %>

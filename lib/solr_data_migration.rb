@@ -12,7 +12,7 @@ class SolrDataMigration
   #   parsed from the `SOLR_URl` environment variable
   def initialize(backup_solr: true, solr_collection: nil, solr_uri: nil)
     @backup_solr = backup_solr
-    @solr_collection = SolrCollection.new
+    @solr_collection = solr_collection || SolrCollection.new
     @solr = RSolr.connect url: solr_uri || ENV['SOLR_URL']
   end
 

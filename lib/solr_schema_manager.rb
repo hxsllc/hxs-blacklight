@@ -1,7 +1,12 @@
 # frozen_string_literal: true
+
+# Compares the local schema configuration with the Solr server configuration
+#  making the necessary changes (add, remove, updates) to the Solr server.
 class SolrSchemaManager
+  # Base Solr Schema Manager error
   class SolrError < StandardError; end
 
+  # Describes the duplicate field in the local solr schema configuration
   class DuplicateFieldSolrError < SolrError
     attr_reader :type, :name, :definition
 
