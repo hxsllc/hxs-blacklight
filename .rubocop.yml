@@ -1,6 +1,2 @@
 inherit_gem:
   upennlib-rubocop: upennlib_rubocop_defaults.yml
-
-AllCops:
-  Exclude:
-    - 'lib/wikibase-to-solr.rb'
