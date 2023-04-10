@@ -1,17 +1,19 @@
 		
 	<% if !@fields_with_keys[:iiif_manifest_link].nil? %>
-	<%=		"<div id='document-viewer' style='background-color:#F8F4ED;margin-top:20px;border-radius:25px 25px 0px 0px;padding:0px 20px 20px 20px;''>".html_safe %>
-	<%=   "<div id='alternate-versions-bar' style='padding:20px 10px 0px 0px;'>".html_safe %>
-	<%=   "<em>Images provided by hosting institution via &nbsp;<a href=\"".html_safe %>
-	<%=   @fields_with_keys[:iiif_manifest_link].values.first %>
-	<%=   "\">".html_safe %>
-	<%=   "<img src=\"https://groups.google.com/group/iiif-discuss/attach/97c1f508489d/IIIF-logo-colored-text.svg?part=0.1\" style=\"height:20px;margin-top:-3px;\"></a></em>".html_safe %>
-	<%=   "<div id='my-mirador' style='display:inline-block;height:450px;position:relative;width:100%;padding-bottom:20px;'>".html_safe %>
-	<%=   "</div>".html_safe %>
-	<%=   "</div>".html_safe %>	
-	<%=   "</div>".html_safe %>				
+		<div id="document-viewer" style="background-color:#F8F4ED;margin-top:20px;border-radius:25px 25px 0px 0px;padding:0px 20px 20px 20px;">
+			<div id="alternate-versions-bar" style="padding:20px 10px 0px 0px;">
+				<em>
+					Images provided by hosting institution via
+					<%= link_to @fields_with_keys[:iiif_manifest_link].values.first do %>
+						<%= image_tag 'IIIF-logo-100w.png', style: 'height:20px;margin-top:-3px;' %>
+					<% end %>
+				</em>
+				<div id="my-mirador" style="display:inline-block;height:450px;position:relative;width:100%;padding-bottom:20px;">
+				</div>
+			</div>
+		</div>
 	<% else %>
-	<%=   "<em style='display:block;padding-top:25px;'>No images provided by hosting institution</em>".html_safe %>	
+		<em style="display:block;padding-top:25px;">No images provided by hosting institution</em>
 	<% end	%>		
 
 	<% if !@fields_with_keys[:iiif_manifest_link].nil? %>
