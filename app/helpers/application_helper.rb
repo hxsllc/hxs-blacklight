@@ -94,6 +94,15 @@ module ApplicationHelper
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
+  # rubocop:disable Lint/UnusedMethodArgument
+  #  Blacklight requires the named arguments
+  def search_term_link document:, field:, value:, context:, config:, facet_field: nil
+    facet_field ||= generate_search_facet_field field
+    links = Array(value).map { |term| search_term_item term, field, facet_field  }
+    safe_join links, "\n"
+  end
+  # rubocop:enable Lint/UnusedMethodArgument
+
   #V2.0 VISUAL BAR, NO LINKED DATA
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
@@ -120,16 +129,19 @@ module ApplicationHelper
     "#{field.to_s.split('_')[0...-1].join('_')}_facet"
   end
 
+  def search_term_item(term, field, facet_field)
+    return if term.blank?
+
+    render partial: 'shared/search_link',
+           locals: { field: field, facet_field: facet_field, term: term }
+  end
+
   def search_link_item(json_string, field, facet_field)
     data = JSON.parse json_string
     return if data['QL'].blank?
 
     render partial: 'shared/search_link',
-           locals: {
-             field: field,
-             facet_field: facet_field,
-             term: data['QL']
-           }
+           locals: { field: field, facet_field: facet_field, term: data['QL'] }
   end
 
   def search_data_link_item(json_string, field, facet_field)

@@ -303,7 +303,7 @@ class CatalogController < ApplicationController
 
 		# FACET LINKS, NO LINKED DATA
 		config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true, helper_method: :search_link
-		config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, helper_method: :search_link
+		config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, helper_method: :search_term_link
 
 		# TEXTUAL
 		config.add_show_field 'physical_description_display', label: 'Physical Description', helper_method: :property_value
