@@ -93,9 +93,6 @@
     "latest_int": [
       815
     ],
-    "century_facet": [
-      "(0801) 8th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -232,9 +229,6 @@
     ],
     "latest_int": [
       815
-    ],
-    "century_facet": [
-      "(0801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -389,9 +383,6 @@
     ],
     "latest_int": [
       850
-    ],
-    "century_facet": [
-      "(0801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -630,10 +621,6 @@
       850,
       910
     ],
-    "century_facet": [
-      null,
-      "(0801) 8th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
     ],
@@ -866,9 +853,6 @@
     "latest_int": [
       850
     ],
-    "century_facet": [
-      "(0801) 8th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -1031,9 +1015,6 @@
     "latest_int": [
       399
     ],
-    "century_facet": [
-      "(0301) 3rd century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -1171,9 +1152,6 @@
     ],
     "latest_int": [
       860
-    ],
-    "century_facet": [
-      "(0801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1325,9 +1303,6 @@
     "latest_int": [
       910
     ],
-    "century_facet": [
-      "(0801) 8th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -1454,9 +1429,6 @@
     ],
     "latest_int": [
       999
-    ],
-    "century_facet": [
-      "(0901) 9th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -1611,9 +1583,6 @@
     "latest_int": [
       1025
     ],
-    "century_facet": [
-      "(1001) 10th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -1761,9 +1730,6 @@
     "latest_int": [
       1050
     ],
-    "century_facet": [
-      "(1001) 10th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -1902,9 +1868,6 @@
     ],
     "latest_int": [
       1150
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2081,9 +2044,6 @@
     ],
     "latest_int": [
       1150
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2293,9 +2253,6 @@
     "latest_int": [
       1150
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -2464,9 +2421,6 @@
     ],
     "latest_int": [
       1160
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2644,9 +2598,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -2836,9 +2787,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -3003,9 +2951,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -3145,9 +3090,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3290,9 +3232,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -3430,9 +3369,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3574,9 +3510,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -3705,9 +3638,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -3833,9 +3763,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -3973,9 +3900,6 @@
     ],
     "latest_int": [
       1210
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4131,9 +4055,6 @@
     "latest_int": [
       1215
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -4269,9 +4190,6 @@
     ],
     "latest_int": [
       1225
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4427,9 +4345,6 @@
     "latest_int": [
       1250
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -4566,9 +4481,6 @@
     "latest_int": [
       1260
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -4701,9 +4613,6 @@
     ],
     "latest_int": [
       1250
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4840,9 +4749,6 @@
     ],
     "latest_int": [
       1175
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -4986,9 +4892,6 @@
     "latest_int": [
       1260
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -5128,9 +5031,6 @@
     ],
     "latest_int": [
       1260
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -5279,9 +5179,6 @@
     "latest_int": [
       1299
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -5415,9 +5312,6 @@
     ],
     "latest_int": [
       1299
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -5555,9 +5449,6 @@
     "latest_int": [
       1299
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -5694,9 +5585,6 @@
     ],
     "latest_int": [
       1299
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -5840,9 +5728,6 @@
     "latest_int": [
       1315
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -5975,9 +5860,6 @@
     ],
     "latest_int": [
       1315
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -6128,10 +6010,6 @@
     "latest_int": [
       1310,
       1599
-    ],
-    "century_facet": [
-      "(1201) 12th century",
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -6286,9 +6164,6 @@
     "latest_int": [
       1315
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -6416,9 +6291,6 @@
     "latest_int": [
       1325
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -6544,9 +6416,6 @@
     "latest_int": [
       1315
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -6671,9 +6540,6 @@
     "latest_int": [
       1350
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -6785,9 +6651,6 @@
     ],
     "latest_int": [
       1325
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -6928,9 +6791,6 @@
     ],
     "latest_int": [
       1350
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -7085,10 +6945,6 @@
       1310,
       1350
     ],
-    "century_facet": [
-      "(1201) 12th century",
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -7228,9 +7084,6 @@
     "latest_int": [
       1350
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -7361,9 +7214,6 @@
     ],
     "latest_int": [
       1360
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -7515,10 +7365,6 @@
     "latest_int": [
       1260,
       1375
-    ],
-    "century_facet": [
-      "(1201) 12th century",
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -7672,9 +7518,6 @@
     "latest_int": [
       1375
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -7805,9 +7648,6 @@
     "latest_int": [
       1399,
       1375
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -7948,9 +7788,6 @@
     ],
     "latest_int": [
       1399
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -8441,9 +8278,6 @@
     "latest_int": [
       1415
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -8580,9 +8414,6 @@
     "latest_int": [
       1425
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -8709,9 +8540,6 @@
     ],
     "latest_int": [
       1450
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
@@ -8869,9 +8697,6 @@
     "latest_int": [
       1450
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -9022,9 +8847,6 @@
     "latest_int": [
       1450
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -9161,9 +8983,6 @@
     ],
     "latest_int": [
       1450
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -9310,9 +9129,6 @@
     ],
     "latest_int": [
       1450
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -9743,9 +9559,6 @@
     "latest_int": [
       1475
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -9874,9 +9687,6 @@
     ],
     "latest_int": [
       1450
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -10048,9 +9858,6 @@
     ],
     "latest_int": [
       1460
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
@@ -10247,9 +10054,6 @@
     "latest_int": [
       1460
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -10410,9 +10214,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -10560,9 +10361,6 @@
     ],
     "latest_int": [
       1475
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -10719,9 +10517,6 @@
     ],
     "latest_int": [
       1475
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -10890,9 +10685,6 @@
     "latest_int": [
       1475
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -11034,9 +10826,6 @@
     "latest_int": [
       1475
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -11174,9 +10963,6 @@
     ],
     "latest_int": [
       1475
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -11328,9 +11114,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -11465,9 +11248,6 @@
     "latest_int": [
       1475
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -11591,9 +11371,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -11728,9 +11505,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -11891,9 +11665,6 @@
     "latest_int": [
       1475
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -12031,9 +11802,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12190,9 +11958,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -12342,9 +12107,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -12505,9 +12267,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
     ],
@@ -12656,9 +12415,6 @@
     "latest_int": [
       1510
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -12782,9 +12538,6 @@
     "latest_int": [
       1515
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -12898,9 +12651,6 @@
     ],
     "latest_int": [
       1515
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13021,9 +12771,6 @@
     ],
     "latest_int": [
       1515
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13280,9 +13027,6 @@
     "latest_int": [
       1515
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -13419,9 +13163,6 @@
     ],
     "latest_int": [
       1515
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -13676,9 +13417,6 @@
     "latest_int": [
       1515
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -13825,9 +13563,6 @@
     ],
     "latest_int": [
       1525
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14099,9 +13834,6 @@
     "latest_int": [
       1550
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -14357,9 +14089,6 @@
     ],
     "latest_int": [
       1550
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Datable\"}"
@@ -14619,9 +14348,6 @@
     ],
     "latest_int": [
       1560
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -14889,9 +14615,6 @@
     "latest_int": [
       1860
     ],
-    "century_facet": [
-      null
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -15022,9 +14745,6 @@
     "latest_int": [
       1225
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -15147,9 +14867,6 @@
     ],
     "latest_int": [
       910
-    ],
-    "century_facet": [
-      "(0801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15277,9 +14994,6 @@
     ],
     "latest_int": [
       999
-    ],
-    "century_facet": [
-      "(0901) 9th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15521,9 +15235,6 @@
     "latest_int": [
       1399
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -15642,9 +15353,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -15773,9 +15481,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -15902,9 +15607,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16033,9 +15735,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -16162,9 +15861,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16293,9 +15989,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -16422,9 +16115,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16553,9 +16243,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -16681,9 +16368,6 @@
     "latest_int": [
       1299
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -16806,9 +16490,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -16937,9 +16618,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -17064,9 +16742,6 @@
     ],
     "latest_int": [
       1399
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -17193,9 +16868,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -17319,9 +16991,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -17438,9 +17107,6 @@
     ],
     "latest_int": [
       1399
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -17565,9 +17231,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -17690,9 +17353,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -17826,9 +17486,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -17955,9 +17612,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -18072,9 +17726,6 @@
     ],
     "latest_int": [
       910
-    ],
-    "century_facet": [
-      "(0801) 8th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -18205,9 +17856,6 @@
     "latest_int": [
       910
     ],
-    "century_facet": [
-      "(0801) 8th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -18332,9 +17980,6 @@
     ],
     "latest_int": [
       1099
-    ],
-    "century_facet": [
-      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -18467,9 +18112,6 @@
     "latest_int": [
       1099
     ],
-    "century_facet": [
-      "(1001) 10th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -18601,9 +18243,6 @@
     "latest_int": [
       1099
     ],
-    "century_facet": [
-      "(1001) 10th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -18732,9 +18371,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -18865,9 +18501,6 @@
     "latest_int": [
       1199
     ],
-    "century_facet": [
-      "(1101) 11th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -18984,9 +18617,6 @@
     ],
     "latest_int": [
       1110
-    ],
-    "century_facet": [
-      "(1001) 10th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -19111,9 +18741,6 @@
     "latest_int": [
       1399
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -19227,9 +18854,6 @@
     "latest_int": [
       1599
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -19341,9 +18965,6 @@
     ],
     "latest_int": [
       1699
-    ],
-    "century_facet": [
-      "(1601) 16th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -19459,9 +19080,6 @@
     ],
     "latest_int": [
       1799
-    ],
-    "century_facet": [
-      "(1701) 17th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -19580,9 +19198,6 @@
     ],
     "latest_int": [
       1699
-    ],
-    "century_facet": [
-      "(1601) 16th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -19713,9 +19328,6 @@
     "latest_int": [
       1499
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
     ],
@@ -19842,9 +19454,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -19973,9 +19582,6 @@
     ],
     "latest_int": [
       1399
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -20107,9 +19713,6 @@
     ],
     "latest_int": [
       1199
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "dated_display": [
       "{\"PV\": \"Non-datable\"}"
@@ -20280,9 +19883,6 @@
     "latest_int": [
       1496
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 18 leaves : paper ; 190 x 140 (170 x 112) mm bound to 197 x 150 mm.\"}"
     ],
@@ -20437,9 +20037,6 @@
     ],
     "latest_int": [
       1400
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 132 leaves : parchment ; 210 x 153 (144 x 80) mm bound to 220 x 160 mm.\"}"
@@ -20597,9 +20194,6 @@
     "latest_int": [
       1400
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 176 leaves : parchment, illustrations ; 370 x 255 (254 x 155) mm bound to 381 x 275 mm.\"}"
     ],
@@ -20729,9 +20323,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Provence or Spain],\",\"QL\":\"Provence\",\"QU\":\"http://vocab.getty.edu/tgn/7012209\"}"
@@ -20900,9 +20491,6 @@
     "latest_int": [
       1205
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 111 x 167 mm.\"}"
     ],
@@ -21054,9 +20642,6 @@
     ],
     "latest_int": [
       1400
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 368 x 262 mm.\"}"
@@ -21217,9 +20802,6 @@
     "latest_int": [
       1399
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Persia?],\",\"QL\":\"Persia\",\"QU\":\"http://vocab.getty.edu/tgn/7024079\"}"
     ],
@@ -21364,9 +20946,6 @@
     "latest_int": [
       1275
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
     ],
@@ -21505,9 +21084,6 @@
     ],
     "latest_int": [
       1490
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[France],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -21677,9 +21253,6 @@
     "latest_int": [
       1578
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 67 leaves : parchment ; 310 x 207 (234 x 130) mm bound to 321 x 226 mm.\"}"
     ],
@@ -21839,9 +21412,6 @@
     "latest_int": [
       1645
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Deccan, India],\",\"QL\":\"Deccan\",\"QU\":\"http://vocab.getty.edu/tgn/7001693\"}"
     ],
@@ -21980,9 +21550,6 @@
     ],
     "latest_int": [
       1299
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -22138,9 +21705,6 @@
     "latest_int": [
       1510
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 206 leaves : paper, color illustrations ; 270 x 200 (204 x 115) mm bound to 280 x 215 mm.\"}"
     ],
@@ -22287,9 +21851,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
@@ -22483,9 +22044,6 @@
     "latest_int": [
       850
     ],
-    "century_facet": [
-      "(0801) 8th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 64 leaves : parchment ; 204-206 x 172-174 (136-148 x 100-128) mm bound to 219 x 190 mm.\"}"
     ],
@@ -22640,9 +22198,6 @@
     "latest_int": [
       1458
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Rome?, Italy],\",\"QL\":\"Rome\",\"QU\":\"http://vocab.getty.edu/tgn/7000874\"}"
     ],
@@ -22786,9 +22341,6 @@
     ],
     "latest_int": [
       1346
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 28 leaves : paper ; 297 x 208 (221 x 105) mm bound to 298 x 212 mm.\"}"
@@ -22950,9 +22502,6 @@
     "latest_int": [
       1760
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Italy],\",\"QL\":\"Italy\",\"QU\":\"http://vocab.getty.edu/tgn/1000080\"}"
     ],
@@ -23113,9 +22662,6 @@
     "latest_int": [
       1540
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 20 leaves : paper ; 188 x 142 (146-156 x 107) mm bound to 196 x 152 mm.\"}"
     ],
@@ -23256,9 +22802,6 @@
     ],
     "latest_int": [
       1275
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[France or Flanders],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -23405,9 +22948,6 @@
     "latest_int": [
       1358
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 170 x 245 mm.\"}"
     ],
@@ -23537,9 +23077,6 @@
     ],
     "latest_int": [
       1499
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Germany],\",\"QL\":\"Germany\",\"QU\":\"http://vocab.getty.edu/tgn/7000084\"}"
@@ -23702,9 +23239,6 @@
     "latest_int": [
       1553
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 38 leaves : parchment ; 334 x 216 (220 x 135) mm bound to 334 x 230 mm.\"}"
     ],
@@ -23861,9 +23395,6 @@
     "latest_int": [
       1349
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 94 leaves : parchment ; 320 x 225 (242 x 170) mm bound to 325 x 235 mm.\"}"
     ],
@@ -24019,9 +23550,6 @@
     "latest_int": [
       1275
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Paris],\",\"QL\":\"Paris\",\"QU\":\"http://vocab.getty.edu/tgn/7008038\"}"
     ],
@@ -24172,9 +23700,6 @@
     "latest_int": [
       1300
     ],
-    "century_facet": [
-      "(1301) 13th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 316 x 162 (233 x 133) mm.\"}"
     ],
@@ -24296,9 +23821,6 @@
     ],
     "latest_int": [
       1380
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 430 x 298 mm.\"}"
@@ -24441,9 +23963,6 @@
     ],
     "latest_int": [
       1475
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 leaf : parchment ; 330 x 296 mm.\"}"
@@ -24590,9 +24109,6 @@
     ],
     "latest_int": [
       1509
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 27 leaves : parchment ; 164 x 116 (111 x 81) mm bound to 172 x 127 mm.\"}"
@@ -24744,9 +24260,6 @@
     "latest_int": [
       1220
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 206 x 150 (145 x 115) mm.\"}"
     ],
@@ -24888,9 +24401,6 @@
     ],
     "latest_int": [
       1399
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 parchment ; 210 x 116 mm.\"}"
@@ -25055,9 +24565,6 @@
     ],
     "latest_int": [
       1453
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Šibenik, Croatia],\",\"QL\":\"Šibenik\",\"QU\":\"http://vocab.getty.edu/tgn/7015447\"}"
@@ -25237,9 +24744,6 @@
     "latest_int": [
       1299
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "place_display": [
       "{\"PV\":\"[Catalonia],\",\"QL\":\"Catalonia\",\"QU\":\"http://vocab.getty.edu/tgn/7030216\"}"
     ],
@@ -25412,9 +24916,6 @@
     "latest_int": [
       1539
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 60 leaves : paper, illustrations ; 220 x 166 (168 x 126) mm bound to 236 x 172 mm.\"}"
     ],
@@ -25551,9 +25052,6 @@
     ],
     "latest_int": [
       1531
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 paper ; 330 x 228 mm.\"}"
@@ -25703,9 +25201,6 @@
     ],
     "latest_int": [
       1270
-    ],
-    "century_facet": [
-      "(1201) 12th century"
     ],
     "place_display": [
       "{\"PV\":\"[Paris?, France],\",\"QL\":\"Paris\",\"QU\":\"http://vocab.getty.edu/tgn/7008038\"}"
@@ -25901,9 +25396,6 @@
     "latest_int": [
       1464
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 online resource (172 leaves) : illustrations.\"}"
     ],
@@ -26046,9 +25538,6 @@
     ],
     "latest_int": [
       1410
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[England and Spain],\",\"QL\":\"England\",\"QU\":\"http://vocab.getty.edu/tgn/7002445\"}"
@@ -26218,9 +25707,6 @@
     "latest_int": [
       1511
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 283 leaves : paper ; 101 x 70 (80 x 53) mm bound to 105 x 76 mm.\"}"
     ],
@@ -26366,9 +25852,6 @@
     "latest_int": [
       1478
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 113 leaves : parchment, color illustrations ; 213 x 154 (144 x 95) mm bound to 220 x 162 mm.\"}"
     ],
@@ -26503,9 +25986,6 @@
     ],
     "latest_int": [
       1599
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 443 x 338 mm.\"}"
@@ -26668,9 +26148,6 @@
     ],
     "latest_int": [
       1175
-    ],
-    "century_facet": [
-      "(1101) 11th century"
     ],
     "place_display": [
       "{\"PV\":\"[Austria?],\",\"QL\":\"Austria\",\"QU\":\"http://vocab.getty.edu/tgn/1000062\"}"
@@ -26840,9 +26317,6 @@
     "latest_int": [
       1409
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 175 leaves : parchment, illustrations ; 190 x 122 (130 x 75-80) mm bound to 200 x 135 mm.\"}"
     ],
@@ -27000,9 +26474,6 @@
     "latest_int": [
       1523
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 242 leaves : paper, illustrations ; 244 x 174 (190 x 130) mm bound to 247 x 186 mm +.\"}"
     ],
@@ -27144,9 +26615,6 @@
     ],
     "latest_int": [
       1380
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "place_display": [
       "{\"PV\":\"[Spain],\",\"QL\":\"Spain\",\"QU\":\"http://vocab.getty.edu/tgn/1000095\"}"
@@ -27305,9 +26773,6 @@
     "latest_int": [
       1275
     ],
-    "century_facet": [
-      "(1201) 12th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 item (1 leaf) : parchment ; 178 x 120 mm.\"}"
     ],
@@ -27456,9 +26921,6 @@
     "latest_int": [
       1599
     ],
-    "century_facet": [
-      "(1501) 15th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 12 leaves : paper, illustrations ; 235 x 165 (200 x 135) mm bound to 244 x 176 mm.\"}"
     ],
@@ -27604,9 +27066,6 @@
     "latest_int": [
       1470
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 20 leaves : parchment ; 198 x 138 (138 x 75) mm bound to 205 x 148 mm.\"}"
     ],
@@ -27743,9 +27202,6 @@
     ],
     "latest_int": [
       1404
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Prague],\",\"QL\":\"Prague\",\"QU\":\"http://vocab.getty.edu/tgn/7006464\"}"
@@ -27900,9 +27356,6 @@
     ],
     "latest_int": [
       1562
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 285 leaves : paper, color illustrations ; 320 x 210 (215 x 115) mm bound to 323 x 230 mm.\"}"
@@ -28070,9 +27523,6 @@
     "latest_int": [
       1460
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 1 online resource (185 leaves) : illustrations.\"}"
     ],
@@ -28231,9 +27681,6 @@
     "latest_int": [
       1476
     ],
-    "century_facet": [
-      "(1401) 14th century"
-    ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 95 leaves : parchment and paper ; 214 x 142 mm bound to 220 x 152 (170 x 98) mm.\"}"
     ],
@@ -28380,9 +27827,6 @@
     ],
     "latest_int": [
       1560
-    ],
-    "century_facet": [
-      "(1501) 15th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: 175 leaves : paper ; 505 x 350 (335 x 245) mm bound to 510 x 360 mm.\"}"
@@ -28532,9 +27976,6 @@
     ],
     "latest_int": [
       1450
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[France],\",\"QL\":\"France\",\"QU\":\"http://vocab.getty.edu/tgn/1000070\"}"
@@ -28687,9 +28128,6 @@
     ],
     "latest_int": [
       1475
-    ],
-    "century_facet": [
-      "(1401) 14th century"
     ],
     "place_display": [
       "{\"PV\":\"[Verona?, Italy],\",\"QL\":\"Verona\",\"QU\":\"http://vocab.getty.edu/tgn/7003262\"}"
@@ -28871,9 +28309,6 @@
     ],
     "latest_int": [
       1381
-    ],
-    "century_facet": [
-      "(1301) 13th century"
     ],
     "physical_description_display": [
       "{\"PV\": \"Extent: i, 174, i leaves : paper ; 280 x 215 (220 x 145) mm bound to 280 x 225 mm.\"}"
