@@ -31,6 +31,16 @@ class CatalogController < ApplicationController
     # The 'facet.limit' -1 value is not respected here, catalog_controller.rb configuration facet limits are still passed along to Solr. This manually adjusts the facet count to -1 for schema_provider_s and gbl_resourceType_sm
     config.advanced_search[:form_solr_parameters]['f.institution_facet.facet.limit'] ||= -1
     config.advanced_search[:form_solr_parameters]['f.author_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.title_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.scribe_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.artist_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.place_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.century_int.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.language_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.material_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.owner_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.agent_facet.facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['f.term_facet.facet.limit'] ||= -1
 
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
