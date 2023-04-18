@@ -90,6 +90,12 @@ module ApplicationHelper
       '17th century'
     when '1701'
       '18th century'
+    when '1801'
+      '19th century'
+    when '1901'
+      '20th century'
+    when '2001'
+      '21st century'                  
     else
       value
     end
