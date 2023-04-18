@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ewlarson/blacklight_advanced_search.git
+  revision: c6c7aedeefbad902183b87fc5610518ab8a2f488
+  branch: bl7-fix-gentle-hands
+  specs:
+    blacklight_advanced_search (7.0.0)
+      blacklight (~> 7.0)
+      parslet
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,9 +99,6 @@ GEM
       marc-fastxmlwriter
       rails
       traject (~> 3.0)
-    blacklight_advanced_search (7.0.0)
-      blacklight (~> 7.0)
-      parslet
     blacklight_range_limit (7.9.1)
       blacklight (~> 7.0)
     bootsnap (1.13.0)
@@ -386,7 +392,7 @@ DEPENDENCIES
   addressable (~> 2.8)
   blacklight (>= 7.0)
   blacklight-marc (>= 7.0.0.rc1, < 8)
-  blacklight_advanced_search (~> 7.0)
+  blacklight_advanced_search!
   blacklight_range_limit (~> 7.8)
   bootsnap
   bootstrap (~> 4.0)

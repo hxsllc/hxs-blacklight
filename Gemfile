@@ -87,7 +87,12 @@ group :development, :test do
 end
 
 gem 'addressable', '~> 2.8'
-gem 'blacklight_advanced_search', '~> 7.0'
+
+# gem 'blacklight_advanced_search', '~> 7.0'
+# BL Advanced Search / Pinned to EWL bug-fix
+# See: https://github.com/projectblacklight/blacklight_advanced_search/issues/127
+gem "blacklight_advanced_search", git: "https://github.com/ewlarson/blacklight_advanced_search.git", branch: "bl7-fix-gentle-hands"
+
 gem 'blacklight-marc', '>= 7.0.0.rc1', '< 8'
 gem 'blacklight_range_limit', '~> 7.8'
 gem 'bootstrap', '~> 4.0'
