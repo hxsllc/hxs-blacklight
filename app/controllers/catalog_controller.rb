@@ -376,33 +376,31 @@ class CatalogController < ApplicationController
 
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.solr_parameters = {
-        qf: '
-    id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search
-    institution_facet title_facet artist_facet author_facet scribe_facet owner_facet term_facet language_facet date_facet place_facet material_facet
-    ',
-        pf: ''
+        qf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
+    term_search language_search date_search place_search material_search',
+        pf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
+    term_search language_search date_search place_search material_search'
       }
     end
 
     config.add_search_field 'institution', label: 'Holding Institution' do |field|
       field.solr_parameters = {
-        qf: 'institution_facet institution_search',
-        pf: ''
+        qf: 'institution_search',
+        pf: 'institution_search'
       }
     end
 
     config.add_search_field 'shelfmark', label: 'Shelfmark' do |field|
       field.solr_parameters = {
         qf: 'shelfmark_search',
-        pf: ''
+        pf: 'shelfmark_search'
       }
     end
 
     config.add_search_field 'title', label: 'Title' do |field|
       field.solr_parameters = {
-        qf: 'title_facet title_search',
-        pf: ''
+        qf: 'title_search',
+        pf: 'title_search'
       }
     end
 
@@ -424,16 +422,16 @@ class CatalogController < ApplicationController
     config.add_search_field 'scribe', label: 'Scribe' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
-        qf: 'scribe_facet scribe_search',
-        pf: ''
+        qf: 'scribe_search',
+        pf: 'scribe_search'
       }
     end
 
     config.add_search_field 'owner', label: 'Owner' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
-        qf: 'owner_facet owner_search',
-        pf: ''
+        qf: 'owner_search',
+        pf: 'owner_search'
       }
     end
 
