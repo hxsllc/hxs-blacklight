@@ -380,8 +380,8 @@ class CatalogController < ApplicationController
 
 	config.add_search_field 'author', label: 'Author' do |field|
 		field.solr_parameters = {
-			qf: 'author_facet author_search',
-			pf: ''
+			qf: 'author_search',
+			pf: 'author_search'
 		}
 	end
 
@@ -412,8 +412,8 @@ class CatalogController < ApplicationController
 
 	config.add_search_field 'place', label: 'Place' do |field|
     	field.solr_parameters = {
-		qf: 'place_facet place_search',
-		pf: ''
+		qf: 'place_search',
+		pf: 'place_search'
     }
   	end
   	
