@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Wikibase Export Version represents a snapshot of the Wikibase JSON export to keep track of changes.
 class WikibaseExportVersion < ApplicationRecord
   # File Not Found Error
@@ -44,7 +46,7 @@ class WikibaseExportVersion < ApplicationRecord
     #
     # @raise [FileNotFound] if the file could not be found
     def file_signature(path)
-      raise FileNotFound.new(path) unless File.exist? path
+      raise FileNotFound, path unless File.exist? path
 
       IO.popen(['git', 'hash-object', path]) { |io| io.gets&.strip }
     end

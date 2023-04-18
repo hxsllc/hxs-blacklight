@@ -13,7 +13,7 @@ class SolrDataMigration
   def initialize(backup_solr: true, solr_collection: nil, solr_uri: nil)
     @backup_solr = backup_solr
     @solr_collection = solr_collection || SolrCollection.new
-    @solr = RSolr.connect url: solr_uri || ENV['SOLR_URL']
+    @solr = RSolr.connect url: solr_uri || ENV.fetch('SOLR_URL', nil)
   end
 
   # Backup enabled
@@ -32,13 +32,19 @@ class SolrDataMigration
     Rails.logger.info "[SolrDataMigration] Migrating solr data (file: #{file})"
     documents = JSON.load_file file
     backup_id = "backup#{Time.now.utc.to_i}"
-    solr_collection.create_backup backup_id, timeout:, interval:, location: backup_location if backup_solr?
+    if backup_solr?
+      solr_collection.create_backup backup_id, timeout: timeout, interval: interval,
+                                               location: backup_location
+    end
 
     begin
       delete_all_documents!
       add_documents! documents
-    rescue
-      solr_collection.restore_backup backup_id, timeout:, interval:, location: backup_location if backup_solr?
+    rescue StandardError
+      if backup_solr?
+        solr_collection.restore_backup backup_id, timeout: timeout, interval: interval,
+                                                  location: backup_location
+      end
       raise
     end
   end
@@ -46,13 +52,13 @@ class SolrDataMigration
   private
 
   def delete_all_documents!
-    Rails.logger.debug "[SolrDataMigration] Deleting all records"
+    Rails.logger.debug '[SolrDataMigration] Deleting all records'
     solr.delete_by_query '*:*'
     solr.commit
   end
 
   def add_documents!(documents)
-    Rails.logger.debug "[SolrDataMigration] Adding new documents"
+    Rails.logger.debug '[SolrDataMigration] Adding new documents'
     solr.add documents
     solr.commit
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../solr_schema_manager'
 
 namespace :solr do
@@ -11,9 +13,9 @@ namespace :solr do
   task seed: :environment do
     raise 'Can not seed production' if Rails.env.production?
 
-    data = File.read Rails.root.join('config/solr-seed.json')
-    solr = RSolr.connect url: ENV['SOLR_URL']
-    solr.post "update", data: data, headers: { 'Content-Type' => 'application/json' }
+    data = Rails.root.join('config/solr-seed.json').read
+    solr = RSolr.connect url: ENV.fetch('SOLR_URL', nil)
+    solr.post 'update', data: data, headers: { 'Content-Type' => 'application/json' }
     solr.commit
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Application view helper methods
 module ApplicationHelper
   LINK_DATA_DEFAULT = :other
@@ -7,44 +9,43 @@ module ApplicationHelper
     },
     tgn: {
       host: 'vocab.getty.edu',
-      path: /^\/tgn\//i
+      path: %r{^/tgn/}i
     },
     aat: {
       host: 'vocab.getty.edu',
-      path: /^\/aat\//i
-    },
+      path: %r{^/aat/}i
+    }
   }.freeze
 
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def make_link document:, field:, value:, context:, config:
+  def make_link(document:, field:, value:, context:, config:)
     safe_join(Array(value).map do |v|
-        link_to(v, v)
-      end, ',')
+                link_to(v, v)
+              end, ',')
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def make_btn_iiif document:, field:, value:, context:, config:
+  def make_btn_iiif(document:, field:, value:, context:, config:)
     safe_join(Array(value).map do |v|
-        link_to("IIIF Manifest", v, class: 'btn btn-secondary')
-      end, ',')
+                link_to('IIIF Manifest', v, class: 'btn btn-secondary')
+              end, ',')
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def make_btn_inst document:, field:, value:, context:, config:
+  def make_btn_inst(document:, field:, value:, context:, config:)
     safe_join(Array(value).map do |v|
-        link_to("Institutional Record", v, class: 'btn btn-secondary')
-      end, ',')
+                link_to('Institutional Record', v, class: 'btn btn-secondary')
+              end, ',')
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
-  # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def link_with_copy document:, field:, value:, context:, config:
+  def link_with_copy(document:, field:, value:, context:, config:)
     values = value.map do |v|
       render partial: 'shared/link_with_icon',
              locals: { document: document, field: field, value: v, context: context, config: config }
@@ -52,40 +53,39 @@ module ApplicationHelper
 
     safe_join values, "\n"
   end
-  # rubocop:enable Lint/UnusedMethodArgument
 
   def century_label(value)
     case value
-    when "801"
-      "9th century"
-    when "901"
-      "10th century"
-    when "1001"
-      "11th century"
-    when "1101"
-      "12th century"
-    when "1201"
-      "13th century"
-    when "1301"
-      "14th century"
-    when "1401"
-      "15th century"
-    when "1501"
-      "16th century"
-    when "1601"
-      "17th century"
-    when "1701"
-      "18th century"
+    when '801'
+      '9th century'
+    when '901'
+      '10th century'
+    when '1001'
+      '11th century'
+    when '1101'
+      '12th century'
+    when '1201'
+      '13th century'
+    when '1301'
+      '14th century'
+    when '1401'
+      '15th century'
+    when '1501'
+      '16th century'
+    when '1601'
+      '17th century'
+    when '1701'
+      '18th century'
     else
       value
     end
   end
 
-  #V2.0 TEXT ONLY
+  # V2.0 TEXT ONLY
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def property_value document:, field:, value:, context:, config:
-    values =  Array(value).map do |json_string|
+  def property_value(document:, field:, value:, context:, config:)
+    values = Array(value).map do |json_string|
       data = JSON.parse json_string
       data['PV'].html_safe
     end
@@ -96,29 +96,29 @@ module ApplicationHelper
 
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def search_term_link document:, field:, value:, context:, config:, facet_field: nil
+  def search_term_link(document:, field:, value:, context:, config:, facet_field: nil)
     facet_field ||= generate_search_facet_field field
-    links = Array(value).map { |term| search_term_item term, field, facet_field  }
+    links = Array(value).map { |term| search_term_item term, field, facet_field }
     safe_join links, "\n"
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
-  #V2.0 VISUAL BAR, NO LINKED DATA
+  # V2.0 VISUAL BAR, NO LINKED DATA
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def search_link document:, field:, value:, context:, config:, facet_field: nil
+  def search_link(document:, field:, value:, context:, config:, facet_field: nil)
     facet_field ||= generate_search_facet_field field
-    links = Array(value).map { |json_string| search_link_item json_string, field, facet_field  }
+    links = Array(value).map { |json_string| search_link_item json_string, field, facet_field }
     safe_join links, "\n"
   end
   # rubocop:enable Lint/UnusedMethodArgument
 
-  #V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
+  # V3.1 Linked Data bar with placeholder grayscale icon and #AUTH# hyperlink + AGR value
   # rubocop:disable Lint/UnusedMethodArgument
   #  Blacklight requires the named arguments
-  def search_data_link document:, field:, value:, context:, config:, facet_field: nil
+  def search_data_link(document:, field:, value:, context:, config:, facet_field: nil)
     facet_field ||= generate_search_facet_field field
-    links = Array(value).map { |json_string| search_data_link_item json_string, field, facet_field  }
+    links = Array(value).map { |json_string| search_data_link_item json_string, field, facet_field }
     safe_join links, "\n"
   end
   # rubocop:enable Lint/UnusedMethodArgument

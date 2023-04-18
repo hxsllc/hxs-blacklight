@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../wikibase_ingest'
 require_relative '../solr_data_migration'
 
@@ -10,9 +12,9 @@ namespace :data do
   #   rake "data:ingest[true]"
   #
   # @param [Boolean] force Still succeed when there are no changes
-  task :ingest, [:force] => [:environment, :verbose, :stdout] do |_task, args|
+  task :ingest, [:force] => %i[environment verbose stdout] do |_task, args|
     unless WikibaseIngest.new.execute! || args[:force]
-      Rails.logger.warn "No changes"
+      Rails.logger.warn 'No changes'
       exit 1
     end
   end
@@ -29,7 +31,7 @@ namespace :data do
   # @param [String] output The path where to write the Solr Documents
   # @param [String] input The path to the wikibase export JSON file
   # @param [Boolean] verbose Verbose logging
-  task :convert, [:output, :input, :verbose] => [:environment, :verbose, :stdout] do |_task, args|
+  task :convert, %i[output input verbose] => %i[environment verbose stdout] do |_task, args|
     args.with_defaults output: 'tmp/solr_data.json',
                        input: WikibaseIngest.json_file_full_path,
                        verbose: false
@@ -42,7 +44,7 @@ namespace :data do
     ]
 
     commands << '-v' if args[:verbose]
-    File.unlink args[:output] if File.exist? args[:output]
+    FileUtils.rm_f args[:output]
     output = IO.popen(commands, err: :out, chdir: Rails.root.join('lib').to_s) { |io| io.readlines.compact }
     Rails.logger.info "[wiki-to-solr.rb] Converted Wiki data\n\t#{output}"
     exit 1 unless File.exist? args[:output]
@@ -56,7 +58,7 @@ namespace :data do
   #   rake "data:seed[tmp/solr_data.json]"
   #
   # @param [String] file The location of the Solr documents
-  task :seed, [:file] => [:environment, :verbose, :stdout] do |_task, args|
+  task :seed, [:file] => %i[environment verbose stdout] do |_task, args|
     args.with_defaults file: 'tmp/solr_data.json'
     SolrDataMigration.new.migrate! args[:file]
   end
@@ -69,7 +71,7 @@ namespace :data do
   #   rake "data:migrate[true]"
   #
   # @param [Boolean] force Force a migration even if there are no changes to the wiki export file
-  task :migrate, [:force] => [:environment, :verbose, :stdout] do |_task, args|
+  task :migrate, [:force] => %i[environment verbose stdout] do |_task, args|
     Rake::Task['data:ingest'].invoke args[:force]
     Rake::Task['data:convert'].invoke
     Rake::Task['data:seed'].invoke

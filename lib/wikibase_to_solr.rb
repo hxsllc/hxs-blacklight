@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ## import Ruby functions
 require 'json'
 require 'csv'
@@ -33,7 +35,7 @@ require 'optparse'
 # .. .. .. > and multiple instances of the same qualifier
 # .. .. .. .. which may contain URIs
 
-# Within each Wikibase item, these are the expected keys: 
+# Within each Wikibase item, these are the expected keys:
 # data.each do |item| puts item.keys
 #   type
 #   id
@@ -45,7 +47,7 @@ require 'optparse'
 #   lastrevid
 #   type
 #   item
-# 
+#
 # => type=...
 # => id=Q...
 # => labels=[]
@@ -72,15 +74,15 @@ require 'optparse'
 # => _meta (for plain text data)
 
 # This script uses the arrays below to reference the numerical ID of Wikibase properties
-# that will be exported to the Solr JSON document. Someone familiar with the DS2.0 
+# that will be exported to the Solr JSON document. Someone familiar with the DS2.0
 # Linked Data model and Wikidata property ID's utilized will need to maintain and update this list.
 # See README.md in the repo for a list of properties.
 
-@displayFieldIDs = [1,5,6,8,10,14,18,21,23,26,27,29,30,32,33].freeze
-@searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,18,21,22,23,27,28,29,32].freeze
-@facetFieldIDs = [5,10,11,14,18,21,23,25,26,27,31].freeze
-@linkFieldIDs = [9,41].freeze
-@intFieldIDs = [25,36,37].freeze
+@displayFieldIDs = [1, 5, 6, 8, 10, 14, 18, 21, 23, 26, 27, 29, 30, 32, 33].freeze
+@searchFieldIDs = [1, 4, 5, 8, 10, 11, 12, 13, 14, 17, 18, 21, 22, 23, 27, 28, 29, 32].freeze
+@facetFieldIDs = [5, 10, 11, 14, 18, 21, 23, 25, 26, 27, 31].freeze
+@linkFieldIDs = [9, 41].freeze
+@intFieldIDs = [25, 36, 37].freeze
 
 # This script uses the below variables to control input and output.
 # => dir = the current directory of this file
@@ -101,7 +103,7 @@ debugQualifiers = false
 
 # JAMES INSERT EXPLANATION HERE
 
-OptionParser.new do |opts|
+OptionParser.new { |opts|
   opts.banner = 'Usage: wikibase_to_solr.rb [options]'
 
   opts.on('-i', '--wiki-export=FILE', 'The file path to the Wikibase JSON export file.') do |f|
@@ -112,16 +114,16 @@ OptionParser.new do |opts|
     outputJSONFile = File.expand_path f, dir
   end
 
-  opts.on('-v', '--verbose', 'Verbose logging') do |v|
+  opts.on('-v', '--verbose', 'Verbose logging') do |_v|
     debugProperties = true
     debugLabels = true
     debugQualifiers = true
   end
-end.parse!
+}.parse!
 
 # This script includes custom functions designed to make the code more readable.
 # => include_any: used to check if the variable contains certain properties
-# 	 - qualPropertyId.include_any?(['P25','P36','P37']) 
+# 	 - qualPropertyId.include_any?(['P25','P36','P37'])
 # => returnMDVNifNotNil: return the mainsnak-datavalue-value-numeric-id of the Wikibase property/qualifier
 # => returnMDVifNotNil: return the mainsnak-datavalue-value of the Wikibase property/qualifier
 # => returnDVifNOtNil: return the datavalue-value of the Wikibase property/qualifier
@@ -137,152 +139,139 @@ end.parse!
 # => isPropertyJSONOutput: utilize the field output arrays to determine whether a value inside the loop should be output
 # => mergeWIDs: per the documentation inside the function, combine multiple Wikibase records into a single Solr object
 
-		class String
-		  def include_any?(array)
-		    array.any? {|i| self.include? i}
-		  end
-		end
+class String
+  def include_any?(array)
+    array.any? { |i| include? i }
+  end
+end
 
-		def returnMDVNifNotNil (var)
-			return var&.dig('mainsnak')&.dig('datavalue')&.dig('value')&.dig('numeric-id')&.to_i
-		end
+def returnMDVNifNotNil(var)
+  var&.dig('mainsnak')&.dig('datavalue')&.dig('value')&.dig('numeric-id')&.to_i
+end
 
-		def returnMDVifNotNil (var)
-			return var&.dig('mainsnak')&.dig('datavalue')&.dig('value')
-		end
+def returnMDVifNotNil(var)
+  var&.dig('mainsnak')&.dig('datavalue')&.dig('value')
+end
 
-		def returnDVifNotNil (var)
-			return var&.dig('datavalue')&.dig('value')
-		end
+def returnDVifNotNil(var)
+  var&.dig('datavalue')&.dig('value')
+end
 
-		def returnDVTifNotNil (var)
-			return var&.dig('datavalue')&.dig('value')&.dig('time')
-		end
+def returnDVTifNotNil(var)
+  var&.dig('datavalue')&.dig('value')&.dig('time')
+end
 
-		def returnIDifNotNil (var)
-			return var&.dig('id')
-		end
+def returnIDifNotNil(var)
+  var&.dig('id')
+end
 
-		def returnPropArrayFirst (var,prop)
-			var&.dig(prop)&.first
-		end
+def returnPropArrayFirst(var, prop)
+  var&.dig(prop)&.first
+end
 
-		def returnPropArray (var,prop)
-			return var&.dig(prop)
-		end
+def returnPropArray(var, prop)
+  var&.dig(prop)
+end
 
-		def returnPropQuals (var)
-			return var&.dig('qualifiers')
-		end
+def returnPropQuals(var)
+  var&.dig('qualifiers')
+end
 
-		def returnLabelValue (var)
-			return var&.dig('en')&.dig('value')
-		end
+def returnLabelValue(var)
+  var&.dig('en')&.dig('value')
+end
 
-		def formatSolrValue(value)
-			str = value.is_a?(Array) || value.is_a?(Hash) ? JSON.generate(value) : value
-			str.is_a?(String) ? str.unicode_normalize : str
-		end
+def formatSolrValue(value)
+  str = value.is_a?(Array) || value.is_a?(Hash) ? JSON.generate(value) : value
+  str.is_a?(String) ? str.unicode_normalize : str
+end
 
-		def generateJSONforSolr(id, fieldname, value)
-			formatted = formatSolrValue value
-			$solrObjects[id] ||= {}
-			$solrObjects[id][fieldname] ||= []
-			$solrObjects[id][fieldname] << formatted unless $solrObjects[id][fieldname].include? formatted
-		end
+def generateJSONforSolr(id, fieldname, value)
+  formatted = formatSolrValue value
+  $solrObjects[id] ||= {}
+  $solrObjects[id][fieldname] ||= []
+  $solrObjects[id][fieldname] << formatted unless $solrObjects[id][fieldname].include? formatted
+end
 
-		def createJSONforSolr (wikibaseid, propertyid, solr_append, fieldname, value)
+def createJSONforSolr(wikibaseid, propertyid, solr_append, fieldname, value)
+  pid = propertyid.tr('P', '').to_i
 
-			pid = propertyid.tr('P','').to_i
+  # special cases for field names
+  case fieldname
+  when 'Scribe'
+    @outputFieldName = 'scribe'
+  when 'Author'
+    @outputFieldName = 'author'
+  when 'Former owner'
+    @outputFieldName = 'owner'
+  when 'Artist'
+    @outputFieldName = 'artist'
+  when 'Associated agent'
+    @outputFieldName = 'agent'
+  when ''
+    @outputFieldName = if $propertyNameArray.key?(propertyid)
+                         $propertyNameArray[propertyid]
+                       else
+                         fieldname
+                       end
+  end
 
-			# special cases for field names
-			if(fieldname=="Scribe")
-				@outputFieldName = "scribe"
-			elsif(fieldname=="Author")
-				@outputFieldName = "author"
-			elsif(fieldname=="Former owner")
-				@outputFieldName = "owner"
-			elsif(fieldname=="Artist")
-				@outputFieldName = "artist"
-			elsif(fieldname=="Associated agent")
-				@outputFieldName = "agent"
-			elsif(fieldname=="")
-				if $propertyNameArray.keys.include?(propertyid)
-					@outputFieldName = $propertyNameArray[propertyid]
-				else
-					@outputFieldName = fieldname
-				end
-			end
+  # check if the property should be output for the specified _append
+  return unless isPropertyJSONOutput(propertyid, solr_append, value)
 
-		  #check if the property should be output for the specified _append
-			if isPropertyJSONOutput(propertyid, solr_append, value)
+  # generate JSON - "fieldname_append": "value"
+  generateJSONforSolr(wikibaseid, "#{@outputFieldName}#{solr_append}", value)
+end
 
-				#generate JSON - "fieldname_append": "value"
-				generateJSONforSolr(wikibaseid, "#{@outputFieldName}#{solr_append}", value)
+def isPropertyJSONOutput(propertyid, solr_append, value)
+  pid = propertyid.tr('P', '').to_i
 
-			end
-		end
+  ((solr_append == '_display' && @displayFieldIDs.include?(pid)) ||
+       (solr_append == '_search' && @searchFieldIDs.include?(pid)) ||
+       (solr_append == '_facet' && @facetFieldIDs.include?(pid)) ||
+       (solr_append == '_int' && @intFieldIDs.include?(pid)) ||
+       (solr_append == '_link' && @linkFieldIDs.include?(pid))) && value != ''
+end
 
-		def isPropertyJSONOutput (propertyid, solr_append, value)
+def mergeWIDs(wikibaseQID)
+  ## retrieve ID from item JSON array
+  # @wid = mergeWIDs(item.fetch('id'))
 
-			pid = propertyid.tr('P','').to_i
+  # DEBUG OUTPUT FROM WIKIBASE-TO-SOLR
+  # {"qid_meta": "Q644",
+  # => Q644 PP P16 Q2
+  # => Q644 PP P38 false
+  # => -- P4 {"entity-type"=>"item", "numeric-id"=>374, "id"=>"Q374"}
+  # => ---- PV University of Pennsylvania QL University of Pennsylvania QU
+  # => Q644 QQ P5 University of Pennsylvania QL University of Pennsylvania QU
+  # => Q644 PP P6 Q4
+  # => Q644 PP P7 9959387343503681
+  # => Q644 PP P8 Oversize LJS 224
+  # => Q644 PP P9 https://franklin.library.upenn.edu/catalog/FRANKLIN_9959387343503681
+  # },{"qid_meta": "Q645",
+  # => "id": "DS55",
+  # => Q645 PP P1 DS55
+  # => Q645 PP P16 Q1
+  # => Q645 PP P2 Q644
+  # },{"qid_meta": "Q646",
+  # => Q646 PP P3 Q645
+  # => Q646 PP P16 Q3
 
-			if((solr_append=="_display" && @displayFieldIDs.include?(pid)) ||
-				(solr_append=="_search" && @searchFieldIDs.include?(pid)) ||
-				(solr_append=="_facet" && @facetFieldIDs.include?(pid)) ||
-				(solr_append=="_int" && @intFieldIDs.include?(pid)) ||
-				(solr_append=="_link" && @linkFieldIDs.include?(pid))) && value!=""
-				return true
-			else
-				return false
-			end
+  # Q646 > points to Q645 > points to Q644
 
-		end
+  @searchDescribedRecordQID = @dsDescribedRecords.key(wikibaseQID)
+  @searchHoldingRecordQID = if @searchDescribedRecordQID.nil?
+                              @dsHoldingRecords.key(wikibaseQID)
+                            else
+                              @dsHoldingRecords.key(@widP2search)
+                            end
 
-		def mergeWIDs (wikibaseQID)
+  return wikibaseQID if @searchHoldingRecordQID.nil?
 
-			## retrieve ID from item JSON array
-			#@wid = mergeWIDs(item.fetch('id'))
-
-			# DEBUG OUTPUT FROM WIKIBASE-TO-SOLR
-			#{"qid_meta": "Q644",
-			# => Q644 PP P16 Q2
-			# => Q644 PP P38 false
-			# => -- P4 {"entity-type"=>"item", "numeric-id"=>374, "id"=>"Q374"}
-			# => ---- PV University of Pennsylvania QL University of Pennsylvania QU
-			# => Q644 QQ P5 University of Pennsylvania QL University of Pennsylvania QU
-			# => Q644 PP P6 Q4
-			# => Q644 PP P7 9959387343503681
-			# => Q644 PP P8 Oversize LJS 224
-			# => Q644 PP P9 https://franklin.library.upenn.edu/catalog/FRANKLIN_9959387343503681
-			#},{"qid_meta": "Q645",
-			# => "id": "DS55",
-			# => Q645 PP P1 DS55
-			# => Q645 PP P16 Q1
-			# => Q645 PP P2 Q644
-			#},{"qid_meta": "Q646",
-			# => Q646 PP P3 Q645
-			# => Q646 PP P16 Q3
-
-			#Q646 > points to Q645 > points to Q644
-
-			@searchDescribedRecordQID = @dsDescribedRecords.key(wikibaseQID)
-			if @searchDescribedRecordQID.nil?
-				@searchHoldingRecordQID = @dsHoldingRecords.key(wikibaseQID)
-			else
-				@searchHoldingRecordQID = @dsHoldingRecords.key(@widP2search)
-			end
-
-			if @searchHoldingRecordQID.nil?
-				return wikibaseQID
-			else
-				return @searchHoldingRecordQID
-			end
-
-		end
+  @searchHoldingRecordQID
+end
 
 class DSItem
-
   attr_reader :item_data # item data is read only
 
   # Contants mapped to properties; call these by
@@ -342,7 +331,7 @@ class DSItem
   PROP_FORMATTER_URL                         = 'P46'
   PROP_SUBCLASS_OF                           = 'P47'
 
-  def initialize item_data
+  def initialize(item_data)
     @item_data = item_data
     @item_data.freeze
   end
@@ -353,7 +342,8 @@ class DSItem
 
   def instance_of
     return unless (claim = find_claim PROP_INSTANCE_OF)
-    #p DSItem.returnMDVIifNotNil(claim)
+
+    # p DSItem.returnMDVIifNotNil(claim)
     DSItem.returnMDVIifNotNil(claim)
   end
 
@@ -366,8 +356,9 @@ class DSItem
   end
 
   def holding_wikibaseid
-  	# @holdings_by_id[ds_item.wikibaseid] = ds_item.holding_wikibaseid # PROP_MANUSCRIPT_HOLDING
+    # @holdings_by_id[ds_item.wikibaseid] = ds_item.holding_wikibaseid # PROP_MANUSCRIPT_HOLDING
     return unless (claim = find_claim PROP_MANUSCRIPT_HOLDING)
+
     # p claim
     # {"mainsnak"=>{"snaktype"=>"value", "property"=>"P2", "datavalue"=>{"value"=>{"entity-type"=>"item", "numeric-id"=>1298, "id"=>"Q1298"}, "type"=>"wikibase-entityid"}, "datatype"=>"wikibase-item"}, "type"=>"statement", "id"=>"Q1299$62D0FA16-5556-479C-8AB2-44C9511BDC31", "rank"=>"normal"}
     DSItem.returnMDVIifNotNil(claim)
@@ -375,27 +366,30 @@ class DSItem
 
   def manuscript_wikibaseid
     return unless (claim = find_claim PROP_DESCRIBED_MANUSCRIPT)
+
     DSItem.returnMDVIifNotNil(claim)
-  end  
+  end
 
   def labels
-  	@item_data['labels']['en']['value']
+    @item_data['labels']['en']['value']
   end
 
   def uri
     # parsed value from @item_data
-		return unless (claim = find_claim PROP_EXTERNAL_URI)
+    return unless (claim = find_claim PROP_EXTERNAL_URI)
+
     DSItem.returnMDVifNotNil(claim)
   end
 
-  def find_claim property
+  def find_claim(property)
     return if claims.empty?
+
     DSItem.returnPropArrayFirst(claims, property)
   end
 
   def claims
-  	#puts "claims"
-  	#puts @item_data['claims']
+    # puts "claims"
+    # puts @item_data['claims']
     @item_data['claims']
   end
 
@@ -404,20 +398,23 @@ class DSItem
   #-------------------
 
   def manuscript_record?
-      return unless (instance_of==ITEM_MANUSCRIPT)   # = 'Q1' contains 'P2'
-      true
+    return unless instance_of == ITEM_MANUSCRIPT # = 'Q1' contains 'P2'
+
+    true
   end
 
   def holding_record?
-  	  #p instance_of
-      return unless (instance_of==ITEM_HOLDING)   # = 'Q2'
-      #p wikibaseid
-      true
+    # p instance_of
+    return unless instance_of == ITEM_HOLDING # = 'Q2'
+
+    # p wikibaseid
+    true
   end
 
   def ds_20_record?
-      return unless (instance_of==ITEM_DS_20_RECORD)   # = 'Q3'
-      true
+    return unless instance_of == ITEM_DS_20_RECORD # = 'Q3'
+
+    true
   end
 
   def core_model_item?
@@ -439,6 +436,7 @@ class DSItem
   def claims?
     return unless claims
     return if claims.empty?
+
     true
   end
 
@@ -495,190 +493,165 @@ end
 # Class to hold DS lookup tables for label, URIs, holdings and manuscripts. Also
 # parses records and adds them to the appropriate lookups.
 class DSLookup
+  def initialize
+    @labels_by_id = {}
+    @uris_by_id = {}
+    @holdings_by_id = {}
+    @manuscripts_by_id	= {}
+    @ds_item_by_id = {}
+  end
 
-    def initialize
-        @labels_by_id               = {}
-        @uris_by_id                 = {}
-        @holdings_by_id   					= {}
-        @manuscripts_by_id 					= {}
-        @ds_item_by_id              = {}
-    end
+  #-------------------------------------------------------
+  # Lookups
+  #-------------------------------------------------------
 
-    #-------------------------------------------------------
-    # Lookups
-    #-------------------------------------------------------
+  attr_reader :labels_by_id, :uris_by_id, :ds_item_by_id, :manuscripts_by_id, :holdings_by_id
 
-    def labels_by_id
-    	@labels_by_id
-    end
+  def find_labels(wikibaseid)
+    @labels_by_id[wikibaseid]
+  end
 
-    def uris_by_id
-    	@uris_by_id
-    end
+  def find_uri(wikibaseid)
+    @uris_by_id[wikibaseid]
+  end
 
-    def ds_item_by_id
-    	@ds_item_by_id
-    end
+  def find_manuscript_holding(wikibaseid)
+    # @holdings_by_id[wikibaseid]
+    @holdings_by_id.key(wikibaseid)
+  end
 
-    def manuscripts_by_id
-    	@manuscripts_by_id
-    end
+  def find_described_manuscript(wikibaseid)
+    # @manuscripts_by_id[wikibaseid]
+    @manuscripts_by_id.key(wikibaseid)
+  end
 
-    def holdings_by_id
-    	@holdings_by_id
-    end
+  def find_ds_item(wikibaseid)
+    @ds_item_by_id[wikibaseid]
+  end
 
-    def find_labels wikibaseid
-      @labels_by_id[wikibaseid]
-    end
-
-    def find_uri wikibaseid
-      @uris_by_id[wikibaseid]
-    end
-
-    def find_manuscript_holding wikibaseid
-      #@holdings_by_id[wikibaseid]
-      @holdings_by_id.key(wikibaseid)
-    end
-
-    def find_described_manuscript wikibaseid
-      #@manuscripts_by_id[wikibaseid]
-      @manuscripts_by_id.key(wikibaseid)
-    end
-
-    def find_ds_item wikibaseid
-      @ds_item_by_id[wikibaseid]
-    end
-
-
-    #-------------------------------------------------------
-    # Record processing
-    #-------------------------------------------------------
+  #-------------------------------------------------------
+  # Record processing
+  #-------------------------------------------------------
 
   ##
   # `item_data` is the parsed JSON. This method parses each item and then
   # adds values to the look up tables (labels, URIs, holdings and manuscripts) as
   # appropriate
-    def process_item ds_item
+  def process_item(ds_item)
+    # pass each item to the method to add to list
+    add_item ds_item
+    add_uri ds_item
+    add_label ds_item
+    add_manuscript_records ds_item # = 'Q1'
+    add_holding_records ds_item # = 'Q2'
+  end
 
-        # pass each item to the method to add to list
-        add_item ds_item
-        add_uri ds_item
-        add_label ds_item
-        add_manuscript_records ds_item   # = 'Q1'
-        add_holding_records ds_item   # = 'Q2'
+  def add_item(ds_item)
+    @ds_item_by_id[ds_item.wikibaseid] = ds_item
+  end
 
-    end
+  def add_uri(ds_item)
+    return if ds_item.uri.nil?
+    return if ds_item.instance_of.nil?
 
-    def add_item ds_item
-      	@ds_item_by_id[ds_item.wikibaseid] = ds_item
-    end    
+    # return if ds_item.core_model_item? ## BB: let's load all URIs
 
-    def add_uri ds_item
-        return if ds_item.uri.nil?
-        return if ds_item.instance_of.nil?
-        #return if ds_item.core_model_item? ## BB: let's load all URIs
+    @uris_by_id[ds_item.wikibaseid] = ds_item.uri
+  end
 
-        @uris_by_id[ds_item.wikibaseid] = ds_item.uri
-    end
+  def add_label(ds_item)
+    return if ds_item.labels.nil?
+    return if ds_item.instance_of.nil?
 
-    def add_label ds_item
-        return if ds_item.labels.nil?
-        return if ds_item.instance_of.nil?
-        #return if ds_item.core_model_item? ## BB: let's load all labels
-        
-        @labels_by_id[ds_item.wikibaseid] = ds_item.labels
-    end
+    # return if ds_item.core_model_item? ## BB: let's load all labels
 
-    def add_holding_records ds_item
-        # = 'Q1' ITEM_MANUSCRIPT contains 'P2' PROP_MANUSCRIPT_HOLDING
-        return unless ds_item.manuscript_record?   # = 'Q1' ITEM_MANUSCRIPT 
+    @labels_by_id[ds_item.wikibaseid] = ds_item.labels
+  end
 
-        @holdings_by_id[ds_item.wikibaseid] = ds_item.holding_wikibaseid # PROP_MANUSCRIPT_HOLDING
-    end
+  def add_holding_records(ds_item)
+    # = 'Q1' ITEM_MANUSCRIPT contains 'P2' PROP_MANUSCRIPT_HOLDING
+    return unless ds_item.manuscript_record? # = 'Q1' ITEM_MANUSCRIPT
 
-    def add_manuscript_records ds_item
-    		#	JSON: "id": "Q1300", // "P16":["Q3":ITEM_DS_20_RECORD] , ["P3":PROP_DESCRIBED_MANUSCRIPT]:"Q1299"
-        return unless ds_item.ds_20_record?   # = 'Q3'
+    @holdings_by_id[ds_item.wikibaseid] = ds_item.holding_wikibaseid # PROP_MANUSCRIPT_HOLDING
+  end
 
-        @manuscripts_by_id[ds_item.wikibaseid] = ds_item.manuscript_wikibaseid # PROP_DESCRIBED_MANUSCRIPT
-    end
+  def add_manuscript_records(ds_item)
+    #	JSON: "id": "Q1300", // "P16":["Q3":ITEM_DS_20_RECORD] , ["P3":PROP_DESCRIBED_MANUSCRIPT]:"Q1299"
+    return unless ds_item.ds_20_record? # = 'Q3'
 
+    @manuscripts_by_id[ds_item.wikibaseid] = ds_item.manuscript_wikibaseid # PROP_DESCRIBED_MANUSCRIPT
+  end
 end
 
 ##
 # Class to hold DS Solr objects for output.
 class DSSolr
+  def initialize
+    @solr_objects = {}
+  end
 
-    def initialize
-        @solr_objects               = {}
+  #-------------------------------------------------------
+  # Lookups
+  #-------------------------------------------------------
+
+  attr_reader :solr_objects
+
+  #-------------------------------------------------------
+  # Record processing
+  #-------------------------------------------------------
+
+  ##
+  # `item_data` is the parsed JSON. This method parses each item and then
+  # adds values to the look up tables (labels, URIs, holdings and manuscripts) as
+  # appropriate
+  def process_item(ds_item, output_wikibaseid)
+    return unless ds_item.core_model_item?
+
+    Rails.logger.debug output_wikibaseid
+    claims = ds_item.claims
+    claims.each_key do |property|
+      Rails.logger.debug property
+      property_claim = ds_item.find_claim property
+      # if ds_item.has_qualifiers property_claim
+
+      #	qualifier_claim = ds_item.find_qualifier property_claim
+      #	p qualifier_claim
+      # end
+
+      # “Q1300"
+      # => "P16"
+      # => "P38"
+      # => "P5"
+      # => "P6"
+      # => "P7"
+      # => "P8"
+      # => "P9"
+      # "Q1300"
+      # => "P1"
+      # => "P16"
+      # => "P2"
+      # "Q1300"
+      # => "P10"
+      # => "P12"
+      # => "P14"
+      # => "P16"
+      # => "P18"
+      # => "P19"
+      # => "P21"
+      # => "P23"
+      # => "P29"
+      # => "P3"
+      # => "P30"
+      # => "P32"
+      # => "P34"
+      # => "P35"
+      # => "P41"
     end
-
-    #-------------------------------------------------------
-    # Lookups
-    #-------------------------------------------------------
-
-    def solr_objects
-    	@solr_objects
-    end
-
-    #-------------------------------------------------------
-    # Record processing
-    #-------------------------------------------------------
-
-	  ##
-	  # `item_data` is the parsed JSON. This method parses each item and then
-	  # adds values to the look up tables (labels, URIs, holdings and manuscripts) as
-	  # appropriate
-    def process_item ds_item, output_wikibaseid
-    		return unless ds_item.core_model_item?
-        
-        p output_wikibaseid
-       	claims = ds_item.claims
-       	claims.keys.each do |property|
-       		p property
-       		property_claim = ds_item.find_claim property
-       		#if ds_item.has_qualifiers property_claim 
-
-       		#	qualifier_claim = ds_item.find_qualifier property_claim
-       		#	p qualifier_claim
-       		#end
-       		
-       		# “Q1300"
-					# => "P16"
-					# => "P38"
-					# => "P5"
-					# => "P6"
-					# => "P7"
-					# => "P8"
-					# => "P9"
-					# "Q1300"
-					# => "P1"
-					# => "P16"
-					# => "P2"
-					# "Q1300"
-					# => "P10"
-					# => "P12"
-					# => "P14"
-					# => "P16"
-					# => "P18"
-					# => "P19"
-					# => "P21"
-					# => "P23"
-					# => "P29"
-					# => "P3"
-					# => "P30"
-					# => "P32"
-					# => "P34"
-					# => "P35"
-					# => "P41"
-       	end
-    end
-
+  end
 end
 
 # Load the import JSON file into a Ruby array
-data = JSON.load_file importJSONfile   # data.is_a?(Array) => true
+data = JSON.load_file importJSONfile # data.is_a?(Array) => true
 # p data[0]
 # => {"type"=>"item", "id"=>"Q1", "labels"=>{"en"=>{"language"=>"en", "value"=>"Manuscript"}}, "descriptions"=>{"en"=>{"language"=>"en", "value"=>"A manuscript"}}, "aliases"=>{}, "claims"=>{}, "sitelinks"=>{}, "lastrevid"=>2}
 
@@ -695,77 +668,72 @@ ds_items = data.map { |item| DSItem.new(item) }
 
 ds_lookups = DSLookup.new
 
-	ds_items.each do |item|
+ds_items.each do |item|
+  ds_lookups.process_item item # item.is_a?(DSItem) => true
+end
 
-		ds_lookups.process_item item   # item.is_a?(DSItem) => true
+# p ds_lookups.labels_by_id
+# e.g. "Q1284"=>"DS194"
+# e.g. "Q1285"=>"Quinque libri Egesippi nacione Judei de excidio iudeorum (DS194)"
+# e.g. "Q1286"=>"Holding: University of Pennsylvania"
 
-	end
+# p ds_lookups.uris_by_id
+# e.g. "Q22"=>"http://vocab.getty.edu/aat/300011892"
+# e.g. "Q780"=>"http://vocab.getty.edu/aat/300026098"
 
-	# p ds_lookups.labels_by_id
-	# e.g. "Q1284"=>"DS194"
-	# e.g. "Q1285"=>"Quinque libri Egesippi nacione Judei de excidio iudeorum (DS194)"
-	# e.g. "Q1286"=>"Holding: University of Pennsylvania"
+# p ds_lookups.ds_item_by_id
+# e.g. "Q1300"=>#<DSItem:0x0000000111882860 @item_data={"type"=>"item", "id"=>"Q1300"
 
-	# p ds_lookups.uris_by_id
-	# e.g. "Q22"=>"http://vocab.getty.edu/aat/300011892"
-	# e.g. "Q780"=>"http://vocab.getty.edu/aat/300026098"
+# p ds_lookups.holdings_by_id
+# JSON: "id": "Q1299", // "P16":["Q1":ITEM_MANUSCRIPT], ["P2":PROP_MANUSCRIPT_HOLDING]:"Q1298"
+# Arry: "Q1299"=>"Q1298"
 
-	# p ds_lookups.ds_item_by_id
-	# e.g. "Q1300"=>#<DSItem:0x0000000111882860 @item_data={"type"=>"item", "id"=>"Q1300"
-
-
-	# p ds_lookups.holdings_by_id
-  # JSON: "id": "Q1299", // "P16":["Q1":ITEM_MANUSCRIPT], ["P2":PROP_MANUSCRIPT_HOLDING]:"Q1298"
-	# Arry: "Q1299"=>"Q1298"
-
-	# p ds_lookups.manuscripts_by_id
-	# JSON: "id": "Q1300", // "P16":["Q3":ITEM_DS_20_RECORD] , ["P3":PROP_DESCRIBED_MANUSCRIPT]:"Q1299"
-	# Arry: "Q1300"=>"Q1299"
+# p ds_lookups.manuscripts_by_id
+# JSON: "id": "Q1300", // "P16":["Q3":ITEM_DS_20_RECORD] , ["P3":PROP_DESCRIBED_MANUSCRIPT]:"Q1299"
+# Arry: "Q1300"=>"Q1299"
 
 ds_solr = DSSolr.new
-	
-	ds_items.each do |item|   # item.is_a?(DSItem) => true
 
-    if item.core_model_item?
-        
-        # Wikibase describes a manuscript using 3 linked records > merge into a single Solr object.
+ds_items.each do |item| # item.is_a?(DSItem) => true
+  if item.core_model_item?
 
-				# "item"
-				# "Q1298"			"P16":["Q2":ITEM_HOLDING]
-				# "Q1299"			find_manuscript_holding
-				# nil 				find_described_manuscript
-				
-				# "item"
-				# "Q1299"			"P16":["Q1":ITEM_MANUSCRIPT]
-				# nil 				find_manuscript_holding
-				# "Q1300"			find_described_manuscript
+    # Wikibase describes a manuscript using 3 linked records > merge into a single Solr object.
 
-				# "item" 			
-				# "Q1300"			"P16":["Q3":ITEM_DS_20_RECORD]
-				# nil 				find_manuscript_holding
-				# nil 				find_described_manuscript
+    # "item"
+    # "Q1298"			"P16":["Q2":ITEM_HOLDING]
+    # "Q1299"			find_manuscript_holding
+    # nil 				find_described_manuscript
 
-        #Q1298
-        if item.holding_record? then 
-        	manuscript_linkedid = ds_lookups.find_manuscript_holding item.wikibaseid #Q2
-        	ds20record_id = ds_lookups.find_described_manuscript manuscript_linkedid
-        end
-        #Q1299
-        if item.manuscript_record? then
-        	ds20record_id = ds_lookups.find_described_manuscript item.wikibaseid #Q1
-        end
-        #Q1300
-        if item.ds_20_record? then 
-        	ds20record_id = item.wikibaseid #Q3
-        end
-        output_wikibaseid = ds20record_id
-				# wikibaseid for Solr output
-		
-		end
+    # "item"
+    # "Q1299"			"P16":["Q1":ITEM_MANUSCRIPT]
+    # nil 				find_manuscript_holding
+    # "Q1300"			find_described_manuscript
 
-  	ds_solr.process_item item, output_wikibaseid
+    # "item"
+    # "Q1300"			"P16":["Q3":ITEM_DS_20_RECORD]
+    # nil 				find_manuscript_holding
+    # nil 				find_described_manuscript
 
-	end
+    # Q1298
+    if item.holding_record?
+      manuscript_linkedid = ds_lookups.find_manuscript_holding item.wikibaseid # Q2
+      ds20record_id = ds_lookups.find_described_manuscript manuscript_linkedid
+    end
+    # Q1299
+    if item.manuscript_record?
+      ds20record_id = ds_lookups.find_described_manuscript item.wikibaseid # Q1
+    end
+    # Q1300
+    if item.ds_20_record?
+      ds20record_id = item.wikibaseid # Q3
+    end
+    output_wikibaseid = ds20record_id
+    # wikibaseid for Solr output
+
+  end
+
+  ds_solr.process_item item, output_wikibaseid
+end
 
 exit
 
@@ -776,216 +744,225 @@ exit
 $solrObjects = {}
 
 data.each do |item|
+  @owid = ''
+  @wikibaseid = ''
+  @instance = 0
+  @uri = ''
+  @label = ''
 
-	@owid = ''
-	@wikibaseid = ''
-	@instance = 0
-	@uri = ''
-	@label = ''
+  ## retrieve ID from item JSON array
+  @owid = item.fetch('id')
+  @wikibaseid = mergeWIDs @owid
 
-	## retrieve ID from item JSON array
-	@owid = item.fetch('id')
-	@wikibaseid = mergeWIDs @owid
+  ## retrieve claims from item JSON array
+  @claims = JSON.parse(item['claims'].to_json)
 
-	## retrieve claims from item JSON array
-	@claims = JSON.parse(item.dig('claims').to_json)
+  ## try retrieving P16 from claims JSON array, if so populate @instance
+  @P16 = returnPropArrayFirst(@claims, 'P16')
+  @P16 ? @instance = returnMDVNifNotNil(@P16) : nil
 
-	## try retrieving P16 from claims JSON array, if so populate @instance
-	@P16 = returnPropArrayFirst(@claims, 'P16')
-	@P16 ? @instance = returnMDVNifNotNil(@P16):  nil
+  # #only process "instance of" [P16] values 1, 2, 3
+  next unless @instance.to_i >= 1 && @instance.to_i <= 3
 
-	##only process "instance of" [P16] values 1, 2, 3
-	if @instance.to_i>=1 && @instance.to_i<=3
+  generateJSONforSolr @wikibaseid, 'qid_meta', @owid
 
-		generateJSONforSolr @wikibaseid, "qid_meta", @owid
+  @claims.each_key do |property|
+    @propArrayX = returnPropArray(@claims, property)
+    @propArrayTotal = @propArrayX.length
+    @propArrayLoopCount = 0
+    @propArrayX.each do |propArray|
+      propArray ? @propValue = returnMDVifNotNil(propArray) : nil
 
-		@claims.keys.each do |property|
+      # custom properties that are not part of property-names.csv
+      generateJSONforSolr @wikibaseid, 'id', @propValue if property == 'P1' && !@propValue.empty?
+      generateJSONforSolr(@wikibaseid, 'images_facet', 'Yes') if property == 'P41' && !@propValue.empty?
 
-			@propArrayX = returnPropArray(@claims, property)
-			@propArrayTotal = @propArrayX.length
-			@propArrayLoopCount = 0
-			@propArrayX.each do |propArray|
-				propArray ? @propValue = returnMDVifNotNil(propArray): nil
+      # check for MDV (mainsnak-datavalue-value) that looks like
+      # P26 example = {"entity-type":"item","numeric-id":14,"id":"Q14"}
+      if @propValue.is_a?(Hash)
+        # get "id" = "Q14"
+        @propID = returnIDifNotNil(@propValue)
+        # translate "Q14" to its label
+        @propValue = wikiItemLabels[@propID]
+      end
 
-				#custom properties that are not part of property-names.csv
-				generateJSONforSolr @wikibaseid, "id", @propValue if property=="P1" && !@propValue.empty?
-				generateJSONforSolr(@wikibaseid, "images_facet", "Yes") if property == 'P41' && !@propValue.empty?
+      propArray ? @qualifiers = returnPropQuals(propArray) : nil
 
-				#check for MDV (mainsnak-datavalue-value) that looks like
-				#P26 example = {"entity-type":"item","numeric-id":14,"id":"Q14"}
-				if @propValue.kind_of?(Hash)
-					#get "id" = "Q14"
-					@propID = returnIDifNotNil(@propValue)
-					#translate "Q14" to its label
-					@propValue = wikiItemLabels[@propID]
-				end
+      if @qualifiers
 
-				propArray ? @qualifiers = returnPropQuals(propArray): nil
+        # set initial state of holding variables
+        @qualID = ''
+        @qualLabel = ''
+        @qualURI = ''
+        @qualAGR = ''
+        @qualRole = ''
+        @qualAuth = []
+        @qualDate = ''
+        @qualCentury = ''
+        @qualLatest = ''
+        @qualEarliest = ''
+        @qualMaterial = ''
 
-				if @qualifiers
+        @qualifiers.each_key do |qualPropertyId|
+          @qualArray = returnPropArrayFirst(@qualifiers, qualPropertyId)
+          # if P25, P36, P37 then return datavalue-value-time, otherwise return datavalue-value
+          @qualValue = if qualPropertyId.include_any?(%w[P25 P36
+                                                         P37])
+                         returnDVTifNotNil(@qualArray)
+                       else
+                         returnDVifNotNil(@qualArray)
+                       end
 
-					#set initial state of holding variables
-					@qualID = ''
-					@qualLabel = ''
-					@qualURI = ''
-					@qualAGR = ''
-					@qualRole = ''
-					@qualAuth = Array.new
-					@qualDate = ''
-					@qualCentury = ''
-					@qualLatest = ''
-					@qualEarliest = ''
-					@qualMaterial = ''
+          # check for MDV (mainsnak-datavalue-value) that looks like
+          # P26 example = {"entity-type":"item","numeric-id":14,"id":"Q14"}
+          if @qualValue.is_a?(Hash)
+            @qualID = returnIDifNotNil(@qualValue)
+            @qualID ? @qualLabel = wikiItemLabels[@qualID] : nil
+            @qualID ? @qualURI = wikiItemURIS[@qualID] : nil
+          end
 
-					@qualifiers.keys.each do |qualPropertyId|
-						
-						@qualArray = returnPropArrayFirst(@qualifiers, qualPropertyId)
-						#if P25, P36, P37 then return datavalue-value-time, otherwise return datavalue-value
-						qualPropertyId.include_any?(['P25','P36','P37']) ? @qualValue = returnDVTifNotNil(@qualArray): @qualValue = returnDVifNotNil(@qualArray)
+          # P10 contains qualifiers P13, P15, and P17 (agr, role, authority)
+          qualPropertyId == 'P13' ? @qualAGR = @qualValue : nil
+          qualPropertyId == 'P15' ? @qualRole = @qualLabel : nil
 
-						#check for MDV (mainsnak-datavalue-value) that looks like
-						#P26 example = {"entity-type":"item","numeric-id":14,"id":"Q14"}
-						if @qualValue.kind_of?(Hash)
-							@qualID = returnIDifNotNil(@qualValue)
-							@qualID ? @qualLabel = wikiItemLabels[@qualID]: nil
-							@qualID ? @qualURI = wikiItemURIS[@qualID]: nil
-						end
-
-						#P10 contains qualifiers P13, P15, and P17 (agr, role, authority)
-						qualPropertyId=='P13' ? @qualAGR = @qualValue: nil
-						qualPropertyId=='P15' ? @qualRole = @qualLabel: nil
-
-            ##there can be multiple P17s inside P10 qualifiers
-            ##there can be multiple name authorities inside an associated name
-						if qualPropertyId === 'P17'
-              @qualAuth += @qualifiers[qualPropertyId].map do |qualifier|
-                data = returnDVifNotNil qualifier
-                id = returnIDifNotNil data
-                wikiItemLabels[id]
-              end
+          # #there can be multiple P17s inside P10 qualifiers
+          # #there can be multiple name authorities inside an associated name
+          if qualPropertyId === 'P17'
+            @qualAuth += @qualifiers[qualPropertyId].map do |qualifier|
+              data = returnDVifNotNil qualifier
+              id = returnIDifNotNil data
+              wikiItemLabels[id]
             end
+          end
 
-						# P23 (..) contains qualifiers 
-						# => P24 (name_authority)
-						# => P25 (..)
-						# => P36 (..) 
-						# => P37 (..)
-						qualPropertyId=='P24' ? @qualDate = @qualValue: nil
-						qualPropertyId=='P25' ? @qualCentury = @qualValue: nil 
-						qualPropertyId=='P36' ? @qualLatest = @qualValue: nil 
-						qualPropertyId=='P37' ? @qualEarliest = @qualValue: nil 
+          # P23 (..) contains qualifiers
+          # => P24 (name_authority)
+          # => P25 (..)
+          # => P36 (..)
+          # => P37 (..)
+          qualPropertyId == 'P24' ? @qualDate = @qualValue : nil
+          qualPropertyId == 'P25' ? @qualCentury = @qualValue : nil
+          qualPropertyId == 'P36' ? @qualLatest = @qualValue : nil
+          qualPropertyId == 'P37' ? @qualEarliest = @qualValue : nil
 
-						#P30 contains qualifier P31
-						qualPropertyId=='P31' ? @qualMaterial = @qualValue: nil
+          # P30 contains qualifier P31
+          qualPropertyId == 'P31' ? @qualMaterial = @qualValue : nil
 
-						if debugQualifiers
-							puts "#{@wikibaseid} QQ #{property} >> has qualifiers"
-							puts "-- #{qualPropertyId} #{@qualValue}"
-							puts "---- PV #{@propValue} QL #{@qualLabel} QU #{@qualURI}"
-						end
+          next unless debugQualifiers
 
-						#end of @qualifiers loop
-					end
+          Rails.logger.debug { "#{@wikibaseid} QQ #{property} >> has qualifiers" }
+          Rails.logger.debug { "-- #{qualPropertyId} #{@qualValue}" }
+          Rails.logger.debug { "---- PV #{@propValue} QL #{@qualLabel} QU #{@qualURI}" }
 
-					# most properties only have one qualifier, but P14 has 0, 1, 2, or 3 qualifiers
-					# so you have to extract them from the loop
-					if property=='P14'
-
-						#special data format output rules for P14 (associated name)
-						#P14 is the only property-qualifier that might contain AGR (P13)
-						#P14 is the only property in which the field name gets modified to the ROLE (P15)	
-												
-						if @qualAGR.empty? && @qualAuth.empty?
-							#when AGR and Authority are empty, we only output the Recorded Name
-							createJSONforSolr(@wikibaseid, property, "_display", @qualRole,  { "PV": @propValue })
-							createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @propValue)
-							createJSONforSolr(@wikibaseid, property, "_facet", @qualRole, @propValue)
-						elsif @qualAGR && @qualAuth.empty?
-							#when AGR is present but Name Authority is empty, we output the AGR + Recorded Name 
-							createJSONforSolr(@wikibaseid, property, "_display", @qualRole, { "PV": @propValue, "AGR": @qualAGR })
-							createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @propValue)
-							createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @qualAGR)
-							createJSONforSolr(@wikibaseid, property, "_facet", @qualRole, @propValue)
-						elsif @qualAGR.empty? && @qualAuth
-							#when AGR is empty (normal) and Name Authority is present, we output the Recorded Name + Name Authority (Label + URI)
-							@qualAuth.each do |nameAuthority|
-								createJSONforSolr(@wikibaseid, property, "_display", @qualRole, { "PV": @propValue, "QL": nameAuthority, "QU": @qualURI })
-								createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @propValue)
-								createJSONforSolr(@wikibaseid, property, "_search", @qualRole, nameAuthority)
-								createJSONforSolr(@wikibaseid, property, "_facet", @qualRole, nameAuthority)
-							end
-						else #@qualAGR && @qualAuth then
-							#when AGR is present and Name Authority is present, we output the AGR + Recorded Name + Name Authority (Label + URI)
-							@qualAuth.each do |nameAuthority|
-								createJSONforSolr(@wikibaseid, property, "_display", @qualRole, { "PV": @propValue, "AGR": @qualAGR, "QL": nameAuthority, "QU": @qualURI })
-								createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @propValue)
-								createJSONforSolr(@wikibaseid, property, "_search", @qualRole, @qualAGR)
-								createJSONforSolr(@wikibaseid, property, "_search", @qualRole, nameAuthority)
-								createJSONforSolr(@wikibaseid, property, "_facet", @qualRole, nameAuthority)
-							end
-						end
-					elsif property=='P23'
-						#special data format output rules for P23 (date)
-						# - P24 century_authority
-						# - P25 century (UTC format)
-						# - P37 earliest date (UTC format)
-						# - P36 latest date (UTC format)
-
-						if debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
-
-						if property=='P23' then generateJSONforSolr @wikibaseid, "date_meta", @propValue end
-						createJSONforSolr(@wikibaseid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
-            createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
-						createJSONforSolr(@wikibaseid, property, "_search", "", @qualLabel)
-						createJSONforSolr(@wikibaseid, property, "_facet", "", @qualLabel)
-
-						# generate _int values for Century, Earliest, and Latest, and a string version of Century for the date range facet
-						createJSONforSolr(@wikibaseid, 'P25', "_int", "", Time.parse(@qualCentury).year)
-						createJSONforSolr(@wikibaseid, 'P37', "_int", "", Time.parse(@qualEarliest).year)
-						createJSONforSolr(@wikibaseid, 'P36', "_int", "", Time.parse(@qualLatest).year)
-
-					elsif property=='P30'
-						#if @debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
-						if debugProperties then puts "P31 material_facet #{@qualMaterial} #{@qualLabel}" end
-						createJSONforSolr(@wikibaseid, 'P31', "_facet", "", @qualLabel)
-
-          else
-						if debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
-						if debugProperties then puts "#{@wikibaseid} #{property} #{@qualLabel}" end
-            createJSONforSolr(@wikibaseid, property, "_display", "", { "PV": @propValue, "QL": @qualLabel, "QU": @qualURI })
-						createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
-						createJSONforSolr(@wikibaseid, property, "_search", "", @qualLabel)
-						createJSONforSolr(@wikibaseid, property, "_facet", "", @qualLabel)
-
-					end
-
-				#else if no @qualifiers exist
-        else
-
-					if debugProperties then puts "#{@wikibaseid} PP #{property} #{@propValue}" end
-
-					@propValueExport = @propValue.to_json
-
-					createJSONforSolr(@wikibaseid, property, "_display", @qualRole, "{\"PV\": #{@propValueExport}}")
-					createJSONforSolr(@wikibaseid, property, "_search", "", @propValue)
-					createJSONforSolr(@wikibaseid, property, "_facet", "", @propValue)
-					createJSONforSolr(@wikibaseid, property, "_link", "", @propValue)
-
-				#end if @qualifiers
+          # end of @qualifiers loop
         end
 
-			#end @propArrayX.each loop
-			end
+        # most properties only have one qualifier, but P14 has 0, 1, 2, or 3 qualifiers
+        # so you have to extract them from the loop
+        case property
+        when 'P14'
 
-		#end @claims.keys.each loop
-		end
+          # special data format output rules for P14 (associated name)
+          # P14 is the only property-qualifier that might contain AGR (P13)
+          # P14 is the only property in which the field name gets modified to the ROLE (P15)
 
-	#end if instance_of = 3
-	end
+          if @qualAGR.empty? && @qualAuth.empty?
+            # when AGR and Authority are empty, we only output the Recorded Name
+            createJSONforSolr(@wikibaseid, property, '_display', @qualRole, { PV: @propValue })
+            createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
+            createJSONforSolr(@wikibaseid, property, '_facet', @qualRole, @propValue)
+          elsif @qualAGR && @qualAuth.empty?
+            # when AGR is present but Name Authority is empty, we output the AGR + Recorded Name
+            createJSONforSolr(@wikibaseid, property, '_display', @qualRole, { PV: @propValue, AGR: @qualAGR })
+            createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
+            createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @qualAGR)
+            createJSONforSolr(@wikibaseid, property, '_facet', @qualRole, @propValue)
+          elsif @qualAGR.empty? && @qualAuth
+            # when AGR is empty (normal) and Name Authority is present, we output the Recorded Name + Name Authority (Label + URI)
+            @qualAuth.each do |nameAuthority|
+              createJSONforSolr(@wikibaseid, property, '_display', @qualRole,
+                                { PV: @propValue, QL: nameAuthority, QU: @qualURI })
+              createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
+              createJSONforSolr(@wikibaseid, property, '_search', @qualRole, nameAuthority)
+              createJSONforSolr(@wikibaseid, property, '_facet', @qualRole, nameAuthority)
+            end
+          else # @qualAGR && @qualAuth then
+            # when AGR is present and Name Authority is present, we output the AGR + Recorded Name + Name Authority (Label + URI)
+            @qualAuth.each do |nameAuthority|
+              createJSONforSolr(@wikibaseid, property, '_display', @qualRole,
+                                { PV: @propValue, AGR: @qualAGR, QL: nameAuthority, QU: @qualURI })
+              createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
+              createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @qualAGR)
+              createJSONforSolr(@wikibaseid, property, '_search', @qualRole, nameAuthority)
+              createJSONforSolr(@wikibaseid, property, '_facet', @qualRole, nameAuthority)
+            end
+          end
+        when 'P23'
+          # special data format output rules for P23 (date)
+          # - P24 century_authority
+          # - P25 century (UTC format)
+          # - P37 earliest date (UTC format)
+          # - P36 latest date (UTC format)
 
-#end data loop
+          if debugProperties then Rails.logger.debug do
+                                    "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}"
+                                  end end
+
+          generateJSONforSolr @wikibaseid, 'date_meta', @propValue if property == 'P23'
+          createJSONforSolr(@wikibaseid, property, '_display', '',
+                            { PV: @propValue, QL: @qualLabel, QU: @qualURI })
+          createJSONforSolr(@wikibaseid, property, '_search', '', @propValue)
+          createJSONforSolr(@wikibaseid, property, '_search', '', @qualLabel)
+          createJSONforSolr(@wikibaseid, property, '_facet', '', @qualLabel)
+
+          # generate _int values for Century, Earliest, and Latest, and a string version of Century for the date range facet
+          createJSONforSolr(@wikibaseid, 'P25', '_int', '', Time.zone.parse(@qualCentury).year)
+          createJSONforSolr(@wikibaseid, 'P37', '_int', '', Time.zone.parse(@qualEarliest).year)
+          createJSONforSolr(@wikibaseid, 'P36', '_int', '', Time.zone.parse(@qualLatest).year)
+
+        when 'P30'
+          # if @debugProperties then puts "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}" end
+          Rails.logger.debug { "P31 material_facet #{@qualMaterial} #{@qualLabel}" } if debugProperties
+          createJSONforSolr(@wikibaseid, 'P31', '_facet', '', @qualLabel)
+
+        else
+          if debugProperties then Rails.logger.debug do
+                                    "#{@wikibaseid} QQ #{property} #{@propValue} QL #{@qualLabel} QU #{@qualURI}"
+                                  end end
+          Rails.logger.debug { "#{@wikibaseid} #{property} #{@qualLabel}" } if debugProperties
+          createJSONforSolr(@wikibaseid, property, '_display', '',
+                            { PV: @propValue, QL: @qualLabel, QU: @qualURI })
+          createJSONforSolr(@wikibaseid, property, '_search', '', @propValue)
+          createJSONforSolr(@wikibaseid, property, '_search', '', @qualLabel)
+          createJSONforSolr(@wikibaseid, property, '_facet', '', @qualLabel)
+
+        end
+
+      # else if no @qualifiers exist
+      else
+
+        Rails.logger.debug { "#{@wikibaseid} PP #{property} #{@propValue}" } if debugProperties
+
+        @propValueExport = @propValue.to_json
+
+        createJSONforSolr(@wikibaseid, property, '_display', @qualRole, "{\"PV\": #{@propValueExport}}")
+        createJSONforSolr(@wikibaseid, property, '_search', '', @propValue)
+        createJSONforSolr(@wikibaseid, property, '_facet', '', @propValue)
+        createJSONforSolr(@wikibaseid, property, '_link', '', @propValue)
+
+        # end if @qualifiers
+      end
+
+      # end @propArrayX.each loop
+    end
+
+    # end @claims.keys.each loop
+  end
+
+  # end if instance_of = 3
+
+  # end data loop
 end
-
 
 # output JSON to stdout
 # here is where you could implement output batching

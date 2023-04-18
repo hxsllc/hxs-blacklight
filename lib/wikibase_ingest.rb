@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 # frozen_string_literals: true
 
 # Takes the public repository for the Wikibase export and tests to see if there are any changes.
 # If the repository does not exist in the app, the program will clone before executing.
+require 'English'
 class WikibaseIngest
   class CloneFailed < StandardError; end
   class PullFailed < StandardError; end
@@ -11,7 +14,8 @@ class WikibaseIngest
   # @param [String] path The relative path to the local instance of the repository relative to the app root directory.
   # @param [String] repository The public Git repository for the exported data.
   # @param [String] json_file The relative path to the exported json file relative to the repository root directory.
-  def initialize(path: self.class.repository_path, repository: self.class.repository_url, json_file: self.class.json_file_path)
+  def initialize(path: self.class.repository_path, repository: self.class.repository_url,
+                 json_file: self.class.json_file_path)
     @path = path
     @repository = repository
     @json_file_path = json_file
@@ -46,7 +50,8 @@ class WikibaseIngest
 
   # Clone the repository
   def clone_repository!
-    execute_command('git', 'clone', repository, path) || raise(CloneFailed, "Unable to clone '#{repository}' repository")
+    execute_command('git', 'clone', repository,
+                    path) || raise(CloneFailed, "Unable to clone '#{repository}' repository")
   end
 
   # Pull the latest changes in the repository
@@ -58,16 +63,16 @@ class WikibaseIngest
   def execute_command(*command)
     args = command.extract_options!
     output = safe_execute_command command, **args
-    status = $?&.exitstatus
-    Rails.logger.info "[WikibaseIngest] run '#{command.join " "}' {exit: #{status}}"
+    status = $CHILD_STATUS&.exitstatus
+    Rails.logger.info "[WikibaseIngest] run '#{command.join ' '}' {exit: #{status}}"
     Rails.logger.debug output.join "\n" if output.present?
-    $?&.success?
+    $CHILD_STATUS&.success?
   end
 
   # Safely run the command
   def safe_execute_command(command, options = {})
     IO.popen(command, err: :out, chdir: options.fetch(:dir, Rails.root)) { |io| io.readlines.compact }
-  rescue
+  rescue StandardError
     nil
   end
 

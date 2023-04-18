@@ -16,7 +16,7 @@ class SolrCollection
   def initialize(uri: nil, collection: nil)
     @uri = uri
     @collection = collection
-    @uri, @collection = uri_from_env unless @uri.present?
+    @uri, @collection = uri_from_env if @uri.blank?
 
     @connection = Faraday.new(@uri) do |f|
       f.request :json
@@ -35,9 +35,12 @@ class SolrCollection
   # @return [JSON] the JSON response body
   def create_backup(id, timeout: nil, interval: nil, location: nil)
     Rails.logger.info "[SolrCollection] Creating Backup #{id}"
-    params = { action: 'BACKUP', name: id, collection: @collection, location: location || default_backup_location}
+    params = { action: 'BACKUP', name: id, collection: @collection, location: location || default_backup_location }
     response = execute_and_wait params, timeout, interval
-    raise BackupFailed, "Unable to create the backup: #{response['status']['msg']}" if response['status']['state'] == 'failed'
+    if response['status']['state'] == 'failed'
+      raise BackupFailed,
+            "Unable to create the backup: #{response['status']['msg']}"
+    end
 
     response
   end
@@ -53,9 +56,12 @@ class SolrCollection
   # @return [JSON] the JSON response body
   def restore_backup(id, timeout: nil, interval: nil, location: nil)
     Rails.logger.info "[SolrCollection] Restoring Backup #{id}"
-    params = { action: 'RESTORE', name: id, collection: @collection, location: location || default_backup_location}
+    params = { action: 'RESTORE', name: id, collection: @collection, location: location || default_backup_location }
     response = execute_and_wait params, timeout, interval
-    raise RestoreFailed, "Unable to restore the backup: #{response['status']['msg']}" if response['status']['state'] == 'failed'
+    if response['status']['state'] == 'failed'
+      raise RestoreFailed,
+            "Unable to restore the backup: #{response['status']['msg']}"
+    end
 
     response
   end
@@ -70,7 +76,7 @@ class SolrCollection
     response = @connection.get nil, action: 'REQUESTSTATUS', requestid: request_id
     raise RequestInvalid if response.status != 200
 
-    status = response.body.dig('status')&.dig('state')
+    status = response.body['status']&.dig('state')
     raise RequestNotFound if status == 'notfound'
 
     response.body if %w[completed failed].include? status # Might be better to use the wait status here
@@ -84,7 +90,7 @@ class SolrCollection
 
   def execute(params)
     response = @connection.get nil, params
-    raise RequestInvalid, response.body.dig('error')&.dig('msg') || 'Invalid Request' if response.status != 200
+    raise RequestInvalid, response.body['error']&.dig('msg') || 'Invalid Request' if response.status != 200
     raise RequestInvalid, response.body['error'] if response.body['error'].present?
 
     response
@@ -104,7 +110,9 @@ class SolrCollection
     response = request_status request_id
 
     until response.present? || start_time - Time.now.utc >= timeout
-      Rails.logger.debug "Waiting #{interval} seconds of #{timeout} seconds - #{timeout - (start_time - Time.now.utc)} seconds remaining"
+      Rails.logger.debug do
+        "Waiting #{interval} seconds of #{timeout} seconds - #{timeout - (start_time - Time.now.utc)} seconds remaining"
+      end
       sleep interval
       response = request_status request_id
     end
@@ -115,10 +123,10 @@ class SolrCollection
   end
 
   def uri_from_env
-    return [nil, nil] unless ENV['SOLR_URL'].present?
+    return [nil, nil] if ENV['SOLR_URL'].blank?
 
     template = Addressable::Template.new '/solr/{core}'
-    uri = Addressable::URI.parse ENV['SOLR_URL']
+    uri = Addressable::URI.parse ENV.fetch('SOLR_URL', nil)
     collection_uri = uri.join('/solr/admin/collections')
     extracted = template.extract uri.path
     collection_name = extracted.present? ? extracted['core'] : nil

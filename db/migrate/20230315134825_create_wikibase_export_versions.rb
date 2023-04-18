@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateWikibaseExportVersions < ActiveRecord::Migration[7.0]
   def change
     create_table :wikibase_export_versions do |t|
