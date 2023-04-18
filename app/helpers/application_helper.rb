@@ -56,6 +56,20 @@ module ApplicationHelper
 
   def century_label(value)
     case value
+    when '101'
+      '2nd century'
+    when '201'
+      '3rd century'            
+    when '301'
+      '4th century'            
+    when '401'
+      '5th century'            
+    when '501'
+      '6th century'            
+    when '601'
+      '7th century'            
+    when '701'
+      '8th century'            
     when '801'
       '9th century'
     when '901'
