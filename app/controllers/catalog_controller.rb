@@ -409,7 +409,7 @@ class CatalogController < ApplicationController
         qf: 'author_search',
         pf: 'author_search'
       }
-    end
+    end    
 
     config.add_search_field 'artist', label: 'Artist' do |field|
       field.include_in_simple_select = false
@@ -427,13 +427,21 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field 'owner', label: 'Owner' do |field|
+    config.add_search_field 'owner', label: 'Owner(s)' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
         qf: 'owner_search',
         pf: 'owner_search'
       }
-    end
+    end   
+
+    config.add_search_field 'agent', label: 'Agent(s)' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'agent_facet',
+        pf: 'agent_facet'
+      }
+    end       
 
     config.add_search_field 'place', label: 'Place' do |field|
       field.solr_parameters = {
@@ -441,6 +449,30 @@ class CatalogController < ApplicationController
         pf: 'place_search'
       }
     end
+
+    config.add_search_field 'date', label: 'Date' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'date_search',
+        pf: 'date_search'
+      }
+    end
+
+   config.add_search_field 'language', label: 'Language' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'language_search',
+        pf: 'language_search'
+      }
+    end    
+
+   config.add_search_field 'keyword', label: 'Keywords' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'term_search',
+        pf: 'term_search'
+      }
+    end    
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
