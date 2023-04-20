@@ -12,6 +12,7 @@ namespace :data do
   #   rake "data:ingest[true]"
   #
   # @param [Boolean] force Still succeed when there are no changes
+  desc 'Ingest the WikiBase data from the remote Git repository.'
   task :ingest, [:force] => %i[environment verbose stdout] do |_task, args|
     unless WikibaseIngest.new.execute! || args[:force]
       Rails.logger.warn 'No changes'
@@ -31,6 +32,7 @@ namespace :data do
   # @param [String] output The path where to write the Solr Documents
   # @param [String] input The path to the wikibase export JSON file
   # @param [Boolean] verbose Verbose logging
+  desc 'Convert the WikiBase exported JSON data file to the application Solr document.'
   task :convert, %i[output input verbose] => %i[environment verbose stdout] do |_task, args|
     args.with_defaults output: 'tmp/solr_data.json',
                        input: WikibaseIngest.json_file_full_path,
@@ -58,6 +60,7 @@ namespace :data do
   #   rake "data:seed[tmp/solr_data.json]"
   #
   # @param [String] file The location of the Solr documents
+  desc 'Seed the application Solr server with the JSON Solr document file.'
   task :seed, [:file] => %i[environment verbose stdout] do |_task, args|
     args.with_defaults file: 'tmp/solr_data.json'
     SolrDataMigration.new.migrate! args[:file]
@@ -71,6 +74,7 @@ namespace :data do
   #   rake "data:migrate[true]"
   #
   # @param [Boolean] force Force a migration even if there are no changes to the wiki export file
+  desc 'Update the application Solr data based on the WikiBase export JSON file stored in the Git repository.'
   task :migrate, [:force] => %i[environment verbose stdout] do |_task, args|
     Rake::Task['data:ingest'].invoke args[:force]
     Rake::Task['data:convert'].invoke

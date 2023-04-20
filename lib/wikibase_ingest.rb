@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-# frozen_string_literals: true
+require 'English'
 
 # Takes the public repository for the Wikibase export and tests to see if there are any changes.
 # If the repository does not exist in the app, the program will clone before executing.
-require 'English'
 class WikibaseIngest
   class CloneFailed < StandardError; end
   class PullFailed < StandardError; end
