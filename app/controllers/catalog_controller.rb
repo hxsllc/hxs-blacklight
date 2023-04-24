@@ -65,9 +65,11 @@ class CatalogController < ApplicationController
     config.per_page = [10, 20, 50, 100]
 
     # solr field configuration for search results/index views
-    # config.index.title_field = 'title_recorded'
+
     config.index.document_presenter_class = TitlePresenterIndex
     config.show.document_presenter_class = TitlePresenterShow
+
+    # config.index.title_field = 'title_recorded'
     # config.index.display_type_field = 'format'
     # config.index.thumbnail_field = 'thumbnail_path_ss'
 
@@ -103,30 +105,6 @@ class CatalogController < ApplicationController
     # config.show.display_type_field = 'format'
     # config.show.thumbnail_field = 'thumbnail_path_ss'
 
-    # solr fields that will be treated as facets by the blacklight application
-    #   The ordering of the field names is the order of the display
-    #
-    # Setting a limit will trigger Blacklight's 'more' facet values link.
-    # * If left unset, then all facet values returned by solr will be displayed.
-    # * If set to an integer, then "f.somefield.facet.limit" will be added to
-    # solr request, with actual solr request being +1 your configured limit --
-    # you configure the number of items you actually want _displayed_ in a page.
-    # * If set to 'true', then no additional parameters will be sent to solr,
-    # but any 'sniffed' request limit parameters will be used for paging, with
-    # paging at requested limit -1. Can sniff from facet.limit or
-    # f.specific_field.facet.limit solr request params. This 'true' config
-    # can be used if you set limits in :default_solr_params, or as defaults
-    # on the solr side in the request handler itself. Request handler defaults
-    # sniffing requires solr requests to be made with "echoParams=all", for
-    # app code to actually have it echo'd back to see it.
-    #
-    # :show may be set to false if you don't want the facet to be drawn in the
-    # facet bar
-    #
-    # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
-    #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
-    # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
-
     config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse: false, limit: 4
     config.add_facet_field 'author_facet', label: 'Author', limit: 5
     config.add_facet_field 'title_facet', label: 'Title', limit: 5
@@ -135,6 +113,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'place_facet', label: 'Place', limit: 5 # , single: true
     config.add_facet_field 'century_int', label: 'Century', limit: 5, sort: 'alpha', helper_method: :century_label
 
+    # TESTING IMPLEMENTATION OF INTEGER DATE FIELDS AND BLACKLIGHT_RANGE_LIMIT
     # config.add_facet_field 'century_facet', label: 'Century', limit:5, sort:'alpha'
     # config.add_facet_field 'earliest_int', label: 'Earliest Date', limit:5
     # config.add_facet_field 'latest_int', label: 'Latest Date', limit:5
@@ -160,20 +139,6 @@ class CatalogController < ApplicationController
     config.add_facet_field 'images_facet', label: 'Has Images', limit: 5
     config.add_facet_field 'dated_facet', label: 'Dated', limit: 5
 
-    # config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    # config.add_facet_field 'language_ssim', label: 'Language', limit: true
-    # config.add_facet_field 'lc_1letter_ssim', label: 'Call Number'
-    # config.add_facet_field 'subject_geo_ssim', label: 'Region'
-    # config.add_facet_field 'subject_era_ssim', label: 'Era'
-
-    # config.add_facet_field 'example_pivot_field', label: 'Pivot Field', pivot: ['format', 'language_ssim'], collapsing: true
-
-    # config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-    #   :years_5 => { label: 'within 5 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 5 } TO *]" },
-    #   :years_10 => { label: 'within 10 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 10 } TO *]" },
-    #   :years_25 => { label: 'within 25 Years', fq: "pub_date_ssim:[#{Time.zone.now.year - 25 } TO *]" }
-    # }
-
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
@@ -187,104 +152,9 @@ class CatalogController < ApplicationController
                                           separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
     config.add_index_field 'date_meta', label: 'Date'
 
-    # config.add_index_field 'earliest_date', label: 'Date Range (Earliest)'
-    # config.add_index_field 'latest_date', label: 'Date Range (Latest)'
-    # config.add_index_field 'century_facet', label: 'Date (Authority)'
-    # config.add_index_field 'place_recorded', label: 'Place (Supplied)', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # config.add_index_field 'institution_facet', label: 'Holding Institution'
-    # config.add_index_field 'physical_description', label: 'Physical Description'
-    # config.add_index_field 'published_vern_ssim', label: 'Published'
-    # config.add_index_field 'lc_callnum_ssim', label: 'Call number'
-
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     # #external links
-
-    # #display v1
-
-    # #top of display
-    # #config.add_show_field 'title_recorded', label: 'Title'
-    # #config.add_show_field 'id_ds', label: 'DS ID'
-    # #config.add_show_field 'shelfmark', label: 'Shelfmark'
-    # #config.add_show_field 'material', label: 'Material (LD)'
-
-    # #middle of display
-    # #config.add_show_field 'place_recorded', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'place_authority', label: 'Place (LD)', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'language_authority', label: 'Language (LD)', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'production_date_recorded', label: 'Production Date', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'century_authority', label: 'Century (LD)', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'associated_name_recorded', label: 'Names', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'name_authority', label: 'Names (LD)', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-
-    # #config.add_show_field 'physical_description', label: 'Physical Description'
-    # #config.add_show_field 'term', label: 'Keywords', link_to_facet:true
-    # #config.add_show_field 'subject_recorded', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'subject_authority', label: 'Subject (LD)', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'genre_recorded', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'genre_authority', label: 'Genre (LD)', link_to_facet:true, separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-
-    # #bottom of display
-    # #config.add_show_field 'holding_institution', label: 'Holding Institution', link_to_facet:true
-
-    # #display v2.0
-
-    # #config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'manuscript_holding', label: 'Manuscript Holding', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'described_manuscript', label: 'Manuscript ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'institution_authority', label: 'Holding Institution', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'institution', label: 'Holding Institution', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'holding_status', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'institutional_id', label: 'Institution ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'shelfmark', label: 'Shelfmark', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'institutional_record', label: 'Institutional Record', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'title', label: 'Title', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'uniform_title_authority', label: 'Uniform Title', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'uniform_title', label: 'Uniform Title', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'original_script', label: 'Original Script', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'associated_name', label: 'Associated Name(s)', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'role_authority', label: 'Role', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'instance_of', label: 'Instance Of', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'name_authority', label: 'Name', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'genre', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'subject', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'genre_authority', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'subject_authority', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'term_authority', label: 'Term', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'language', label: 'Language', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'language_authority', label: 'Language', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'date', label: 'Date', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'century_authority', label: 'Century', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'century', label: 'Century', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'dated', label: 'Dated', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'place', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'place_authority', label: 'Place', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'physical_description', label: 'Physical Description', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'material', label: 'Material', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'material_authority', label: 'Material', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'note', label: 'Note', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'acknowledgements', label: 'Acknowledgements', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'date_added', label: 'Date Added', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'date_updated', label: 'Date Updated', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'latest_date', label: 'Latest Date', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'earliest_date', label: 'Earliest Date', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'start_time', label: 'Start Time', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'end_time', label: 'End Time', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'external_identifier', label: 'External Identifier', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'aat_id', label: 'AAT ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'iiif_manifest', label: 'IIIF Manifest', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'wikidata_qid', label: 'Wikidata ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'viaf_id', label: 'VIAF ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'external_uri', label: 'External URI', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'equivalent_property', label: 'Property ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'formatter_url', label: 'Formatter URL', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'subclass_of', label: 'Subclass ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'name_linked', label: 'Associated Name (LD)', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'author', label: 'Author', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'scribe', label: 'Scribe', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'artist', label: 'Artist', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'owner', label: 'Former Owner', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # #config.add_show_field 'label', label: 'Label', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
 
     # #display v3.0
 
@@ -321,41 +191,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'institutional_record_link', label: 'Institutional Record', helper_method: :link_with_copy
     config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', helper_method: :link_with_copy
 
-    ## ACCESSOR METHODS
-    ## BUTTONS AND VIEWERS
-    ## config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } #, accessor: :make_btn_ds
-
-    ## METADATA
-    ## config.add_show_field 'shelfmark_display', label: 'Shelfmark', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_shelfmark
-    ## config.add_show_field 'title_display', label: 'Title', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_title
-
-    # FACET LINKS, LINKED DATA
-    ## config.add_show_field 'author_display', label: 'Author', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_author
-    ## config.add_show_field 'scribe_display', label: 'Scribe', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_scribe
-    ## config.add_show_field 'artist_display', label: 'Artist', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_artist
-    ## config.add_show_field 'owner_display', label: 'Former Owner(s)', separator_options: { words_connector: '', two_words_connector: '', last_word_connector: '' }, accessor: :prop_owner
-    ## config.add_show_field 'agent_display', label: 'Associated Agent(s)', separator_options: { words_connector: '', two_words_connector: '', last_word_connector: '' }, accessor: :prop_agent
-    ## config.add_show_field 'place_display', label: 'Place', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_place
-    ## config.add_show_field 'date_display', label: 'Date', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_date
-    ## config.add_show_field 'language_display', label: 'Language', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_language
-    ## config.add_show_field 'material_display', label: 'Material', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_material
-
-    # FACET LINKS, NO LINKED DATA
-    ## config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_institution
-    ## config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_term
-
-    # TEXTUAL
-    ## config.add_show_field 'physical_description_display', label: 'Physical Description', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_description
-    ## config.add_show_field 'note_display', label: 'Note', separator_options: { words_connector: '<br />', two_words_connector: '<br />', last_word_connector: '<br />' }, accessor: :prop_note
-
-    # TECHNICAL
-    ## config.add_show_field 'institutional_record_link', label: 'Institutional Record', helper_method: :link_with_copy
-    ## config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', helper_method: :link_with_copy
-
-    # config.add_show_field 'genre_display', label: 'Genre', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # config.add_show_field 'subject_display', label: 'Subject', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-    # config.add_show_field 'acknowledgements_display', label: 'Acknowledgements', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
-
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
@@ -376,33 +211,31 @@ class CatalogController < ApplicationController
 
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.solr_parameters = {
-        qf: '
-    id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search
-    institution_facet title_facet artist_facet author_facet scribe_facet owner_facet term_facet language_facet date_facet place_facet material_facet
-    ',
-        pf: ''
+        qf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
+    term_search language_search date_search place_search material_search',
+        pf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
+    term_search language_search date_search place_search material_search'
       }
     end
 
     config.add_search_field 'institution', label: 'Holding Institution' do |field|
       field.solr_parameters = {
-        qf: 'institution_facet institution_search',
-        pf: ''
+        qf: 'institution_search',
+        pf: 'institution_search'
       }
     end
 
     config.add_search_field 'shelfmark', label: 'Shelfmark' do |field|
       field.solr_parameters = {
         qf: 'shelfmark_search',
-        pf: ''
+        pf: 'shelfmark_search'
       }
     end
 
     config.add_search_field 'title', label: 'Title' do |field|
       field.solr_parameters = {
-        qf: 'title_facet title_search',
-        pf: ''
+        qf: 'title_search',
+        pf: 'title_search'
       }
     end
 
@@ -411,7 +244,7 @@ class CatalogController < ApplicationController
         qf: 'author_search',
         pf: 'author_search'
       }
-    end
+    end    
 
     config.add_search_field 'artist', label: 'Artist' do |field|
       field.include_in_simple_select = false
@@ -424,18 +257,26 @@ class CatalogController < ApplicationController
     config.add_search_field 'scribe', label: 'Scribe' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
-        qf: 'scribe_facet scribe_search',
-        pf: ''
+        qf: 'scribe_search',
+        pf: 'scribe_search'
       }
     end
 
-    config.add_search_field 'owner', label: 'Owner' do |field|
+    config.add_search_field 'owner', label: 'Owner(s)' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
-        qf: 'owner_facet owner_search',
-        pf: ''
+        qf: 'owner_search',
+        pf: 'owner_search'
       }
-    end
+    end   
+
+    config.add_search_field 'agent', label: 'Agent(s)' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'agent_facet',
+        pf: 'agent_facet'
+      }
+    end       
 
     config.add_search_field 'place', label: 'Place' do |field|
       field.solr_parameters = {
@@ -443,6 +284,30 @@ class CatalogController < ApplicationController
         pf: 'place_search'
       }
     end
+
+    config.add_search_field 'date', label: 'Date' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'date_search',
+        pf: 'date_search'
+      }
+    end
+
+   config.add_search_field 'language', label: 'Language' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'language_search',
+        pf: 'language_search'
+      }
+    end    
+
+   config.add_search_field 'keyword', label: 'Keywords' do |field|
+      field.include_in_simple_select = false
+      field.solr_parameters = {
+        qf: 'term_search',
+        pf: 'term_search'
+      }
+    end    
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
