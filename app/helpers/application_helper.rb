@@ -56,6 +56,7 @@ module ApplicationHelper
 
   def century_label(value)
     case value
+    # ADD WIKIBASE DATA REFERENCE
     when '101'
       '2nd century'
     when '201'
@@ -107,7 +108,7 @@ module ApplicationHelper
   def property_value(document:, field:, value:, context:, config:)
     values = Array(value).map do |json_string|
       data = JSON.parse json_string
-      data['PV'].html_safe
+      data['PV']
     end
 
     safe_join values, '<br />'.html_safe
@@ -191,7 +192,7 @@ module ApplicationHelper
       when Regexp
         uri.send(part).match? test
       else
-        uri.send(part) === test
+        uri.send(part) == test
       end
     end
   end
