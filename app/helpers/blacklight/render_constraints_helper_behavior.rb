@@ -3,10 +3,9 @@
 # All methods in here are 'api' that may be over-ridden by plugins and local
 # code, so method signatures and semantics should not be changed casually.
 # implementations can be of course.
-#
-# Includes methods for rendering contraints graphically on the
-# search results page (render_constraints(_*))
 module Blacklight
+  
+  # Includes methods for rendering contraints graphically on the search results page (render_constraints(_*))
   module RenderConstraintsHelperBehavior
     extend Deprecation
     self.deprecation_horizon = 'blacklight 8.0'
