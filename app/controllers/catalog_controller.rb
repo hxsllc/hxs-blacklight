@@ -106,8 +106,8 @@ class CatalogController < ApplicationController
     # config.show.thumbnail_field = 'thumbnail_path_ss'
 
     config.add_facet_field 'institution_facet', label: 'Holding Institution', collapse: false, limit: 4
-    config.add_facet_field 'author_facet', label: 'Author', limit: 5
     config.add_facet_field 'title_facet', label: 'Title', limit: 5
+    config.add_facet_field 'author_facet', label: 'Author', limit: 5
     config.add_facet_field 'scribe_facet', label: 'Scribe', limit: 5
     config.add_facet_field 'artist_facet', label: 'Artist', limit: 5
     config.add_facet_field 'place_facet', label: 'Place', limit: 5 # , single: true
@@ -158,38 +158,25 @@ class CatalogController < ApplicationController
 
     # #display v3.0
 
-    ## BUTTONS AND VIEWERS
     config.add_show_field 'id', label: 'DS ID', separator_options: { words_connector: '<br />', last_word_connector: '<br />' } # , accessor: :make_btn_ds
-
-    ## METADATA
     config.add_show_field 'shelfmark_display', label: 'Shelfmark', helper_method: :search_data_link
     config.add_show_field 'title_display', label: 'Title', helper_method: :property_value
-
-    # FACET LINKS, LINKED DATA
     config.add_show_field 'author_display', label: 'Author', helper_method: :search_data_link
     config.add_show_field 'scribe_display', label: 'Scribe', helper_method: :search_data_link
     config.add_show_field 'artist_display', label: 'Artist', helper_method: :search_data_link
-    config.add_show_field 'owner_display', label: 'Former Owner(s)', helper_method: :search_data_link
-    config.add_show_field 'agent_display', label: 'Associated Agent(s)', helper_method: :search_data_link
-    # config.add_show_field 'holding_status_display', label: 'Holding Status', separator_options: { words_connector: '<br />', last_word_connector: '<br />' }
     config.add_show_field 'place_display', label: 'Place', helper_method: :search_data_link
     config.add_show_field 'date_display', label: 'Date', helper_method: :search_data_link
     config.add_show_field 'language_display', label: 'Language', helper_method: :search_data_link
     config.add_show_field 'material_display', label: 'Material', helper_method: :search_data_link
-
-    # FACET LINKS, NO LINKED DATA
-    config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true,
-                                                 helper_method: :search_link
-    config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, helper_method: :search_term_link
-
-    # TEXTUAL
-    config.add_show_field 'physical_description_display', label: 'Physical Description',
-                                                          helper_method: :property_value
+    config.add_show_field 'physical_description_display', label: 'Physical Description',                                                          helper_method: :property_value
+    config.add_show_field 'owner_display', label: 'Former Owner(s)', helper_method: :search_data_link
+    config.add_show_field 'agent_display', label: 'Associated Agent(s)', helper_method: :search_data_link
     config.add_show_field 'note_display', label: 'Note', helper_method: :property_value
-
-    # TECHNICAL
+    config.add_show_field 'term_facet', label: 'Keyword', link_to_facet: true, helper_method: :search_term_link
     config.add_show_field 'institutional_record_link', label: 'Institutional Record', helper_method: :link_with_copy
     config.add_show_field 'iiif_manifest_link', label: 'IIIF Manifest', helper_method: :link_with_copy
+    config.add_show_field 'institution_display', label: 'Holding Institution', link_to_facet: true,
+                                                 helper_method: :search_link
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -212,9 +199,9 @@ class CatalogController < ApplicationController
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.solr_parameters = {
         qf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search',
+    term_search language_search date_search place_search material_search physical_description_display note_display',
         pf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search'
+    term_search language_search date_search place_search material_search physical_description_display note_display'
       }
     end
 
