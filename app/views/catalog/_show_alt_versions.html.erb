@@ -5,8 +5,7 @@
     </h2>
   </div>
   <div class="list-group list-group-flush">
-    <%= link_to '→ Institutional Record', document['institutional_record_link'].first, target: "_blank", class: 'list-group-item' if document['institutional_record_link'].present? %>
-    <%= link_to '→ DS Wikibase', "https://catalog.digital-scriptorium.org/wiki/item:#{document['qid_meta'][2]}", target: "_blank", class: 'list-group-item' if document['qid_meta'].present? %>
-    <%= link_to '→ IIIF Manifest', document['iiif_manifest_link'].first, target: "_blank", class: 'list-group-item' if document['iiif_manifest_link'].present? %>
+    <%= link_to 'For the complete catalog description, follow this link to the institutional record', document['institutional_record_link'].first, target: "_blank", class: 'list-group-item' if document['institutional_record_link'].present? %>
+    <%= link_to 'To view our Linked Data record, follow this link to the DS Wikibase record', "https://catalog.digital-scriptorium.org/wiki/item:#{document['qid_meta'][2]}", target: "_blank", class: 'list-group-item' if document['qid_meta'].present? %>
   </div>
 </div>
