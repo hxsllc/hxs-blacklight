@@ -40,7 +40,7 @@ namespace :data do
 
     commands = [
       'ruby',
-      'wikibase-to-solr.rb',
+      'wikibase-solr-raw.rb',
       '-i', File.expand_path(args[:input], Rails.root).to_s,
       '-o', File.expand_path(args[:output], Rails.root).to_s
     ]
@@ -48,7 +48,7 @@ namespace :data do
     commands << '-v' if args[:verbose]
     FileUtils.rm_f args[:output]
     output = IO.popen(commands, err: :out, chdir: Rails.root.join('lib').to_s) { |io| io.readlines.compact }
-    Rails.logger.info "[wiki-to-solr.rb] Converted Wiki data\n\t#{output}"
+    Rails.logger.info "[wikibase-solr-raw.rb] Converted Wiki data\n\t#{output}"
     exit 1 unless File.exist? args[:output]
   end
 
