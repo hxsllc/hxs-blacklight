@@ -199,9 +199,9 @@ class CatalogController < ApplicationController
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.solr_parameters = {
         qf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search physical_description_display note_display',
+    term_search language_search date_search place_search material_search physical_description_search note_search',
         pf: 'id_search institution_search shelfmark_search title_search artist_search author_search scribe_search owner_search
-    term_search language_search date_search place_search material_search physical_description_display note_display'
+    term_search language_search date_search place_search material_search physical_description_search note_search'
       }
     end
 
