@@ -101,6 +101,12 @@ debugLabels = false
 debugProperties = false
 debugQualifiers = false
 
+$propertyNameArray={}
+CSV.foreach(importPropertyFile, col_sep: ",", liberal_parsing: true) do |line|
+	@propertyName = line[0]
+	$propertyNameArray[@propertyName] = line[1]
+end
+
 # JAMES INSERT EXPLANATION HERE
 
 OptionParser.new { |opts|
@@ -587,13 +593,12 @@ end
 # Class to hold DS Solr objects for output.
 class DSSolr
   def initialize
-    @solr_objects = {}
+    @solr_objects = {} # move this to the MAIN LOOP
   end
 
   #-------------------------------------------------------
   # Lookups
   #-------------------------------------------------------
-
   attr_reader :solr_objects
 
   #-------------------------------------------------------
@@ -607,10 +612,10 @@ class DSSolr
   def process_item(ds_item, output_wikibaseid)
     return unless ds_item.core_model_item?
 
-    Rails.logger.debug output_wikibaseid
+    #Rails.logger.debug output_wikibaseid
     claims = ds_item.claims
     claims.each_key do |property|
-      Rails.logger.debug property
+      #Rails.logger.debug property
       property_claim = ds_item.find_claim property
       # if ds_item.has_qualifiers property_claim
 
@@ -692,6 +697,8 @@ end
 # JSON: "id": "Q1300", // "P16":["Q3":ITEM_DS_20_RECORD] , ["P3":PROP_DESCRIBED_MANUSCRIPT]:"Q1299"
 # Arry: "Q1300"=>"Q1299"
 
+@solr_objects = {}
+
 ds_solr = DSSolr.new
 
 ds_items.each do |item| # item.is_a?(DSItem) => true
@@ -727,19 +734,103 @@ ds_items.each do |item| # item.is_a?(DSItem) => true
     if item.ds_20_record?
       ds20record_id = item.wikibaseid # Q3
     end
-    output_wikibaseid = ds20record_id
-    # wikibaseid for Solr output
-
   end
 
-  ds_solr.process_item item, output_wikibaseid
+  ds_solr.process_item item, ds20record_id
 end
 
-exit
+#exit
+
+wikiItemLabels = {}
+wikiItemURIS = {}
+
+# Create lists populated with Q-id / property value pairs that are used
+# to construct SOLR OBJECTS in the MAIN LOOP
+@dsDescribedRecords = {}
+@dsHoldingRecords = {}
+
+data.each do |item|
+
+	@wikibaseid = ''
+	@instance = nil
+	@uri = ''
+	@label = ''
+
+	## retrieve ID from item HASH array
+	@wikibaseid = item.fetch('id')
+
+	## retrieve claims from item HASH array
+	@claims = JSON.parse item.dig('claims').to_json
+
+	## try retrieving P16 from claims HASH array, if so populate @instance	     
+	@P16 = returnPropArrayFirst @claims, 'P16'
+
+	# if P16 is populated, get the instance
+
+	@P16 ? @instance = returnMDVNifNotNil(@P16):  nil
+
+	## try retrieving P42 from claims JSON array, if so populate @uri     
+	@P42 = returnPropArrayFirst @claims, 'P42'
+	@P42 ? @uri = "https://www.wikidata.org/wiki/"+returnMDVifNotNil(@P42): nil
+
+	## try retrieving P48 from claims JSON array, if so populate @uri	     
+	@P44 = returnPropArrayFirst @claims, 'P44'
+	@P44 ? @uri = returnMDVifNotNil(@P44): nil
+
+	##only populate LABELS HASH with objects matching certain "instance of" [P16] values	
+	if @instance.nil? || !@instance.between?(1,3)
+
+		# labels is a top-level property in the exported Wikibase documment
+		@labelsArray = JSON.parse(item.dig('labels').to_json)
+		@label = returnLabelValue @labelsArray
+
+		#if there is a label present, populate a LABELS array
+		@label ? wikiItemLabels[@wikibaseid]=@label: nil
+
+		#if there is a URI present, populate a URIs array
+		@uri ? wikiItemURIS[@wikibaseid]=@uri: nil
+
+		if debugLabels
+			puts "---"
+			puts @wikibaseid
+			puts @instance
+			puts @label
+			puts @uri
+		end
+
+	# if the instance_of = 1, 2, 3 then we want to extract the MANUSCRIPT_HOLDING (P2)
+	# and DESCRIBED_MANUSCRIPT (P3) values into arrays
+	elsif @instance.to_i>=1 && @instance.to_i<=3
+
+		@P2 = returnPropArrayFirst @claims, 'P2'
+		@P2 ? @dsDescribedRecords[@wikibaseid] = returnIDifNotNil(returnMDVifNotNil(@P2)):  nil
+		@P3 = returnPropArrayFirst @claims, 'P3'
+		@P3 ? @dsHoldingRecords[@wikibaseid] = returnIDifNotNil(returnMDVifNotNil(@P3)):  nil
+	end
+
+end
+
 
 ## main LOOP:
 ##   loop over each Wikibase object in the JSON data array
 ##   evaluate when "instance of" P16 >= 1 && <= 3
+
+## main loop described:
+
+## . take the entire JSON file and loop through each object within
+## . extract the wikibase ID and its associated claims
+## . investigate the claims so that we only process instance_of (P16) = Q1, Q2, Q3
+## . apply logic to follow the properties that link records so that we end up with a single DS2 "record" 
+##   for the Solr database
+## . once we have an item we care about (P16=Q1, Q2, Q3) and a final ID for output...
+## . loop through every single property inside the 'claims'
+## . . usually, the data we want for the final record is inside mainsnak-datavalue-value, BUT sometimes
+## . . . it is one level deeper inside an array/hash, and we extract the 'id' (e.g. Q14) and transform that into its label
+## . . once we have the output value for that property, we check if there are qualifiers
+## . . if there are no qualifiers, then we export it in 4 ways for Solr (_display, _search, _facet, _link)
+## . . . when we are exporting, we check if that particular representation is needed, if not we don't export (to reduce total size of Solr import)
+## . . if there are qualifiers, then loop through every single qualifier (which is a property of a property)
+## . . . 
 
 $solrObjects = {}
 
@@ -880,8 +971,7 @@ data.each do |item|
           elsif @qualAGR.empty? && @qualAuth
             # when AGR is empty (normal) and Name Authority is present, we output the Recorded Name + Name Authority (Label + URI)
             @qualAuth.each do |nameAuthority|
-              createJSONforSolr(@wikibaseid, property, '_display', @qualRole,
-                                { PV: @propValue, QL: nameAuthority, QU: @qualURI })
+              createJSONforSolr(@wikibaseid, property, '_display', @qualRole, { PV: @propValue, QL: nameAuthority, QU: @qualURI })
               createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
               createJSONforSolr(@wikibaseid, property, '_search', @qualRole, nameAuthority)
               createJSONforSolr(@wikibaseid, property, '_facet', @qualRole, nameAuthority)
@@ -889,8 +979,7 @@ data.each do |item|
           else # @qualAGR && @qualAuth then
             # when AGR is present and Name Authority is present, we output the AGR + Recorded Name + Name Authority (Label + URI)
             @qualAuth.each do |nameAuthority|
-              createJSONforSolr(@wikibaseid, property, '_display', @qualRole,
-                                { PV: @propValue, AGR: @qualAGR, QL: nameAuthority, QU: @qualURI })
+              createJSONforSolr(@wikibaseid, property, '_display', @qualRole, { PV: @propValue, AGR: @qualAGR, QL: nameAuthority, QU: @qualURI })
               createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @propValue)
               createJSONforSolr(@wikibaseid, property, '_search', @qualRole, @qualAGR)
               createJSONforSolr(@wikibaseid, property, '_search', @qualRole, nameAuthority)
