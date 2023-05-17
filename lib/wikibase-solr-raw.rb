@@ -18,9 +18,9 @@ require 'optparse'
 # => @displayFieldIDs = YES to output _display for that property
 # => @searchFieldIDs = YES to output _search for that property
 
-	@displayFieldIDs = [1,5,6,8,10,14,18,21,23,26,27,29,30,32,33].freeze
-	@searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,18,21,22,23,27,28,29,32].freeze
-	@facetFieldIDs = [5,10,11,14,18,21,23,25,26,27,31].freeze
+	@displayFieldIDs = [1,5,6,8,10,14,18,19,21,23,26,27,29,30,32,33].freeze
+	@searchFieldIDs = [1,4,5,8,10,11,12,13,14,17,18,19,21,22,23,27,28,29,32].freeze
+	@facetFieldIDs = [5,10,11,14,18,19,21,23,25,26,27,31].freeze
 	@linkFieldIDs = [9,41].freeze
 	@intFieldIDs = [25,36,37].freeze
 
@@ -29,7 +29,7 @@ require 'optparse'
 	dir = File.dirname __FILE__
 	importJSONfile = File.expand_path 'export.json', dir
 	outputJSONFile = File.expand_path 'import.json', dir
-	importPropertyFile = File.expand_path 'property-names.csv', dir
+	importPropertyFile = File.expand_path 'solr-property-names.csv', dir
 
 ## parameter definition
 
@@ -225,7 +225,7 @@ data.each do |item|
 	item_WIKIDATA_QID ? @uri = "https://www.wikidata.org/wiki/"+returnMDVifNotNil(item_WIKIDATA_QID): nil
 
 	## try retrieving P48 from claims JSON array, if so populate @uri	     
-	item_EXTERNAL_URI = returnPropArrayFirst @claims, 'P44'
+	item_EXTERNAL_URI = returnPropArrayFirst item_CLAIMS, 'P44'
 	item_EXTERNAL_URI ? @uri = returnMDVifNotNil(item_EXTERNAL_URI): nil
 
 	##only populate LABELS HASH with objects matching certain "instance of" [P16] values	
@@ -336,7 +336,7 @@ data.each do |item|
 							@qualID ? @qualURI = uris[@qualID]: nil
 						end
 
-						#P10 contains qualifiers P13, P15, and P17 (agr, role, authority)
+						#P14 contains qualifiers P13, P15, and P17 (agr, role, authority)
 						qualPropertyId=='P13' ? @qualAGR = @qualValue: nil
 						qualPropertyId=='P15' ? @qualRole = @qualLabel: nil
 
@@ -373,7 +373,7 @@ data.each do |item|
 						#special data format output rules for P14 (associated name)
 						#P14 is the only property-qualifier that might contain AGR (P13)
 						#P14 is the only property in which the field name gets modified to the ROLE (P15)	
-												
+						#P17						
 						if @qualAGR.empty? && @qualAuth.empty?
 							#when AGR and Authority are empty, we only output the Recorded Name
 							createJSONforSolr(@wikibaseid, property, "_display", @qualRole,  { "PV": @propValue })
