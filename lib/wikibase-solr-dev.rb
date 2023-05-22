@@ -199,6 +199,55 @@
       return true
     end     
 
+    def transform_item_property_value(itemPropertyValue) 
+
+        if itemPropertyValue.is_a?(Hash)
+
+            # When the hash has an "id" field, we want that (it is the Q-id, e.g. Q1, Q942)
+            itemPropertyValue = itemPropertyValue["id"] if itemPropertyValue["id"]
+
+            # When the hash has a "time" field, we want that value
+            itemPropertyValue = get_hash_value(itemPropertyValue) if itemPropertyValue["time"]
+
+        end
+
+        return itemPropertyValue
+
+    end
+
+    def transform_item_qualifier_value(itemQualifierValue) 
+
+        if itemQualifierValue.is_a?(Hash)
+
+            # When the hash has an "id" field, we want that (it is the Q-id, e.g. Q1, Q942)
+            itemQualifierValue = get_hash_value(itemQualifierValue["id"]) if itemQualifierValue&.dig("id")
+
+            # When the hash has a "time" field, we want that value
+            itemQualifierValue = get_hash_value(itemQualifierValue) if itemQualifierValue&.dig("time")
+
+        end
+
+        return itemQualifierValue
+
+    end
+
+
+    def transform_name_as_recorded(propertyValue,qualifierValues)
+
+        ## Store Wikibase item ID (e.g. Q942) in the Solr document for reference
+        # solr_create item_ID, "qid_meta", item_ID
+
+        # "P14" property has qualifiers {0=>{"P15"=>"Former owner"}, 1=>{"P17"=>"Dean of Lukirch"}, 2=>{"P17"=>"Buxheim Charterhouse"}, 3=>{"P17"=>"Hugo Philipp Waldbott-Bassenheim"}, 4=>{"P17"=>"Adolph Sutro"}}
+        qualifierValues.each do |qualifierInstance|
+            qualifierInstance.each do |qualifierID,qualifierValue| # qualifier => qualifierArray
+                @role = qualifierValue if qualifierID==ID_ROLE_IN_AUTHORITY_FILE
+            end
+        end
+
+        # solrLinkedDataValue = 
+        # "{\"PV\":\"Pseudo Phalaris\",\"QL\":\"Pseudo-Phalaris\",\"QU\":\"https://www.wikidata.org/wiki/Q101173400\"}"
+    end
+
     def get_hash_value(value)
       if value.is_a?(Hash)
         if value["id"]
@@ -225,22 +274,31 @@
       return item_URI
     end
 
+    def solr_format(value)
+        str = value.is_a?(Array) || value.is_a?(Hash) ? JSON.generate(value) : value
+        str.is_a?(String) ? str.unicode_normalize : str
+    end
+
+    def solr_create(id, fieldname, value)
+        formatted = solr_format value
+        $solr_OBJECTS[id] ||= {}
+        $solr_OBJECTS[id][fieldname] ||= []
+        $solr_OBJECTS[id][fieldname] << formatted unless $solr_OBJECTS[id][fieldname].include? formatted
+    end
+
 ## INPUT / OUTPUT CONFIGURATION
 
     dir = File.dirname __FILE__
     importJSONfile = File.expand_path 'export-dev-0302.json', dir
-    sampleOutput = true  
 
 ## LOAD DATA
 
     data = JSON.load_file importJSONfile
 
-## CREATE LOOKUP ARRAYS
+## POPULATE LOOKUP ARRAYS (Wikibase items with INSTANCE_OF = Q4-Q17)
 
     $item_LABELS = {}
     $item_URIS = {}
-
-## POPULATE LOOKUP ARRAYS
 
     ## Loop through every item from the Wikibase JSON export to populate item_LABELS and item_URIS
     data.each do |item|
@@ -256,7 +314,7 @@
       ## Retrieve the ID_INSTANCE_OF (deep dig into claims via get_first_instance_of method)
       item_INSTANCE_OF = get_first_instance_of item_CLAIMS
 
-      ## Unlikely, but if there are no claims, skip to the next item
+      ## Unlikely, but if there are no claims or ID_INSTANCE_OF, skip to the next item
       next if item_CLAIMS.empty?
       next if item_INSTANCE_OF.nil?
 
@@ -277,7 +335,9 @@
       end
     end
 
-## CONSTRUCT SOLR ITEMS
+## CONSTRUCT SOLR OBJECTS (Wikibase items with INSTANCE_OF = Q1-Q3)
+
+    $solr_OBJECTS = {}
 
     ## Loop through every item from the Wikibase JSON export to generate Solr items
     data.each do |item|
@@ -287,17 +347,14 @@
       ## Retrieve the item ID (value)
       item_ID = item["id"]
 
+      ## Store Wikibase item ID (e.g. Q942) in the Solr document for reference
+      solr_create item_ID, "qid_meta", item_ID
+
       ## Retrieve the item claims (deep array)
       item_CLAIMS = item["claims"]
 
       ## Retrieve the ID_INSTANCE_OF (deep dig into claims via get_first_instance_of method)
       item_INSTANCE_OF = get_first_instance_of item_CLAIMS
-
-      if sampleOutput then
-        puts "---"
-        puts "Wikibase item ID: #{item_ID}"
-        puts "Item instance: #{item_INSTANCE_OF}"
-      end
 
       ## Unlikely, but if there are no claims, skip to the next item
       next if item_CLAIMS.empty?
@@ -305,11 +362,6 @@
 
       # Wikibase items with an ID_INSTANCE_OF = Q1-Q3 contain the manuscript data that we want to use when constructing the Solr item
       next unless item_INSTANCE_OF.between?(1,3)
-
-      if sampleOutput then
-        puts "Property keys:"
-        puts "  #{item_CLAIMS.keys}"
-      end
 
       # Wikibase item claims array contains an arbitrary list of property ID's (P1-P47)     
       item_CLAIMS.each_key do |propertyID|
@@ -320,9 +372,8 @@
         # Skip ahead if the array has zero elements/data in it
         next if item_PROPERTY_ARRAY.nil?
 
-          if sampleOutput then
-            puts "  #{propertyID} instances: #{item_PROPERTY_ARRAY.length()}"
-          end
+        # Initiate a hash to hold all qualifiers of a particular property, for transformation logic at the end
+        qualifier_VALUES = {}
 
         # Loop through each instance of a property
         item_PROPERTY_ARRAY.each do |propertyInstance|
@@ -331,74 +382,73 @@
             item_PROPERTY_VALUE = propertyInstance&.dig "mainsnak", "datavalue", "value"
 
             # When the retrieved value is a hash/array, that means we have to dig one level further to retrieve the value we want
-            # Translation logic for property values that are not a text string in datavalue-value are slightly different than qualifiers
-            if item_PROPERTY_VALUE.is_a?(Hash)
-
-                if item_PROPERTY_VALUE["id"]
-                  # When the hash has an "id" field, we want that (it is the Q-id, e.g. Q1, Q942)
-                  item_PROPERTY_VALUE = item_PROPERTY_VALUE["id"]
-                elsif item_PROPERTY_VALUE["time"]
-                  # When the hash has a "time" field, we want that value
-                  item_PROPERTY_VALUE = get_hash_value(item_PROPERTY_VALUE)
-                end
-                
-            end
-
-            propertyDebug = "  ^-- #{propertyID} = #{item_PROPERTY_VALUE}" 
-            if sampleOutput then puts propertyDebug end
+            # Translation logic for PROPERTY values that are not a text string in datavalue-value are slightly different than qualifiers
+            item_PROPERTY_VALUE = transform_item_property_value item_PROPERTY_VALUE if item_PROPERTY_VALUE.is_a?(Hash)
 
             # Each property ID may be further described by an array of qualifiers, which are properties
             item_PROPERTY_QUALIFIERS = propertyInstance.dig "qualifiers"
 
-            # Skip ahead if there are no qualifiers
-            next if item_PROPERTY_QUALIFIERS.nil?
+            # If no qualifiers, then we can store the property value in the Solr object
+            solr_create item_ID, propertyID, item_PROPERTY_VALUE if item_PROPERTY_QUALIFIERS.nil? 
 
-              if sampleOutput then
-                puts "    Qualifier keys:"
-                puts "    #{item_PROPERTY_QUALIFIERS.keys}"
-              end
+            # Skip the qualifiers loop if there are no qualifiers
+            next if item_PROPERTY_QUALIFIERS.nil?  
+
+            qualifierCount = 0
 
             # Loop through each qualifier ID in the qualifier array
             item_PROPERTY_QUALIFIERS.each do |qualifier,qualifierArray| # qualifier => qualifierArray
 
-                if sampleOutput then puts "    #{qualifier} instances: #{qualifierArray.length()}" end
                 # Each qualifier may have multiple instances of data within it, e.g. multiple authors
                 qualifierArray.each do |qualifierInstance|
 
                     # Retrieve the value that we use for the Solr item
                     item_PROPERTY_QUALIFIER_VALUE = qualifierInstance&.dig "datavalue", "value"
 
-                    # Translation logic for qualifier values that are not a text string in datavalue-value are slightly different than properties
-                    if item_PROPERTY_QUALIFIER_VALUE.is_a?(Hash)
+                    # When the retrieved value is a hash/array, that means we have to dig one level further to retrieve the value we want
+                    # Translation logic for QUALIFIER VALUES that are not a text string in datavalue-value are slightly different than qualifiers
+                    item_PROPERTY_QUALIFIER_VALUE_URI = get_hash_uri(item_PROPERTY_QUALIFIER_VALUE) if item_PROPERTY_QUALIFIER_VALUE.is_a?(Hash) && item_PROPERTY_QUALIFIER_VALUE&.dig("id")
+                    item_PROPERTY_QUALIFIER_VALUE = transform_item_qualifier_value item_PROPERTY_QUALIFIER_VALUE if item_PROPERTY_QUALIFIER_VALUE.is_a?(Hash)
 
-                        if item_PROPERTY_QUALIFIER_VALUE["id"]
-                          item_PROPERTY_QUALIFIER_VALUE_ID = item_PROPERTY_QUALIFIER_VALUE["id"]
-                          item_PROPERTY_QUALIFIER_VALUE_URI = get_hash_uri(item_PROPERTY_QUALIFIER_VALUE)
-                          item_PROPERTY_QUALIFIER_VALUE = get_hash_value(item_PROPERTY_QUALIFIER_VALUE)
-                          qualifierDebug = "    ^-- #{qualifier} = #{item_PROPERTY_QUALIFIER_VALUE_ID} > #{item_PROPERTY_QUALIFIER_VALUE} < #{item_PROPERTY_QUALIFIER_VALUE_URI}"
-                        end
+                    next if item_PROPERTY_QUALIFIER_VALUE.nil?
+                    
+                    qualifier_KEYVAL = {}
+                    qualifier_KEYVAL[qualifier] = item_PROPERTY_QUALIFIER_VALUE
+                    qualifier_VALUES[qualifierCount] = qualifier_KEYVAL
+                    qualifierCount = qualifierCount + 1
 
-                        if item_PROPERTY_QUALIFIER_VALUE["time"]
-                          item_PROPERTY_QUALIFIER_VALUE = get_hash_value(item_PROPERTY_QUALIFIER_VALUE)
-                          qualifierDebug = "    ^-- #{qualifier} = #{item_PROPERTY_QUALIFIER_VALUE}" 
-                        end
-                        
-                    end
-
-                    if sampleOutput then puts qualifierDebug end
-
-                    # INSERT QUALIFIERS BUSINESS LOGIC
-                    # USE PROPERTY CONSTANTS INSTEAD OF P-VALUES
-                    # STANDARD CASE AND THEN EXCEPTIONS
+                    ## QUALIFIERS requiring transformation (business logic)
+                    # P13 ID_IN_ORIGINAL_SCRIPT - expected to only occur once per property (P14)
+                    # P15 ID_ROLE_IN_AUTHORITY_FILE - expected to only occur once per property (P14)
+                    # P17 ID_NAME_IN_AUTHORITY_FILE - can occur MORE THAN ONCE per property (P14)
+                    # P24 ID_PRODUCTION_CENTURY_IN_AUTHORITY_FILE - expected to only occur once per property (P23)
+                    # P25 ID_CENTURY - expected to only occur once per property (P23)
+                    # P36 ID_LATEST_DATE - expected to only occur once per property (P23)
+                    # P37 ID_EARLIEST_DATE - expected to only occur once per property (P23)
 
                 end
+                # end qualifier instances evaluation
+                
             end
+            # end qualifier evaluation 
 
-            # INSERT PROPERTIES BUSINESS LOGIC
-            # USE PROPERTY CONSTANTS INSTEAD OF P-VALUES
-            # STANDARD CASE AND THEN EXCEPTIONS
+            # $q_VALUES data samples - property X has qualifiers $q_VALUES
+            # "P5" property has qualifiers {0=>{"P4"=>"State of California"}}
+            # "P10" property has qualifiers {0=>{"P11"=>"Sermons for the temporale"}}
+            # "P14" property has qualifiers {0=>{"P15"=>"Former owner"}, 1=>{"P17"=>"Dean of Lukirch"}, 2=>{"P17"=>"Buxheim Charterhouse"}, 3=>{"P17"=>"Hugo Philipp Waldbott-Bassenheim"}, 4=>{"P17"=>"Adolph Sutro"}}
+            # "P21" property has qualifiers {0=>{"P22"=>"Latin"}}
+            # "P23" property has qualifiers {0=>{"P25"=>"+1401-01-01T00:00:00Z"}, 1=>{"P24"=>"fifteenth century (dates CE)"}, 2=>{"P37"=>"+1450-01-01T00:00:00Z"}, 3=>{"P36"=>"+1475-12-31T00:00:00Z"}}
+            # "P27" property has qualifiers {0=>{"P28"=>"Italy"}, 1=>{"P28"=>"Lombardy"}}
+
+            # Helper methods that apply transfomation logic per property
+            transform_name_as_recorded(item_PROPERTY_VALUE, qualifier_VALUES) if propertyID=="P14" 
 
         end
+        # end property array evaluation
+        
       end 
+      # end item claims evaluation
 
     end
+
+    #pp $solr_OBJECTS
