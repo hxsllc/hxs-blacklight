@@ -217,17 +217,13 @@
 
     def transform_item_qualifier_value(itemQualifierValue) 
 
-        if itemQualifierValue.is_a?(Hash)
+        # When the hash has an "id" field, we want that (it is the Q-id, e.g. Q1, Q942)
+        qualifierPropertyValue = get_hash_value(itemQualifierValue) if itemQualifierValue&.dig("id")
 
-            # When the hash has an "id" field, we want that (it is the Q-id, e.g. Q1, Q942)
-            itemQualifierValue = get_hash_value(itemQualifierValue["id"]) if itemQualifierValue&.dig("id")
+        # When the hash has a "time" field, we want that value
+        qualifierPropertyValue = get_hash_value(itemQualifierValue) if itemQualifierValue&.dig("time")
 
-            # When the hash has a "time" field, we want that value
-            itemQualifierValue = get_hash_value(itemQualifierValue) if itemQualifierValue&.dig("time")
-
-        end
-
-        return itemQualifierValue
+        return qualifierPropertyValue
 
     end
 
@@ -275,7 +271,8 @@
     end
 
     def solr_format(value)
-        str = value.is_a?(Array) || value.is_a?(Hash) ? JSON.generate(value) : value
+        #str = value.is_a?(Array) || value.is_a?(Hash) ? JSON.generate(value) : value
+        str = value
         str.is_a?(String) ? str.unicode_normalize : str
     end
 
@@ -348,7 +345,7 @@
       item_ID = item["id"]
 
       ## Store Wikibase item ID (e.g. Q942) in the Solr document for reference
-      solr_create item_ID, "qid_meta", item_ID
+      # solr_create item_ID, "qid_meta", item_ID
 
       ## Retrieve the item claims (deep array)
       item_CLAIMS = item["claims"]
@@ -372,9 +369,6 @@
         # Skip ahead if the array has zero elements/data in it
         next if item_PROPERTY_ARRAY.nil?
 
-        # Initiate a hash to hold all qualifiers of a particular property, for transformation logic at the end
-        qualifier_VALUES = {}
-
         # Loop through each instance of a property
         item_PROPERTY_ARRAY.each do |propertyInstance|
 
@@ -388,12 +382,14 @@
             # Each property ID may be further described by an array of qualifiers, which are properties
             item_PROPERTY_QUALIFIERS = propertyInstance.dig "qualifiers"
 
-            # If no qualifiers, then we can store the property value in the Solr object
-            solr_create item_ID, propertyID, item_PROPERTY_VALUE if item_PROPERTY_QUALIFIERS.nil? 
+            # Store the property value in the Solr object, whether it has qualifiers or not
+            solr_create item_ID, propertyID, item_PROPERTY_VALUE 
 
             # Skip the qualifiers loop if there are no qualifiers
             next if item_PROPERTY_QUALIFIERS.nil?  
 
+            # Initiate a hash to hold all qualifiers of a particular property, for transformation logic at the end
+            qualifier_VALUES = {}
             qualifierCount = 0
 
             # Loop through each qualifier ID in the qualifier array
@@ -414,8 +410,10 @@
                     
                     qualifier_KEYVAL = {}
                     qualifier_KEYVAL[qualifier] = item_PROPERTY_QUALIFIER_VALUE
-                    qualifier_VALUES[qualifierCount] = qualifier_KEYVAL
-                    qualifierCount = qualifierCount + 1
+                    qualifier_KEYVAL[qualifier] = [item_PROPERTY_QUALIFIER_VALUE => item_PROPERTY_QUALIFIER_VALUE_URI] if item_PROPERTY_QUALIFIER_VALUE_URI
+                    solr_create item_ID, propertyID, qualifier_KEYVAL
+                    #qualifier_VALUES[qualifierCount] = qualifier_KEYVAL 
+                    #qualifierCount = qualifierCount + 1
 
                     ## QUALIFIERS requiring transformation (business logic)
                     # P13 ID_IN_ORIGINAL_SCRIPT - expected to only occur once per property (P14)
@@ -430,9 +428,13 @@
                 # end qualifier instances evaluation
                 
             end
-            # end qualifier evaluation 
+            # end qualifier evaluation
 
-            # $q_VALUES data samples - property X has qualifiers $q_VALUES
+            # If no qualifiers, then we can store the property value in the Solr object
+            #solr_create item_ID, propertyID, item_PROPERTY_VALUE if item_PROPERTY_QUALIFIERS 
+            #solr_create item_ID, propertyID, qualifier_VALUES if item_PROPERTY_QUALIFIERS
+
+            # qualifier_VALUES data samples - property X has qualifiers $q_VALUES
             # "P5" property has qualifiers {0=>{"P4"=>"State of California"}}
             # "P10" property has qualifiers {0=>{"P11"=>"Sermons for the temporale"}}
             # "P14" property has qualifiers {0=>{"P15"=>"Former owner"}, 1=>{"P17"=>"Dean of Lukirch"}, 2=>{"P17"=>"Buxheim Charterhouse"}, 3=>{"P17"=>"Hugo Philipp Waldbott-Bassenheim"}, 4=>{"P17"=>"Adolph Sutro"}}
@@ -441,7 +443,7 @@
             # "P27" property has qualifiers {0=>{"P28"=>"Italy"}, 1=>{"P28"=>"Lombardy"}}
 
             # Helper methods that apply transfomation logic per property
-            transform_name_as_recorded(item_PROPERTY_VALUE, qualifier_VALUES) if propertyID=="P14" 
+            # transform_name_as_recorded(item_PROPERTY_VALUE, qualifier_VALUES) if propertyID=="P14" 
 
         end
         # end property array evaluation
@@ -451,4 +453,4 @@
 
     end
 
-    #pp $solr_OBJECTS
+    pp $solr_OBJECTS
